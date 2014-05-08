@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+/* line 3, settings.scss */
+body {
+  background: #5c62ce;
+  font-family: "Open Sans", Helvetica;
+}
+
+/* line 4, style.scss */
+.site-header {
+  background: rgba(45, 47, 89, 0.9) !important;
+  color: #fff;
+  position: relative;
+  top: -1em;
+  left: -1em;
+  max-width: 1000px;
+  padding: 1em 1em 4em 2em;
+}
+
+/* line 14, style.scss */
+div.site_information {
+  max-width: 400px;
+  float: left;
+  margin-right: 1.5em;
+  line-height: .5;
+}
+/* line 19, style.scss */
+div.site_information .site-title, div.site_information .site-description {
+  color: #fff;
+}
+
+/* line 24, style.scss */
+a.home-link {
+  text-decoration: none;
+}
+
+/* line 28, style.scss */
+div#main {
+  position: absolute;
+  top: 35%;
+}
+
+/* line 33, style.scss */
+div.nav-menu li {
+  display: inline-block;
+  list-style-type: none;
+  font-weight: 700;
+}
+/* line 38, style.scss */
+div.nav-menu li a {
+  text-decoration: none;
+  color: #fff;
+}
+/* line 42, style.scss */
+div.nav-menu li :after {
+  content: "|";
+}

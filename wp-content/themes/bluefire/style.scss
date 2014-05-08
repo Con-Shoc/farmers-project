@@ -1,0 +1,45 @@
+@import 'bluefire/settings';
+
+
+.site-header {
+	background: rgba(45,47,89, 0.9) !important;
+	color: #fff;
+	position: relative;
+	top: -1em;
+	left: -1em;
+	max-width: 1000px;
+	padding: 1em 1em 4em 2em;
+}
+
+div.site_information {
+	max-width: 400px;
+	float: left;
+	margin-right: 1.5em;
+	line-height: .5;
+	.site-title, .site-description { 
+		color: #fff;
+	}
+}
+
+a.home-link {
+	text-decoration: none;
+}
+
+div#main {
+	position: absolute;
+	top: 35%;
+}
+
+div.nav-menu li {
+	display: inline-block;
+	list-style-type: none;
+	font-weight: 700;
+	// padding-right: 1em;
+	a { 
+		text-decoration: none;
+		color: #fff;
+	}
+	:after { 
+		content: "|";
+	}
+}
