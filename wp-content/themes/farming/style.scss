@@ -151,7 +151,7 @@ tt,
 var,
 samp,
 pre {
-	font-family: monospace, serif;
+	// font-family: monospace, serif;
 	font-size: 15px;
 	-webkit-hyphens: none;
 	-moz-hyphens:    none;
@@ -783,7 +783,7 @@ span + .edit-link:before,
 }
 
 .site-header {
-	background-color: #000;
+	background-color: $navcolor;
 	// max-width: 1260px;
 	position: relative;
 	width: 100%;
@@ -883,7 +883,6 @@ span + .edit-link:before,
 .site-navigation a {
 	color: #fff;
 	display: block;
-	text-transform: uppercase;
 }
 
 .site-navigation a:hover {
@@ -1034,8 +1033,9 @@ a.post-thumbnail:hover {
 
 .entry-title {
 	font-size: 33px;
-	font-weight: 300;
+	font-weight: 600;
 	line-height: 1.0909090909;
+	text-align: center;
 	margin-bottom: 12px;
 	margin: 0 0 12px 0;
 	text-transform: uppercase;
@@ -2000,9 +2000,9 @@ a.post-thumbnail:hover {
 /* Secondary */
 
 #secondary {
-	background-color: #000;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: $navcolor !important;
+	// border-top: 1px solid #000;
+	// border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	clear: both;
 	color: rgba(255, 255, 255, 0.7);
 	margin-top: -1px;
@@ -2669,6 +2669,7 @@ a.post-thumbnail:hover {
 }
 
 .site-footer {
+	display: none;
 	background-color: #000;
 	font-size: 12px;
 	position: relative;
@@ -3567,7 +3568,7 @@ a.post-thumbnail:hover {
 	.site:before {
 		background-color: #000;
 		content: "";
-		display: block;
+		display: none;
 		height: 100%;
 		min-height: 100%;
 		position: absolute;
@@ -3580,6 +3581,7 @@ a.post-thumbnail:hover {
 	#secondary {
 		background-color: transparent;
 		border: 0;
+		display: none;
 		clear: none;
 		float: left;
 		margin: 0 0 0 -100%;
