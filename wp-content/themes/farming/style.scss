@@ -1038,7 +1038,7 @@ a.post-thumbnail:hover {
 	text-align: center;
 	margin-bottom: 12px;
 	margin: 0 0 12px 0;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 }
 
 .entry-title a {
@@ -3195,9 +3195,9 @@ a.post-thumbnail:hover {
 		margin-top: 0;
 	}
 
-	.full-width .site-content {
-		margin-right: 0;
-	}
+	// .full-width .site-content {
+	// 	margin-right: 0;
+	// }
 
 	.full-width .site-content .has-post-thumbnail .entry-header,
 	.full-width.singular .site-content .hentry.has-post-thumbnail,
@@ -3324,10 +3324,10 @@ a.post-thumbnail:hover {
 
 	.primary-navigation {
 		float: right;
-		font-size: 11px;
-		margin: 0 1px 0 -12px;
+		// font-size: 11px;
+		margin: 10px 1px 0 -12px;
 		padding: 0;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 	}
 
 	.primary-navigation .menu-toggle {
@@ -3494,10 +3494,10 @@ a.post-thumbnail:hover {
 }
 
 @media screen and (min-width: 846px) {
-	.content-area,
-	.content-sidebar {
-		padding-top: 72px;
-	}
+	// .content-area,
+	// .content-sidebar {
+	// 	padding-top: 72px;
+	// }
 
 	.site-content .has-post-thumbnail .entry-header {
 		margin-top: -48px;

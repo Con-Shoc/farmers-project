@@ -12,8 +12,18 @@
 	<?php
 		// Page thumbnail and title.
 		twentyfourteen_post_thumbnail();
-		the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+		if ( !is_front_page() && !is_home() ) {
+  			// Default homepage
+			the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+		}
+
+		else { 
+			echo'<header class="entry-header"><h1 class="entry-title home-title">Please select an option</h1></header>';
+		}
+
 	?>
+
+	
 
 	<div class="entry-content">
 		<?php

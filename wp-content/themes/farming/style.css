@@ -4,14 +4,35 @@ body {
   font-family: "Open Sans", Helvetica !important;
 }
 
-/* line 10, settings.scss */
+/* line 13, settings.scss */
 section.site-width {
   max-width: 1000px;
   margin: auto;
 }
-/* line 14, settings.scss */
+/* line 17, settings.scss */
 section.site-width .site-header {
   max-width: 1000px;
+}
+/* line 21, settings.scss */
+section.site-width .logo {
+  padding: 1em 0;
+  max-width: 75%;
+}
+/* line 26, settings.scss */
+section.site-width .search-toggle, section.site-width .menu-toggle {
+  display: inline-block;
+  background: none;
+  margin-top: 10px;
+}
+/* line 32, settings.scss */
+section.site-width .search-box-wrapper {
+  margin-top: 17px;
+}
+/* line 34, settings.scss */
+section.site-width .search-box-wrapper .search-box {
+  background: #299546;
+  width: 200px;
+  float: right;
 }
 
 /* line 3, style.scss */
@@ -1172,7 +1193,6 @@ a.post-thumbnail:hover {
   text-align: center;
   margin-bottom: 12px;
   margin: 0 0 12px 0;
-  text-transform: uppercase;
 }
 
 /* line 1044, style.scss */
@@ -3605,11 +3625,6 @@ a.post-thumbnail:hover {
     margin-top: 0;
   }
 
-  /* line 3198, style.scss */
-  .full-width .site-content {
-    margin-right: 0;
-  }
-
   /* line 3204, style.scss */
   .full-width .site-content .has-post-thumbnail .entry-header,
   .full-width.singular .site-content .hentry.has-post-thumbnail,
@@ -3753,10 +3768,8 @@ a.post-thumbnail:hover {
   /* line 3325, style.scss */
   .primary-navigation {
     float: right;
-    font-size: 11px;
-    margin: 0 1px 0 -12px;
+    margin: 10px 1px 0 -12px;
     padding: 0;
-    text-transform: uppercase;
   }
 
   /* line 3333, style.scss */
@@ -3947,12 +3960,6 @@ a.post-thumbnail:hover {
   }
 }
 @media screen and (min-width: 846px) {
-  /* line 3498, style.scss */
-  .content-area,
-  .content-sidebar {
-    padding-top: 72px;
-  }
-
   /* line 3502, style.scss */
   .site-content .has-post-thumbnail .entry-header {
     margin-top: -48px;

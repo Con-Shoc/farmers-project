@@ -5,7 +5,10 @@ body {
 }
 
 $navcolor: #299546;
-
+$blue: #2e3092;
+$seagreen: #52be99;
+$purple: #797dbb;
+$red: #b21e38;
 
 section.site-width { 
 	max-width: 1000px;
@@ -14,4 +17,28 @@ section.site-width {
 	.site-header { 
 		max-width: 1000px;
 	}
+
+	.logo { 
+		padding: 1em 0;
+		max-width: 75%;
+	}
+	
+	.search-toggle, .menu-toggle{ 
+		display: inline-block;
+		background: none;
+		margin-top: 10px;
+	}
+
+	.search-box-wrapper { 
+		margin-top: 17px;
+			.search-box { 
+				background: $navcolor;
+				width: 200px;
+				float: right;
+			}
+
+	}
 }
+
+
+
