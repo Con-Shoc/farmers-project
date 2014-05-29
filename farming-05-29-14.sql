@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2014 at 02:15 PM
+-- Generation Time: May 29, 2014 at 03:29 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -21,6 +21,82 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `farming` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `farming`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wp_commentmeta`
+--
+
+CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
+  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `meta_key` varchar(255) DEFAULT NULL,
+  `meta_value` longtext,
+  PRIMARY KEY (`meta_id`),
+  KEY `comment_id` (`comment_id`),
+  KEY `meta_key` (`meta_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wp_comments`
+--
+
+CREATE TABLE IF NOT EXISTS `wp_comments` (
+  `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `comment_author` tinytext NOT NULL,
+  `comment_author_email` varchar(100) NOT NULL DEFAULT '',
+  `comment_author_url` varchar(200) NOT NULL DEFAULT '',
+  `comment_author_IP` varchar(100) NOT NULL DEFAULT '',
+  `comment_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comment_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comment_content` text NOT NULL,
+  `comment_karma` int(11) NOT NULL DEFAULT '0',
+  `comment_approved` varchar(20) NOT NULL DEFAULT '1',
+  `comment_agent` varchar(255) NOT NULL DEFAULT '',
+  `comment_type` varchar(20) NOT NULL DEFAULT '',
+  `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`comment_ID`),
+  KEY `comment_post_ID` (`comment_post_ID`),
+  KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
+  KEY `comment_date_gmt` (`comment_date_gmt`),
+  KEY `comment_parent` (`comment_parent`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `wp_comments`
+--
+
+INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
+(1, 1, 'Mr WordPress', '', 'https://wordpress.org/', '', '2014-05-08 17:35:29', '2014-05-08 17:35:29', 'Hi, this is a comment.\nTo delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.', 0, '1', '', '', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wp_links`
+--
+
+CREATE TABLE IF NOT EXISTS `wp_links` (
+  `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `link_url` varchar(255) NOT NULL DEFAULT '',
+  `link_name` varchar(255) NOT NULL DEFAULT '',
+  `link_image` varchar(255) NOT NULL DEFAULT '',
+  `link_target` varchar(25) NOT NULL DEFAULT '',
+  `link_description` varchar(255) NOT NULL DEFAULT '',
+  `link_visible` varchar(20) NOT NULL DEFAULT 'Y',
+  `link_owner` bigint(20) unsigned NOT NULL DEFAULT '1',
+  `link_rating` int(11) NOT NULL DEFAULT '0',
+  `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `link_rel` varchar(255) NOT NULL DEFAULT '',
+  `link_notes` mediumtext NOT NULL,
+  `link_rss` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`link_id`),
+  KEY `link_visible` (`link_visible`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -98,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=520 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=526 ;
 
 --
 -- Dumping data for table `wp_options`
@@ -200,7 +276,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (93, 'widget_archives', 'a:2:{s:12:"_multiwidget";i:1;i:1;a:0:{}}', 'yes'),
 (94, 'widget_meta', 'a:2:{s:12:"_multiwidget";i:1;i:1;a:0:{}}', 'yes'),
 (95, 'sidebars_widgets', 'a:5:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:0:{}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}s:13:"array_version";i:3;}', 'yes'),
-(96, 'cron', 'a:6:{i:1401372562;a:1:{s:29:"ngg_delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"ngg_custom";s:4:"args";a:0:{}s:8:"interval";i:1800;}}}i:1401379202;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1401385173;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1401391560;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1401452140;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(96, 'cron', 'a:6:{i:1401377962;a:1:{s:29:"ngg_delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"ngg_custom";s:4:"args";a:0:{}s:8:"interval";i:1800;}}}i:1401379202;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1401385173;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1401391560;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1401452140;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (98, '_transient_random_seed', '4c149865cf4e9bc2ee95ae9a0277b215', 'yes'),
 (99, 'auth_key', '>NSIq7mc7{y >c7Gi/o}grF/Xw;E1X^kX+!QHNYJ>P1*}NH?f`Vwp *~@R}H=fH*', 'yes'),
 (100, 'auth_salt', '`_MZ?4$`8_|V/@a_$<J)}Rr~.v9!t_9h5`i|Z4s.L-z|c%H(|gewuvGvh/JlNbHz', 'yes'),
@@ -273,7 +349,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (516, '_transient_timeout_plugin_slugs', '1401458017', 'no'),
 (517, '_transient_plugin_slugs', 'a:4:{i:0;s:30:"advanced-custom-fields/acf.php";i:1;s:43:"custom-post-type-ui/custom-post-type-ui.php";i:2;s:37:"hide-admin-bar/sd3_hide_admin_bar.php";i:3;s:29:"nextgen-gallery/nggallery.php";}', 'no'),
 (518, '_transient_timeout_dash_4077549d03da2e451c8b5f002294ff51', '1401414817', 'no'),
-(519, '_transient_dash_4077549d03da2e451c8b5f002294ff51', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.org/news/2014/05/wordpress-3-9-1/''>WordPress 3.9.1 Maintenance Release</a> <span class="rss-date">May 8, 2014</span><div class="rssSummary">After three weeks and more than 9 million downloads of WordPress 3.9, we’re pleased to announce that WordPress 3.9.1 is now available. This maintenance release fixes 34 bugs in 3.9, including numerous fixes for multisite networks, customizing widgets while previewing themes, and the updated visual editor. We’ve also made some improvements to the new audio/vi</div></li></ul></div><div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/05/29/mirko-santangelo-alla-scoperta-del-responsive-web-design-per-wordpress/'' title=''''>WordPress.tv: Mirko Santangelo: Alla scoperta del Responsive Web Design per WordPress</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/05/29/matej-lancaric-ondrej-monsberger-ako-nam-pomohol-woocommerce-zdvojnasobit-navstevnost/'' title=''''>WordPress.tv: Matej Lančarič, Ondrej Monsberger: Ako nám pomohol woocommerce zdvojnásobiť návštevnosť</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/05/29/michal-bluma-comment-changer-la-couleur-dun-bouton-sans-aneantir-lunivers/'' title=''''>WordPress.tv: Michal Bluma: Comment changer la couleur d’un bouton sans anéantir l’univers?</a></li></ul></div><div class="rss-widget"><ul><li class=''dashboard-news-plugin''><span>Popular Plugin:</span> <a href=''http://wordpress.org/plugins/wysija-newsletters/'' class=''dashboard-news-plugin-link''>MailPoet Newsletters</a>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=wysija-newsletters&amp;_wpnonce=08d3ace8e0&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''MailPoet Newsletters''>Install</a>)</span></li></ul></div>', 'no');
+(519, '_transient_dash_4077549d03da2e451c8b5f002294ff51', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.org/news/2014/05/wordpress-3-9-1/''>WordPress 3.9.1 Maintenance Release</a> <span class="rss-date">May 8, 2014</span><div class="rssSummary">After three weeks and more than 9 million downloads of WordPress 3.9, we’re pleased to announce that WordPress 3.9.1 is now available. This maintenance release fixes 34 bugs in 3.9, including numerous fixes for multisite networks, customizing widgets while previewing themes, and the updated visual editor. We’ve also made some improvements to the new audio/vi</div></li></ul></div><div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/05/29/mirko-santangelo-alla-scoperta-del-responsive-web-design-per-wordpress/'' title=''''>WordPress.tv: Mirko Santangelo: Alla scoperta del Responsive Web Design per WordPress</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/05/29/matej-lancaric-ondrej-monsberger-ako-nam-pomohol-woocommerce-zdvojnasobit-navstevnost/'' title=''''>WordPress.tv: Matej Lančarič, Ondrej Monsberger: Ako nám pomohol woocommerce zdvojnásobiť návštevnosť</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/05/29/michal-bluma-comment-changer-la-couleur-dun-bouton-sans-aneantir-lunivers/'' title=''''>WordPress.tv: Michal Bluma: Comment changer la couleur d’un bouton sans anéantir l’univers?</a></li></ul></div><div class="rss-widget"><ul><li class=''dashboard-news-plugin''><span>Popular Plugin:</span> <a href=''http://wordpress.org/plugins/wysija-newsletters/'' class=''dashboard-news-plugin-link''>MailPoet Newsletters</a>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=wysija-newsletters&amp;_wpnonce=08d3ace8e0&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''MailPoet Newsletters''>Install</a>)</span></li></ul></div>', 'no'),
+(525, '_transient_is_multi_author', '0', 'yes');
 
 -- --------------------------------------------------------
 
@@ -289,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=386 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=408 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -321,7 +398,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (26, 6, 'testimonial_author', 'Steve Buscemi'),
 (27, 6, '_testimonial_author', 'field_5373620aea34e'),
 (28, 11, '_edit_last', '1'),
-(29, 11, '_edit_lock', '1401371946:1'),
+(29, 11, '_edit_lock', '1401375028:1'),
 (30, 11, '_wp_page_template', 'page-templates/button-page.php'),
 (31, 14, 'title', 'Galleries'),
 (32, 14, 'name', 'galleries'),
@@ -619,11 +696,33 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (378, 76, '_edit_lock', '1401214241:1'),
 (379, 77, 'button_name', 'Wetlands'),
 (380, 77, '_button_name', 'field_5384c87908711'),
-(381, 11, 'button_name', 'Wetlands'),
+(381, 11, 'button_name', 'Helping Habitat'),
 (382, 11, '_button_name', 'field_5384c87908711'),
 (383, 76, 'rule', 'a:5:{s:5:"param";s:13:"page_template";s:8:"operator";s:2:"==";s:5:"value";s:30:"page-templates/button-page.php";s:8:"order_no";i:0;s:8:"group_no";i:0;}'),
 (384, 78, 'button_name', 'Wetlands'),
-(385, 78, '_button_name', 'field_5384c87908711');
+(385, 78, '_button_name', 'field_5384c87908711'),
+(386, 80, '_edit_last', '1'),
+(387, 80, '_edit_lock', '1401374596:1'),
+(388, 80, '_wp_page_template', 'default'),
+(389, 81, '_menu_item_type', 'post_type'),
+(390, 81, '_menu_item_menu_item_parent', '0'),
+(391, 81, '_menu_item_object_id', '80'),
+(392, 81, '_menu_item_object', 'page'),
+(393, 81, '_menu_item_target', ''),
+(394, 81, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(395, 81, '_menu_item_xfn', ''),
+(396, 81, '_menu_item_url', ''),
+(397, 83, '_menu_item_type', 'post_type'),
+(398, 83, '_menu_item_menu_item_parent', '0'),
+(399, 83, '_menu_item_object_id', '80'),
+(400, 83, '_menu_item_object', 'page'),
+(401, 83, '_menu_item_target', ''),
+(402, 83, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(403, 83, '_menu_item_xfn', ''),
+(404, 83, '_menu_item_url', ''),
+(405, 83, '_menu_item_orphaned', '1401374631'),
+(406, 84, 'button_name', 'Helping Habitat'),
+(407, 84, '_button_name', 'field_5384c87908711');
 
 -- --------------------------------------------------------
 
@@ -660,7 +759,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=80 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=85 ;
 
 --
 -- Dumping data for table `wp_posts`
@@ -675,7 +774,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (8, 1, '2014-05-14 12:18:47', '2014-05-14 12:18:47', '', 'Testimonials', '', 'publish', 'closed', 'closed', '', 'acf_testimonials', '', '', '2014-05-14 12:33:19', '2014-05-14 12:33:19', '', 0, 'http://localhost/farming/?post_type=acf&#038;p=8', 0, 'acf', '', 0),
 (9, 1, '2014-05-14 12:19:35', '2014-05-14 12:19:35', '', 'Ecosystem Services', '', 'inherit', 'open', 'open', '', '6-revision-v1', '', '', '2014-05-14 12:19:35', '2014-05-14 12:19:35', '', 6, 'http://localhost/farming/?p=9', 0, 'revision', '', 0),
 (10, 1, '2014-05-14 12:33:38', '2014-05-14 12:33:38', '', 'Ecosystem Services', '', 'inherit', 'open', 'open', '', '6-revision-v1', '', '', '2014-05-14 12:33:38', '2014-05-14 12:33:38', '', 6, 'http://localhost/farming/?p=10', 0, 'revision', '', 0),
-(11, 1, '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2014-05-27 17:19:59', '2014-05-27 17:19:59', '', 0, 'http://localhost/farming/?page_id=11', 0, 'page', '', 0),
+(11, 1, '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2014-05-29 14:46:09', '2014-05-29 14:46:09', '', 0, 'http://localhost/farming/?page_id=11', 0, 'page', '', 0),
 (12, 1, '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 11, 'http://localhost/farming/?p=12', 0, 'revision', '', 0),
 (14, 1, '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkdhbGxlcmllcyIsInJldHVybnMiOlsiaW1hZ2UiXSwiYWxpYXNlcyI6WyJnYWxsZXJ5IiwiaW1hZ2VzIiwiaW1hZ2UiXSwibmFtZSI6ImdhbGxlcmllcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 'Galleries', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkdhbGxlcmllcyIsInJldHVybnMiOlsiaW1hZ2UiXSwiYWxpYXNlcyI6WyJnYWxsZXJ5IiwiaW1hZ2VzIiwiaW1hZ2UiXSwibmFtZSI6ImdhbGxlcmllcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 0, 'http://localhost/farming/?p=14', 0, 'gal_display_source', '', 0),
 (15, 1, '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkFsYnVtcyIsInJldHVybnMiOlsiZ2FsbGVyeSIsImFsYnVtIl0sImFsaWFzZXMiOlsiYWxidW0iXSwibmFtZSI6ImFsYnVtcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 'Albums', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkFsYnVtcyIsInJldHVybnMiOlsiZ2FsbGVyeSIsImFsYnVtIl0sImFsaWFzZXMiOlsiYWxidW0iXSwibmFtZSI6ImFsYnVtcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 0, 'http://localhost/farming/?p=15', 0, 'gal_display_source', '', 0),
@@ -704,8 +803,8 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (39, 1, '2014-05-20 15:39:03', '2014-05-20 15:39:03', '', 'Wetlands', '', 'inherit', 'open', 'open', '', '38-revision-v1', '', '', '2014-05-20 15:39:03', '2014-05-20 15:39:03', '', 38, 'http://localhost/farming/?p=39', 0, 'revision', '', 0),
 (40, 1, '2014-05-20 15:39:31', '2014-05-20 15:39:31', '', 'Wetland Solutions', '', 'trash', 'open', 'closed', '', 'wetland-solutions', '', '', '2014-05-20 15:51:10', '2014-05-20 15:51:10', '', 0, 'http://localhost/farming/?page_id=40', 0, 'page', '', 0),
 (41, 1, '2014-05-20 15:39:31', '2014-05-20 15:39:31', '', 'Wetland Solutions', '', 'inherit', 'open', 'open', '', '40-revision-v1', '', '', '2014-05-20 15:39:31', '2014-05-20 15:39:31', '', 40, 'http://localhost/farming/?p=41', 0, 'revision', '', 0),
-(43, 1, '2014-05-20 15:48:42', '2014-05-20 15:48:42', ' ', '', '', 'publish', 'open', 'open', '', '43', '', '', '2014-05-27 14:10:21', '2014-05-27 14:10:21', '', 0, 'http://localhost/farming/?p=43', 1, 'nav_menu_item', '', 0),
-(44, 1, '2014-05-20 15:48:42', '2014-05-20 15:48:42', ' ', '', '', 'publish', 'open', 'open', '', '44', '', '', '2014-05-27 14:10:21', '2014-05-27 14:10:21', '', 0, 'http://localhost/farming/?p=44', 2, 'nav_menu_item', '', 0),
+(43, 1, '2014-05-20 15:48:42', '2014-05-20 15:48:42', ' ', '', '', 'publish', 'open', 'open', '', '43', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=43', 1, 'nav_menu_item', '', 0),
+(44, 1, '2014-05-20 15:48:42', '2014-05-20 15:48:42', ' ', '', '', 'publish', 'open', 'open', '', '44', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=44', 2, 'nav_menu_item', '', 0),
 (46, 1, '2014-05-20 15:47:34', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:47:34', '0000-00-00 00:00:00', '', 38, 'http://localhost/farming/?p=46', 1, 'nav_menu_item', '', 0),
 (47, 1, '2014-05-20 15:47:40', '0000-00-00 00:00:00', '<p>Best Management Practice</p>\n', 'BMP''s', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:47:40', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=47', 1, 'nav_menu_item', '', 0),
 (49, 1, '2014-05-20 15:49:04', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:49:04', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=49', 1, 'nav_menu_item', '', 0),
@@ -716,14 +815,14 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (54, 1, '2014-05-20 15:50:26', '2014-05-20 15:50:26', '', 'Water Crossing', '', 'inherit', 'open', 'open', '', '53-revision-v1', '', '', '2014-05-20 15:50:26', '2014-05-20 15:50:26', '', 53, 'http://localhost/farming/?p=54', 0, 'revision', '', 0),
 (55, 1, '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 'Riparian Area', '', 'publish', 'open', 'open', '', 'riparian-area', '', '', '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 0, 'http://localhost/farming/?page_id=55', 0, 'page', '', 0),
 (56, 1, '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 'Riparian Area', '', 'inherit', 'open', 'open', '', '55-revision-v1', '', '', '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 55, 'http://localhost/farming/?p=56', 0, 'revision', '', 0),
-(57, 1, '2014-05-20 15:52:43', '2014-05-20 15:52:43', ' ', '', '', 'publish', 'open', 'open', '', '57', '', '', '2014-05-27 14:10:21', '2014-05-27 14:10:21', '', 0, 'http://localhost/farming/?p=57', 5, 'nav_menu_item', '', 0),
-(59, 1, '2014-05-20 15:52:43', '2014-05-20 15:52:43', ' ', '', '', 'publish', 'open', 'open', '', '59', '', '', '2014-05-27 14:10:21', '2014-05-27 14:10:21', '', 0, 'http://localhost/farming/?p=59', 3, 'nav_menu_item', '', 0),
+(57, 1, '2014-05-20 15:52:43', '2014-05-20 15:52:43', ' ', '', '', 'publish', 'open', 'open', '', '57', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=57', 5, 'nav_menu_item', '', 0),
+(59, 1, '2014-05-20 15:52:43', '2014-05-20 15:52:43', ' ', '', '', 'publish', 'open', 'open', '', '59', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=59', 3, 'nav_menu_item', '', 0),
 (60, 1, '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 'Bird Watching', '', 'publish', 'open', 'open', '', 'bird-watching-2', '', '', '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 0, 'http://localhost/farming/?page_id=60', 0, 'page', '', 0),
 (61, 1, '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 'Bird Watching', '', 'inherit', 'open', 'open', '', '60-revision-v1', '', '', '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 60, 'http://localhost/farming/?p=61', 0, 'revision', '', 0),
 (62, 1, '2014-05-20 15:54:30', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:54:30', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=62', 1, 'nav_menu_item', '', 0),
-(63, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '63', '', '', '2014-05-27 14:10:21', '2014-05-27 14:10:21', '', 0, 'http://localhost/farming/?p=63', 6, 'nav_menu_item', '', 0),
-(64, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '64', '', '', '2014-05-27 14:10:21', '2014-05-27 14:10:21', '', 0, 'http://localhost/farming/?p=64', 4, 'nav_menu_item', '', 0),
-(65, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '65', '', '', '2014-05-27 14:10:21', '2014-05-27 14:10:21', '', 0, 'http://localhost/farming/?p=65', 7, 'nav_menu_item', '', 0),
+(63, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '63', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=63', 6, 'nav_menu_item', '', 0),
+(64, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '64', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=64', 4, 'nav_menu_item', '', 0),
+(65, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '65', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=65', 7, 'nav_menu_item', '', 0),
 (66, 1, '2014-05-24 15:52:10', '2014-05-24 15:52:10', 'This is an example page. It''s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\r\n<blockquote>Hi there! I''m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin'' caught in the rain.)</blockquote>\r\n...or something like this:\r\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\r\nAs a new WordPress user, you should go to <a href="http://localhost/farming/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!', 'Helping Habitats', '', 'inherit', 'open', 'open', '', '2-revision-v1', '', '', '2014-05-24 15:52:10', '2014-05-24 15:52:10', '', 2, 'http://localhost/farming/?p=66', 0, 'revision', '', 0),
 (70, 1, '2014-05-24 16:05:04', '2014-05-24 16:05:04', '', 'logo', '', 'inherit', 'open', 'open', '', 'logo', '', '', '2014-05-24 16:05:04', '2014-05-24 16:05:04', '', 0, 'http://localhost/farming/wp-content/uploads/2014/05/logo.png', 0, 'attachment', 'image/png', 0),
 (71, 1, '2014-05-27 14:05:27', '2014-05-27 14:05:27', '<p style="color: #000000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum tincidunt urna, eget hendrerit est aliquet nec. Sed id fringilla lacus, porta ultricies erat. In ullamcorper purus ut orci adipiscing, nec placerat nunc condimentum. Curabitur mattis neque sit amet dolor venenatis porta. Nulla nec urna in lectus lobortis congue. Nullam semper justo metus, vitae bibendum elit sollicitudin ut. Ut non iaculis orci. Sed commodo egestas posuere.</p>\r\n<p style="color: #000000;">Nam sapien nisi, rhoncus ut tortor at, venenatis congue dui. Nunc fringilla non felis quis auctor. Vivamus vitae luctus mauris. Nulla mollis faucibus erat, ac volutpat mauris auctor ut. Etiam facilisis libero sit amet laoreet auctor. Morbi a congue lorem. Nulla id hendrerit mi. Nulla dapibus dictum mi, ut egestas velit mattis at. Duis vestibulum hendrerit lectus dapibus imperdiet. Quisque vehicula tellus vel dignissim aliquam. Cras at sem vel risus fringilla ornare. Nunc tortor metus, ultricies vitae dolor nec, tristique aliquet neque. Vestibulum tempus leo eu mauris viverra, a rutrum dolor porttitor. Donec tincidunt eros ut urna consectetur ornare.</p>', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-05-27 14:05:27', '2014-05-27 14:05:27', '', 11, 'http://localhost/farming/?p=71', 0, 'revision', '', 0),
@@ -734,7 +833,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (76, 1, '2014-05-27 17:17:17', '2014-05-27 17:17:17', '', 'Button Pages', '', 'publish', 'closed', 'closed', '', 'acf_button-pages', '', '', '2014-05-27 17:19:37', '2014-05-27 17:19:37', '', 0, 'http://localhost/farming/?post_type=acf&#038;p=76', 0, 'acf', '', 0),
 (77, 1, '2014-05-27 17:18:35', '2014-05-27 17:18:35', '<p style="color: #000000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum tincidunt urna, eget hendrerit est aliquet nec. Sed id fringilla lacus, porta ultricies erat. In ullamcorper purus ut orci adipiscing, nec placerat nunc condimentum. Curabitur mattis neque sit amet dolor venenatis porta. Nulla nec urna in lectus lobortis congue. Nullam semper justo metus, vitae bibendum elit sollicitudin ut. Ut non iaculis orci. Sed commodo egestas posuere.</p>\r\n<p style="color: #000000;">Nam sapien nisi, rhoncus ut tortor at, venenatis congue dui. Nunc fringilla non felis quis auctor. Vivamus vitae luctus mauris. Nulla mollis faucibus erat, ac volutpat mauris auctor ut. Etiam facilisis libero sit amet laoreet auctor. Morbi a congue lorem. Nulla id hendrerit mi. Nulla dapibus dictum mi, ut egestas velit mattis at. Duis vestibulum hendrerit lectus dapibus imperdiet. Quisque vehicula tellus vel dignissim aliquam. Cras at sem vel risus fringilla ornare. Nunc tortor metus, ultricies vitae dolor nec, tristique aliquet neque. Vestibulum tempus leo eu mauris viverra, a rutrum dolor porttitor. Donec tincidunt eros ut urna consectetur ornare.</p>', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-05-27 17:18:35', '2014-05-27 17:18:35', '', 11, 'http://localhost/farming/?p=77', 0, 'revision', '', 0),
 (78, 1, '2014-05-27 17:19:59', '2014-05-27 17:19:59', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-05-27 17:19:59', '2014-05-27 17:19:59', '', 11, 'http://localhost/farming/?p=78', 0, 'revision', '', 0),
-(79, 1, '2014-05-29 13:53:31', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2014-05-29 13:53:31', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=79', 0, 'post', '', 0);
+(79, 1, '2014-05-29 13:53:31', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2014-05-29 13:53:31', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=79', 0, 'post', '', 0),
+(80, 1, '2014-05-29 14:43:33', '2014-05-29 14:43:33', 'fhdfaufudybfaudyufbaubfyub', 'HELLO!!', '', 'publish', 'open', 'open', '', 'hello', '', '', '2014-05-29 14:43:33', '2014-05-29 14:43:33', '', 0, 'http://localhost/farming/?page_id=80', 0, 'page', '', 0),
+(81, 1, '2014-05-29 14:43:33', '2014-05-29 14:43:33', ' ', '', '', 'publish', 'open', 'open', '', '81', '', '', '2014-05-29 14:43:59', '2014-05-29 14:43:59', '', 0, 'http://localhost/farming/?p=81', 8, 'nav_menu_item', '', 0),
+(82, 1, '2014-05-29 14:43:33', '2014-05-29 14:43:33', 'fhdfaufudybfaudyufbaubfyub', 'HELLO!!', '', 'inherit', 'open', 'open', '', '80-revision-v1', '', '', '2014-05-29 14:43:33', '2014-05-29 14:43:33', '', 80, 'http://localhost/farming/?p=82', 0, 'revision', '', 0),
+(83, 1, '2014-05-29 14:43:50', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-29 14:43:50', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=83', 1, 'nav_menu_item', '', 0),
+(84, 1, '2014-05-29 14:46:09', '2014-05-29 14:46:09', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-05-29 14:46:09', '2014-05-29 14:46:09', '', 11, 'http://localhost/farming/?p=84', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -789,7 +893,8 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (59, 4, 0),
 (63, 4, 0),
 (64, 4, 0),
-(65, 4, 0);
+(65, 4, 0),
+(81, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -817,7 +922,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (1, 1, 'category', '', 0, 1),
 (2, 2, 'post_format', '', 0, 0),
 (3, 3, 'category', 'Best Management Practice', 0, 0),
-(4, 4, 'nav_menu', '', 0, 7);
+(4, 4, 'nav_menu', '', 0, 8);
 
 -- --------------------------------------------------------
 
@@ -833,7 +938,7 @@ CREATE TABLE IF NOT EXISTS `wp_usermeta` (
   PRIMARY KEY (`umeta_id`),
   KEY `user_id` (`user_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
 
 --
 -- Dumping data for table `wp_usermeta`
@@ -858,7 +963,43 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (16, 1, 'metaboxhidden_acf', 'a:1:{i:0;s:7:"slugdiv";}'),
 (17, 1, 'managenav-menuscolumnshidden', 'a:4:{i:0;s:11:"link-target";i:1;s:11:"css-classes";i:2;s:3:"xfn";i:3;s:11:"description";}'),
 (18, 1, 'metaboxhidden_nav-menus', 'a:5:{i:0;s:8:"add-post";i:1;s:16:"add-testimonials";i:2;s:12:"add-post_tag";i:3;s:15:"add-post_format";i:4;s:11:"add-ngg_tag";}'),
-(19, 1, 'nav_menu_recently_edited', '4');
+(19, 1, 'nav_menu_recently_edited', '4'),
+(20, 2, 'first_name', 'Andrew'),
+(21, 2, 'last_name', 'Sampson'),
+(22, 2, 'nickname', 'andrew'),
+(23, 2, 'description', ''),
+(24, 2, 'rich_editing', 'true'),
+(25, 2, 'comment_shortcuts', 'false'),
+(26, 2, 'admin_color', 'fresh'),
+(27, 2, 'use_ssl', '0'),
+(28, 2, 'show_admin_bar_front', 'true'),
+(29, 2, 'wp_capabilities', 'a:1:{s:13:"administrator";b:1;}'),
+(30, 2, 'wp_user_level', '10'),
+(31, 2, 'dismissed_wp_pointers', 'wp350_media,wp360_revisions,wp360_locks,wp390_widgets'),
+(32, 3, 'first_name', 'Sahl'),
+(33, 3, 'last_name', 'Al'),
+(34, 3, 'nickname', 'sahl'),
+(35, 3, 'description', ''),
+(36, 3, 'rich_editing', 'true'),
+(37, 3, 'comment_shortcuts', 'false'),
+(38, 3, 'admin_color', 'fresh'),
+(39, 3, 'use_ssl', '0'),
+(40, 3, 'show_admin_bar_front', 'true'),
+(41, 3, 'wp_capabilities', 'a:1:{s:13:"administrator";b:1;}'),
+(42, 3, 'wp_user_level', '10'),
+(43, 3, 'dismissed_wp_pointers', 'wp350_media,wp360_revisions,wp360_locks,wp390_widgets'),
+(44, 4, 'first_name', 'Jason'),
+(45, 4, 'last_name', 'Mallard'),
+(46, 4, 'nickname', 'jason'),
+(47, 4, 'description', ''),
+(48, 4, 'rich_editing', 'true'),
+(49, 4, 'comment_shortcuts', 'false'),
+(50, 4, 'admin_color', 'fresh'),
+(51, 4, 'use_ssl', '0'),
+(52, 4, 'show_admin_bar_front', 'true'),
+(53, 4, 'wp_capabilities', 'a:1:{s:13:"administrator";b:1;}'),
+(54, 4, 'wp_user_level', '10'),
+(55, 4, 'dismissed_wp_pointers', 'wp350_media,wp360_revisions,wp360_locks,wp390_widgets');
 
 -- --------------------------------------------------------
 
@@ -880,14 +1021,17 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
   PRIMARY KEY (`ID`),
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `wp_users`
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'connor', '$P$BcdzvnuwSZFebggcNngh8gULm6H/J50', 'connor', 'CShocrylas@gmail.com', '', '2014-05-08 17:35:29', '', 0, 'connor');
+(1, 'connor', '$P$BcdzvnuwSZFebggcNngh8gULm6H/J50', 'connor', 'CShocrylas@gmail.com', '', '2014-05-08 17:35:29', '', 0, 'connor'),
+(2, 'andrew', '$P$BwCKDJEHqnu3p5fuGh..s/TbKc1tom0', 'andrew', 'andrewziac91@gmail.com', '', '2014-05-29 15:26:15', '', 0, 'Andrew Sampson'),
+(3, 'sahl', '$P$B7Alkl4BCS1EIxHymPRLF6X8RssrqC1', 'sahl', 'sahool.90@gmail.com', '', '2014-05-29 15:27:10', '', 0, 'Sahl Al'),
+(4, 'jason', '$P$BYHIWIuPMyjK5pcN.hx24BEmeKcAzU.', 'jason', 'jmallard404@gmail.com', '', '2014-05-29 15:28:17', '', 0, 'Jason Mallard');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

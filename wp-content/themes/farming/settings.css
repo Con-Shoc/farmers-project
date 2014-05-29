@@ -10,27 +10,25 @@ section.site-width {
   margin: auto;
 }
 /* line 17, settings.scss */
+section.site-width .site-title {
+  max-width: 400px;
+  min-width: 325px;
+}
+/* line 22, settings.scss */
 section.site-width .site-header {
   max-width: 1000px;
 }
-/* line 21, settings.scss */
+/* line 26, settings.scss */
 section.site-width .logo {
   padding: 1em 0;
   max-width: 75%;
 }
-/* line 26, settings.scss */
-section.site-width .search-toggle, section.site-width .menu-toggle {
-  display: inline-block;
+/* line 31, settings.scss */
+section.site-width .menu-toggle {
   background: none;
   margin-top: 10px;
 }
-/* line 32, settings.scss */
-section.site-width .search-box-wrapper {
-  margin-top: 17px;
-}
-/* line 34, settings.scss */
-section.site-width .search-box-wrapper .search-box {
-  background: #299546;
-  width: 200px;
-  float: right;
+/* line 36, settings.scss */
+section.site-width .search-toggle {
+  display: none;
 }

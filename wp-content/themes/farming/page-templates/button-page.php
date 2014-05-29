@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Full Width Page
+ * Template Name: Button Page
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen
@@ -33,6 +33,9 @@ get_header(); ?>
 					}
 				endwhile;
 			?>
+			<div class=""
+				<p><?php the_field('button_name'); ?></p>
+
 		</div><!-- #content -->
 	</div><!-- #primary -->
 </div><!-- #main-content -->
