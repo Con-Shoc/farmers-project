@@ -19,7 +19,7 @@ get_header(); ?>
 ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content button-page-margins" role="main">
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
@@ -33,8 +33,9 @@ get_header(); ?>
 					}
 				endwhile;
 			?>
-			<div class=""
-				<p><?php the_field('button_name'); ?></p>
+			<div class="btn">
+				<p class="btn-name"><?php the_field('button_name'); ?></p>
+			</div>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->

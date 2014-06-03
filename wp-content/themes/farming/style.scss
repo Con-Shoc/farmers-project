@@ -400,7 +400,7 @@ hr {
  * to achieve a better experience. See http://core.trac.wordpress.org/ticket/25898.
  */
 ::selection {
-	background: #24890d;
+	background: #299546;
 	color: #fff;
 	text-shadow: none;
 }
@@ -3405,10 +3405,10 @@ a.post-thumbnail:hover {
 		left: auto;
 	}
 
-	.primary-navigation ul ul li:hover > ul,
-	.primary-navigation ul ul li.focus > ul {
-		left: 100%;
-	}
+	// .primary-navigation ul ul li:hover > ul,
+	// .primary-navigation ul ul li.focus > ul {
+	// 	left: 100%;
+	// }
 
 	.primary-navigation .menu-item-has-children > a,
 	.primary-navigation .page_item_has_children > a {
@@ -3437,7 +3437,7 @@ a.post-thumbnail:hover {
 	.primary-navigation .menu-item-has-children li.page_item_has_children > a:after,
 	.primary-navigation .page_item_has_children li.menu-item-has-children > a:after,
 	.primary-navigation .page_item_has_children li.page_item_has_children > a:after {
-		content: "\f501";
+		content: "\f502";
 		right: 8px;
 		top: 20px;
 	}
@@ -3549,8 +3549,10 @@ a.post-thumbnail:hover {
 	}
 
 	.site-content {
-		margin-right: 29.04761904%;
-		margin-left: 182px;
+		// margin-right: 29.04761904%;
+		margin: 0 75px;
+		// padding: 0 5em;
+		// margin-left: 182px;
 	}
 
 	.site-content .entry-header {
@@ -3619,7 +3621,7 @@ a.post-thumbnail:hover {
 	}
 
 	.secondary-navigation ul ul {
-		background-color: #24890d;
+		background-color: #299546;
 		position: absolute;
 		top: 0;
 		left: -999em;
@@ -3633,7 +3635,7 @@ a.post-thumbnail:hover {
 
 	.secondary-navigation li:hover > a,
 	.secondary-navigation li.focus > a {
-		background-color: #24890d;
+		background-color: #299546;
 		color: #fff;
 	}
 
@@ -3900,7 +3902,7 @@ a.post-thumbnail:hover {
 
 	.site-content,
 	.site-main .widecolumn {
-		margin-left: 222px;
+		// margin-left: 222px;
 	}
 
 	.site:before {

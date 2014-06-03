@@ -2,6 +2,8 @@
 
 body { 
 	font-family: "Open Sans", Helvetica !important;
+	-webkit-font-smoothing: antialiased !important;
+	 text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 $navcolor: #299546;
@@ -36,8 +38,38 @@ section.site-width {
 	.search-toggle { 
 		display: none;
 	}
+	// Site Button Styles
+	div.btn { 
+		background-color: #2e3092;
+		position: relative;
+		color: #fff;
+		font-weight: 700;
+		font-size: 28pt;
+		max-width: 100%;
+
+		.btn-name { 
+			position: relative;
+			top: -2em;
+			
+			// &:before { 
+			// 	position: relative;
+			// 	content: url(images/helping-habitat.svg);
+			// 	padding-right: .5em;
+			// 	top: 2.1em;
+			// }
+		}
+	}
 
 }
 
+// Navigation Menu
+	.primary-navigation ul ul li:hover > ul,
+	.primary-navigation ul ul li.focus > ul {
+		top: 3.5em;
+	}
 
+// Homepage Styles
+.site-content.button-page-margins {
+	margin: 0 100px;
 
+}
