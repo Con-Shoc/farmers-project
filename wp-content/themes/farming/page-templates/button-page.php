@@ -44,8 +44,28 @@ get_header(); ?>
 			 	// loop through the rows of data
 			    while ( have_rows('button') ) : the_row();
 			 
+					// display the image for the button
+					$button_image = get_sub_field('button-image');
+
+					if(!empty($button_image)): ?>
+						<div class='menu_button'>
+						<img src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
+
+					<?php 
+
+					endif;
+
+					
+
 			        // display a sub field value
 			        the_sub_field('button_name');
+
+			        // display the blurb for the button
+			        the_sub_field('button_blurb'); ?>
+
+			        </div>
+
+			        <?php
 			 
 			    endwhile;
 			 

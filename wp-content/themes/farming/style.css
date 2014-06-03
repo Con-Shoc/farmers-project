@@ -6,6 +6,12 @@ body {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
+
+/* temporary rule to test menu buttons */
+.menu_button {
+  background-color: #999999; 
+}
+
 /* line 15, settings.scss */
 section.site-width {
   max-width: 1000px;
