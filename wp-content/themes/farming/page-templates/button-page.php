@@ -32,15 +32,35 @@ get_header(); ?>
 						comments_template();
 					}
 				endwhile;
+
+
 			?>
-			<div class="btn">
-				<p class="btn-name"><?php the_field('button_name'); ?></p>
-			</div>
+			
+		<?php
+ 
+			// check if the repeater field has rows of data
+			if( have_rows('button') ):
+			 
+			 	// loop through the rows of data
+			    while ( have_rows('button') ) : the_row();
+			 
+			        // display a sub field value
+			        the_sub_field('button-name');
+			 
+			    endwhile;
+			 
+			else :
+			 
+			    // no rows found
+			 
+			endif;
+ 
+		?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
 </div><!-- #main-content -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
