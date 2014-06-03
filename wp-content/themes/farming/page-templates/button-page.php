@@ -45,7 +45,7 @@ get_header(); ?>
 			    while ( have_rows('button') ) : the_row();
 			 
 			        // display a sub field value
-			        the_sub_field('button-name');
+			        the_sub_field('button_name');
 			 
 			    endwhile;
 			 
