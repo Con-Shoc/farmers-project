@@ -45,7 +45,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-main">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img class="logo" src="http://localhost/farming/wp-content/uploads/2014/05/logo.png"/>
+				<img class="logo" src="/images/logo.png"/>
 			</a></h1>
 
 			<div class="search-toggle">
