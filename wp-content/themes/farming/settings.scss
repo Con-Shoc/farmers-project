@@ -50,9 +50,64 @@ section.site-width {
 
 
 
+// Contact Page Template 
+.one_half_first {
+	width: 50%;
+	float: left;
+	clear: both;
+}
+
+.one_half_last { 
+	width: 50%;
+	float: right;
+}
+
+.contact_form { 
+	.contact_name, .contact_email, .contact_subject, .contact_type, .contact_message, .contact_submit { 
+		text-align: center;
+		input { 
+			font-weight: 700;
+			max-width: 300px;
+			border-radius: 0;
+		}
+	}
+	.contact_type {
+		select { 
+			border-color: #e5e5e5;
+			padding: .5em;
+			font-weight: 700;
+			color: #939393;
+			
+		}
+	}
+
+	.contact_submit { 
+		input { 
+			background: $navcolor;
+			transition: all .5s ease;
+			&:hover { 
+		
+			}
+		}
+	}
+	
+}
+
+select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required { 
+		width: 300px;
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required { 
+	font-family: "Open Sans", Helvetica;
+	max-width: 700px;
+}
 
 
-// Homepage Styles
+// End of Contact Page CSS
+
+
+// CUSTOM MEDIA QUERIES
+
 @media all and (min-width: 699px) { 
 
 	.menu_button { 
@@ -83,42 +138,22 @@ section.site-width {
 			padding-left: 5em;
 		}
 	}
+	
+	.contact_form { 
+		.contact_name, .contact_email, .contact_subject { 
+			input { 
+				max-width: 200px;
+			}
 
-}
-
-
-// Contact Page Template 
-.one_half_first {
-	width: 50%;
-	float: left;
-	clear: both;
-}
-
-.one_half_last { 
-	width: 50%;
-	float: right;
-}
-
-.contact_form { 
-	.contact_name, .contact_email, .contact_subject { 
-		input { 
-			font-weight: 700;
-			max-width: 300px;
 		}
 	}
-	.contact_type { 
 
-		select { 
-			border-color: #e5e5e5;
-			padding: .5em;
-			font-weight: 700;
-			color: #939393;
-			
-		}
+	select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required { 
+		width: 200px;
 	}
 	
-}
+	textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required { 
+		max-width: 525px;
+	}
 
-select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required { 
-		width: 300px;
 }

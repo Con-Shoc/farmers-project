@@ -32,8 +32,11 @@ get_header(); ?>
 						comments_template();
 					}
 				endwhile;
-
-
+				?>
+				
+				<div class="contact_content"><?php the_field('contact_description');?></div>
+				
+				<?php
 				$myvalue = get_field( 'contact_shortcode'); 
 
 	
