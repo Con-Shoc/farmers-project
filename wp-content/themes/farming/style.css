@@ -34,28 +34,14 @@ section.site-width .menu-toggle {
 section.site-width .search-toggle {
   display: none;
 }
-/* line 42, settings.scss */
-section.site-width div.btn {
-  background-color: #2e3092;
-  position: relative;
-  color: #fff;
-  font-weight: 700;
-  font-size: 28pt;
-  max-width: 100%;
-}
-/* line 50, settings.scss */
-section.site-width div.btn .btn-name {
-  position: relative;
-  top: -2em;
-}
 
-/* line 67, settings.scss */
+/* line 47, settings.scss */
 .primary-navigation ul ul li:hover > ul,
 .primary-navigation ul ul li.focus > ul {
   top: 3.5em;
 }
 
-/* line 72, settings.scss */
+/* line 52, settings.scss */
 .site-content.button-page-margins {
   margin: 0 100px;
 }
@@ -4746,32 +4732,40 @@ menu buttons styling
   height: 80px;
   color: white;
 }
+/* line 4191, style.scss */
+.menu_button .button_name {
+  margin-top: -4em;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+/* line 4198, style.scss */
+.menu_button .button_blurb {
+  margin-top: -3em;
+  text-align: center;
+}
 
-/* line 4192, style.scss */
+/* line 4204, style.scss */
 .menu_button:nth-child(2) {
   background-color: #48B749;
 }
 
-/* line 4196, style.scss */
+/* line 4208, style.scss */
 .menu_button:nth-child(3) {
   background-color: #2E3092;
 }
-/* line 4199, style.scss */
-.menu_button:nth-child(3) img {
-  margin-left: 9px;
-}
 
-/* line 4204, style.scss */
+/* line 4212, style.scss */
 .menu_button:nth-child(4) {
   background-color: #4BBF9A;
 }
 
-/* line 4208, style.scss */
+/* line 4216, style.scss */
 .menu_button:nth-child(5) {
   background-color: #797CBB;
 }
 
-/* line 4212, style.scss */
+/* line 4220, style.scss */
 .menu_button:nth-child(6) {
   background-color: #B11E38;
 }

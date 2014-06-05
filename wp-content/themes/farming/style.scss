@@ -4187,6 +4187,18 @@ menu buttons styling
 	width:70%;
 	height:80px;
 	color:white;
+
+	.button_name { 
+		margin-top: -4em;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	.button_blurb { 
+		margin-top: -3em;
+		text-align: center;
+	}
 }
 
 .menu_button:nth-child(2){
@@ -4195,10 +4207,6 @@ menu buttons styling
 
 .menu_button:nth-child(3){
 	background-color: #2E3092;
-
-	img{
-		margin-left: 9px;
-	}
 }
 
 .menu_button:nth-child(4){

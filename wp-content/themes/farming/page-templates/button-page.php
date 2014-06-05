@@ -49,19 +49,22 @@ get_header(); ?>
 
 					if(!empty($button_image)): ?>
 						<div class='menu_button'>
-						<img src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
+							<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
 
 					<?php 
 
-					endif;
+					endif;?>
+						
+						<!-- <div class="button_text"> -->
+				         <!-- display a sub field value -->
+				        <p class="button_name"><?php the_sub_field('button_name'); ?></p>
 
-					
+				       	</br>
 
-			        // display a sub field value
-			        the_sub_field('button_name');
+				        <!-- display the blurb for the button -->
+				       <p class="button_blurb"> <?php the_sub_field('button_blurb'); ?> </p>
+						<!-- </div> -->
 
-			        // display the blurb for the button
-			        the_sub_field('button_blurb'); ?>
 
 			        </div>
 
