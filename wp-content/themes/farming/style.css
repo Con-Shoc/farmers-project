@@ -4744,35 +4744,34 @@ menu buttons styling
   margin-bottom: 5px;
   width: 70%;
   height: 80px;
-  background-color: green;
   color: white;
 }
 
-/* line 4193, style.scss */
+/* line 4192, style.scss */
 .menu_button:nth-child(2) {
   background-color: #48B749;
 }
 
-/* line 4197, style.scss */
+/* line 4196, style.scss */
 .menu_button:nth-child(3) {
   background-color: #2E3092;
 }
-/* line 4200, style.scss */
+/* line 4199, style.scss */
 .menu_button:nth-child(3) img {
   margin-left: 9px;
 }
 
-/* line 4205, style.scss */
+/* line 4204, style.scss */
 .menu_button:nth-child(4) {
   background-color: #4BBF9A;
 }
 
-/* line 4209, style.scss */
+/* line 4208, style.scss */
 .menu_button:nth-child(5) {
   background-color: #797CBB;
 }
 
-/* line 4213, style.scss */
+/* line 4212, style.scss */
 .menu_button:nth-child(6) {
   background-color: #B11E38;
 }
