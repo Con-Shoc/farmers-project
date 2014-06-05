@@ -983,7 +983,7 @@ span + .edit-link:before,
 }
 
 .hentry {
-	margin: 0 auto 48px;
+	margin: 0 auto;
 	max-width: 672px;
 }
 
@@ -4190,18 +4190,25 @@ menu buttons styling
 	margin-bottom: 5px;
 	height:80px;
 
-	.button_name { 
-		margin-top: -4em;
-		text-align: center;
-		font-size: 16px;
-		font-weight: 700;
-	}
+	.button_text {
+		padding: .5em 0 0 0;
 
-	.button_blurb { 
-		margin-top: -3em;
-		text-align: center;
-		font-style: italic;
-	}
+		.button_name { 
+			margin-top: -4em;
+			text-align: center;
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.button_blurb { 
+			margin-top: -3em;
+			text-align: center;
+			font-style: italic;
+		}
+
+	}	
+
+
 	
 	a { 
 		color: #fff;
