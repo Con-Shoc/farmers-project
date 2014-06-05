@@ -4188,10 +4188,11 @@ menu buttons styling
 .menu_button{
 	margin:auto;
 	margin-bottom: 5px;
-	height:80px;
+	transition: all .5s ease;
+	// height:70px;
 
 	.button_text {
-		padding: .5em 0 0 0;
+			
 
 		.button_name { 
 			margin-top: -4em;
@@ -4207,8 +4208,6 @@ menu buttons styling
 		}
 
 	}	
-
-
 	
 	a { 
 		color: #fff;
@@ -4218,20 +4217,43 @@ menu buttons styling
 
 .menu_button:nth-child(2){
 	background-color: #48B749;
+	
+
+	&:hover { 
+		background-color: #3C963C;
+	}
 }
+
 
 .menu_button:nth-child(3){
 	background-color: #2E3092;
+	
+	&:hover { 
+		background-color: #252672;
+	}
 }
 
 .menu_button:nth-child(4){
 	background-color: #4BBF9A;
+
+	&:hover { 
+		background-color: #41A081;
+	}
 }
 
 .menu_button:nth-child(5){
 	background-color: #797CBB;
+
+	&:hover { 
+		background-color: #656799;
+	}
 }
 
 .menu_button:nth-child(6){
 	background-color: #B11E38;
+	margin-bottom: 3em;
+
+	&:hover { 
+		background-color: #94192F;
+	}
 }

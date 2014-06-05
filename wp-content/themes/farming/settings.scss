@@ -57,6 +57,11 @@ section.site-width {
 
 	.menu_button { 
 		width:70%;
+		height: 70px;
+
+		.button_text { 
+			padding-left: 3em;
+		}
 		
 	}
 
@@ -73,6 +78,7 @@ section.site-width {
 
 	.menu_button{
 		width: 100%;
+		height: 80px;
 		.button_text {
 			padding-left: 5em;
 		}

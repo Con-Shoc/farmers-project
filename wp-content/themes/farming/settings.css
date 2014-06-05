@@ -45,24 +45,30 @@ section.site-width .search-toggle {
   /* line 58, settings.scss */
   .menu_button {
     width: 70%;
+    height: 70px;
+  }
+  /* line 62, settings.scss */
+  .menu_button .button_text {
+    padding-left: 3em;
   }
 
-  /* line 63, settings.scss */
+  /* line 68, settings.scss */
   .site-content.button-page-margins {
     margin: 0 100px;
   }
 }
 @media all and (max-width: 699px) {
-  /* line 70, settings.scss */
+  /* line 75, settings.scss */
   .site-content.button-page-margins {
     margin: 0 5px;
   }
 
-  /* line 74, settings.scss */
+  /* line 79, settings.scss */
   .menu_button {
     width: 100%;
+    height: 80px;
   }
-  /* line 76, settings.scss */
+  /* line 82, settings.scss */
   .menu_button .button_text {
     padding-left: 5em;
   }

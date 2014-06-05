@@ -46,7 +46,7 @@
 		<div class="header-main">
 			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img class="logo" src="/images/logo.png"/>
+					<img class="logo" src="images/logo.png"/>
 				</a>
 			</h1>
 
