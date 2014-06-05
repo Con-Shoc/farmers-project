@@ -87,3 +87,38 @@ section.site-width {
 }
 
 
+// Contact Page Template 
+.one_half_first {
+	width: 50%;
+	float: left;
+	clear: both;
+}
+
+.one_half_last { 
+	width: 50%;
+	float: right;
+}
+
+.contact_form { 
+	.contact_name, .contact_email, .contact_subject { 
+		input { 
+			font-weight: 700;
+			max-width: 300px;
+		}
+	}
+	.contact_type { 
+
+		select { 
+			border-color: #e5e5e5;
+			padding: .5em;
+			font-weight: 700;
+			color: #939393;
+			
+		}
+	}
+	
+}
+
+select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required { 
+		width: 300px;
+}

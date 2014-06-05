@@ -73,3 +73,33 @@ section.site-width .search-toggle {
     padding-left: 5em;
   }
 }
+/* line 91, settings.scss */
+.one_half_first {
+  width: 50%;
+  float: left;
+  clear: both;
+}
+
+/* line 97, settings.scss */
+.one_half_last {
+  width: 50%;
+  float: right;
+}
+
+/* line 104, settings.scss */
+.contact_form .contact_name input, .contact_form .contact_email input, .contact_form .contact_subject input {
+  font-weight: 700;
+  max-width: 300px;
+}
+/* line 111, settings.scss */
+.contact_form .contact_type select {
+  border-color: #e5e5e5;
+  padding: .5em;
+  font-weight: 700;
+  color: #939393;
+}
+
+/* line 122, settings.scss */
+select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required {
+  width: 300px;
+}
