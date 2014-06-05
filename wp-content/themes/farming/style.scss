@@ -1,5 +1,7 @@
 @import 'farming/settings';
 
+
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
 	// font-family: inherit;
@@ -4170,4 +4172,44 @@ a.post-thumbnail:hover {
 		font-size: 25pt;
 		line-height: 36px;
 	}
+}
+
+
+/* 
+
+menu buttons styling
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.menu_button{
+	margin:auto;
+	margin-bottom: 5px;
+	width:70%;
+	height:80px;
+	background-color: green;
+	color:white;
+}
+
+.menu_button:nth-child(2){
+	background-color: #48B749;
+}
+
+.menu_button:nth-child(3){
+	background-color: #2E3092;
+
+	img{
+		margin-left: 9px;
+	}
+}
+
+.menu_button:nth-child(4){
+	background-color: #4BBF9A;
+}
+
+.menu_button:nth-child(5){
+	background-color: #797CBB;
+}
+
+.menu_button:nth-child(6){
+	background-color: #B11E38;
 }
