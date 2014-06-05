@@ -4762,33 +4762,34 @@ menu buttons styling
 .menu_button .button_blurb {
   margin-top: -3em;
   text-align: center;
+  font-style: italic;
 }
-/* line 4203, style.scss */
+/* line 4204, style.scss */
 .menu_button a {
   color: white;
 }
 
-/* line 4209, style.scss */
+/* line 4210, style.scss */
 .menu_button:nth-child(2) {
   background-color: #48B749;
 }
 
-/* line 4213, style.scss */
+/* line 4214, style.scss */
 .menu_button:nth-child(3) {
   background-color: #2E3092;
 }
 
-/* line 4217, style.scss */
+/* line 4218, style.scss */
 .menu_button:nth-child(4) {
   background-color: #4BBF9A;
 }
 
-/* line 4221, style.scss */
+/* line 4222, style.scss */
 .menu_button:nth-child(5) {
   background-color: #797CBB;
 }
 
-/* line 4225, style.scss */
+/* line 4226, style.scss */
 .menu_button:nth-child(6) {
   background-color: #B11E38;
 }
