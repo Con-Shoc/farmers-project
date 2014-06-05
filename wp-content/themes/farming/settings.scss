@@ -85,9 +85,6 @@ section.site-width {
 		input { 
 			background: $navcolor;
 			transition: all .5s ease;
-			&:hover { 
-		
-			}
 		}
 	}
 	
@@ -100,6 +97,7 @@ select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required {
 textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required { 
 	font-family: "Open Sans", Helvetica;
 	max-width: 700px;
+	font-weight: 700;
 }
 
 

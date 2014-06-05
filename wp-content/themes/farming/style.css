@@ -77,60 +77,61 @@ section.site-width .search-toggle {
   transition: all .5s ease;
 }
 
-/* line 96, settings.scss */
+/* line 93, settings.scss */
 select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required {
   width: 300px;
 }
 
-/* line 100, settings.scss */
+/* line 97, settings.scss */
 textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   font-family: "Open Sans", Helvetica;
   max-width: 700px;
+  font-weight: 700;
 }
 
 @media all and (min-width: 699px) {
-  /* line 113, settings.scss */
+  /* line 111, settings.scss */
   .menu_button {
     width: 70%;
     height: 70px;
   }
-  /* line 117, settings.scss */
+  /* line 115, settings.scss */
   .menu_button .button_text {
     padding-left: 3em;
   }
 
-  /* line 123, settings.scss */
+  /* line 121, settings.scss */
   .site-content.button-page-margins {
     margin: 0 100px;
   }
 }
 @media all and (max-width: 699px) {
-  /* line 130, settings.scss */
+  /* line 128, settings.scss */
   .site-content.button-page-margins {
     margin: 0 5px;
   }
 
-  /* line 134, settings.scss */
+  /* line 132, settings.scss */
   .menu_button {
     width: 100%;
     height: 80px;
   }
-  /* line 137, settings.scss */
+  /* line 135, settings.scss */
   .menu_button .button_text {
     padding-left: 5em;
   }
 
-  /* line 144, settings.scss */
+  /* line 142, settings.scss */
   .contact_form .contact_name input, .contact_form .contact_email input, .contact_form .contact_subject input {
     max-width: 200px;
   }
 
-  /* line 151, settings.scss */
+  /* line 149, settings.scss */
   select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required {
     width: 200px;
   }
 
-  /* line 155, settings.scss */
+  /* line 153, settings.scss */
   textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
     max-width: 525px;
   }
