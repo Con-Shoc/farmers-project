@@ -49,9 +49,10 @@ get_header(); ?>
 					
 
 					if(!empty($button_image)): ?>
-				
 						<div class='menu_button'>
-						<a href="<?php the_sub_field('button_link'); ?>">
+
+						<a class="menu_link" href="<?php the_sub_field('button_link'); ?>">
+				
 							<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
 
 					<?php 
@@ -70,11 +71,13 @@ get_header(); ?>
 					       <p class="button_blurb">
 					       		<?php the_sub_field('button_blurb'); ?> 
 					       	</p>
-					       	</a>
+					  
 						</div>
+						</a>
 
 
 			        </div>
+			        
 
 			        <?php
 			 
