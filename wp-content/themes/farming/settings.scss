@@ -48,8 +48,36 @@ section.site-width {
 		top: 3.5em;
 	}
 
+
+
+
+
 // Homepage Styles
-.site-content.button-page-margins {
-	margin: 0 100px;
+@media all and (min-width: 699px) { 
+
+	.menu_button { 
+		width:70%;
+		
+	}
+
+	.site-content.button-page-margins {
+		margin: 0 100px;
+
+	}
+}
+
+@media all and (max-width: 699px) { 
+	.site-content.button-page-margins {
+		margin: 0 5px;
+	}
+
+	.menu_button{
+		width: 100%;
+		.button_text {
+			padding-left: 5em;
+		}
+	}
 
 }
+
+

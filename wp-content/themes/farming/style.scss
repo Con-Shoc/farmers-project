@@ -3017,6 +3017,7 @@ a.post-thumbnail:hover {
 }
 
 @media screen and (min-width: 401px) {
+
 	a.post-thumbnail:hover img {
 		opacity: 0.85;
 	}
@@ -3145,6 +3146,7 @@ a.post-thumbnail:hover {
 }
 
 @media screen and (min-width: 594px) {
+
 	.site-content .entry-header {
 		padding-right: 30px;
 		padding-left: 30px;
@@ -3156,6 +3158,7 @@ a.post-thumbnail:hover {
 }
 
 @media screen and (min-width: 673px) {
+
 	.header-main {
 		padding: 0 30px;
 	}
@@ -4184,9 +4187,7 @@ menu buttons styling
 .menu_button{
 	margin:auto;
 	margin-bottom: 5px;
-	width:70%;
 	height:80px;
-	color:white;
 
 	.button_name { 
 		margin-top: -4em;
@@ -4198,6 +4199,10 @@ menu buttons styling
 	.button_blurb { 
 		margin-top: -3em;
 		text-align: center;
+	}
+	a { 
+		color:white;
+		
 	}
 }
 

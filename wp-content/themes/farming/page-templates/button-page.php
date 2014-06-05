@@ -46,27 +46,35 @@ get_header(); ?>
 			 
 					// display the image for the button
 					$button_image = get_sub_field('button-image');
+					$button_link = get_sub_field('button_link');
 
 					if(!empty($button_image)): ?>
+				
 						<div class='menu_button'>
 							<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
-
+					
 					<?php 
 
 					endif;?>
 						
-						<!-- <div class="button_text"> -->
+						<div class="button_text">
+						<a href="<?php echo $button_link?>">
 				         <!-- display a sub field value -->
-				        <p class="button_name"><?php the_sub_field('button_name'); ?></p>
+					        <p class="button_name">
+					        	<?php the_sub_field('button_name'); ?>
+					        </p>
 
-				       	</br>
+					       	</br>
 
-				        <!-- display the blurb for the button -->
-				       <p class="button_blurb"> <?php the_sub_field('button_blurb'); ?> </p>
-						<!-- </div> -->
+					        <!-- display the blurb for the button -->
+					       <p class="button_blurb">
+					       		<?php the_sub_field('button_blurb'); ?> 
+					       	</p>
+						</div>
 
 
 			        </div>
+
 
 			        <?php
 			 

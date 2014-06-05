@@ -41,7 +41,29 @@ section.site-width .search-toggle {
   top: 3.5em;
 }
 
-/* line 52, settings.scss */
-.site-content.button-page-margins {
-  margin: 0 100px;
+@media all and (min-width: 699px) {
+  /* line 58, settings.scss */
+  .menu_button {
+    width: 70%;
+  }
+
+  /* line 63, settings.scss */
+  .site-content.button-page-margins {
+    margin: 0 100px;
+  }
+}
+@media all and (max-width: 699px) {
+  /* line 70, settings.scss */
+  .site-content.button-page-margins {
+    margin: 0 5px;
+  }
+
+  /* line 74, settings.scss */
+  .menu_button {
+    width: 100%;
+  }
+  /* line 76, settings.scss */
+  .menu_button .button_text {
+    padding-left: 5em;
+  }
 }
