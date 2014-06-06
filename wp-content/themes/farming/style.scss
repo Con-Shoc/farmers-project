@@ -895,8 +895,9 @@ span + .edit-link:before,
 .site-navigation .current_page_ancestor > a,
 .site-navigation .current-menu-item > a,
 .site-navigation .current-menu-ancestor > a {
-	color: #55d737;
-	font-weight: 900;
+	color: #fff;
+	font-weight: 700;
+	border-bottom: 2px solid #fff;
 }
 
 /* Primary Navigation */
@@ -3357,6 +3358,7 @@ a.post-thumbnail:hover {
 		display: inline-block;
 		height: 48px;
 		line-height: 48px;
+		font-weight: 600;
 		position: relative;
 	}
 

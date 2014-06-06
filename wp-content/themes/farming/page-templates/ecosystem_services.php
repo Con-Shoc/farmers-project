@@ -32,16 +32,17 @@ get_header(); ?>
 					}
 				endwhile;
 			?>
-
-				<div class="testimonial">
-				<p><?php the_field('testimonials'); ?></p>
-				<p class="testimonial_author"><?php the_field('testimonial_author'); ?></p>
-
-
-
-				</div>
-
-		</div><!-- #content -->
+				<!-- Slider -->
+				<?php if(get_field('image_gallery')): ?>
+					<div id="slider">
+						<?php while(the_repeater_field('images')): ?>
+							<?php $image = wp_get_attachment_image_src(get_sub_field('image'), 'full'); ?>
+							<?php $thumb = wp_get_attachment_image_src(get_sub_field('image'), 'thumbnail'); ?>
+					    	<img src="<?php echo $image[0]; ?>" alt="<?php  the_sub_field('title');?>" rel="<?php echo $thumb[0]; ?>" />
+					    <?php endwhile; ?>
+					</div>
+				<?php endif; ?>
+		
 	</div><!-- #primary -->
 </div><!-- #main-content -->
 
