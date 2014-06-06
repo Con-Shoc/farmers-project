@@ -47,17 +47,29 @@ get_header(); ?>
 					// display the image for the button
 					$button_image = get_sub_field('button-image');
 					
+					// get the boolean value of whether or not to create spacing between the buttons
+					$button_border = get_sub_field('button_border');
 
-					if(!empty($button_image)): ?>
-						<div class='menu_button'>
+					if(!empty($button_image)){
 
+						// case where a border is requested
+						if($button_border) { ?>
+
+							<div class='menu_button' id='button_border'>
+
+						<?php
+						// case where a border is not requested
+						} else { ?>
+							<div class='menu_button'>
+						<?php
+						}?>
 						<a class="menu_link" href="<?php the_sub_field('button_link'); ?>">
-				
-							<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
+			
+						<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
 
 					<?php 
 
-					endif;?>
+					}?>
 						
 						<div class="button_text">
 				         <!-- display a sub field value -->
