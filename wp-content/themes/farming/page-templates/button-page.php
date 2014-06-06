@@ -53,13 +53,14 @@ get_header(); ?>
 					if(!empty($button_image)){
 
 						// case where a border is requested
-						if($button_border) { ?>
+						if($button_border) {
+		?>					
+							<div class='menu_button button_border'>
 
-							<div class='menu_button' id='button_border'>
-
+						
 						<?php
 						// case where a border is not requested
-						} else { ?>
+						} elseif (empty($button_border)) { ?>
 							<div class='menu_button'>
 						<?php
 						}?>
@@ -86,7 +87,6 @@ get_header(); ?>
 					  
 						</div>
 						</a>
-
 
 			        </div>
 			        

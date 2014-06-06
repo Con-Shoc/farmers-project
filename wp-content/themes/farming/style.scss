@@ -4185,13 +4185,17 @@ a.post-thumbnail:hover {
 menu buttons styling
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
-
+.menu_button.button_border { 
+		margin-top: 3em;
+}
 
 .menu_button{
 	margin:auto;
 	margin-bottom: 5px;
 	transition: all .5s ease;
 	// height:70px;
+
+	
 
 	.button_text {
 			
