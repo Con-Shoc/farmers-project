@@ -69,3 +69,13 @@
 	</header><!-- #masthead -->
 
 	<div id="main" class="site-main">
+	<div class="breadcrumbs">
+    <?php
+    if ( !is_front_page() ) {
+	    if(function_exists('bcn_display'))
+	    {
+	        bcn_display();
+	    }
+	}
+    ?>
+</div>
