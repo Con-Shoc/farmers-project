@@ -108,7 +108,7 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 @media all and (max-width: 699px) {
   /* line 128, settings.scss */
   .site-content.button-page-margins {
-    margin: 0 5px;
+    margin: 0 10px;
   }
 
   /* line 132, settings.scss */
@@ -119,19 +119,20 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   /* line 135, settings.scss */
   .menu_button .button_text {
     padding-left: 5em;
+    padding-right: 2em;
   }
 
-  /* line 142, settings.scss */
+  /* line 143, settings.scss */
   .contact_form .contact_name input, .contact_form .contact_email input, .contact_form .contact_subject input {
     max-width: 200px;
   }
 
-  /* line 149, settings.scss */
+  /* line 150, settings.scss */
   select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required {
     width: 200px;
   }
 
-  /* line 153, settings.scss */
+  /* line 154, settings.scss */
   textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
     max-width: 525px;
   }
