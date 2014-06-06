@@ -4830,6 +4830,11 @@ menu buttons styling
   font-size: 16px;
   font-weight: 700;
 }
+
+#button_border {
+  margin-bottom: 2em;
+}
+
 /* line 4206, style.scss */
 .menu_button .button_text .button_blurb {
   margin-top: -3em;
