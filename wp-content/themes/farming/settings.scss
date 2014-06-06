@@ -39,13 +39,22 @@ section.site-width {
 		display: none;
 	}
 
-
 }
 
 // Navigation Menu
 	.primary-navigation ul ul li:hover > ul,
 	.primary-navigation ul ul li.focus > ul {
 		top: 3.5em;
+	}
+
+// Breadcrumbs 
+
+.breadcrumbs {
+	text-align: center;
+	color: #299546;
+		a.post.post-page.current-item { 
+			font-weight: 600;
+		}
 	}
 
 
