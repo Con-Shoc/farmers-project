@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 06, 2014 at 09:38 PM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Host: localhost
+-- Generation Time: Jun 06, 2014 at 08:30 PM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `farming`
 --
+CREATE DATABASE IF NOT EXISTS `farming` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `farming`;
 
 -- --------------------------------------------------------
 
@@ -172,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=751 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=763 ;
 
 --
 -- Dumping data for table `wp_options`
@@ -210,7 +212,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (29, 'hack_file', '0', 'yes'),
 (30, 'blog_charset', 'UTF-8', 'yes'),
 (31, 'moderation_keys', '', 'no'),
-(32, 'active_plugins', 'a:5:{i:0;s:29:"acf-repeater/acf-repeater.php";i:1;s:30:"advanced-custom-fields/acf.php";i:2;s:36:"contact-form-7/wp-contact-form-7.php";i:3;s:43:"custom-post-type-ui/custom-post-type-ui.php";i:4;s:29:"nextgen-gallery/nggallery.php";}', 'yes'),
+(32, 'active_plugins', 'a:6:{i:0;s:29:"acf-repeater/acf-repeater.php";i:1;s:30:"advanced-custom-fields/acf.php";i:2;s:37:"breadcrumb-navxt/breadcrumb-navxt.php";i:3;s:36:"contact-form-7/wp-contact-form-7.php";i:4;s:43:"custom-post-type-ui/custom-post-type-ui.php";i:5;s:29:"nextgen-gallery/nggallery.php";}', 'yes'),
 (33, 'home', 'http://localhost/farming', 'yes'),
 (34, 'category_base', '', 'yes'),
 (35, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
@@ -274,7 +276,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (93, 'widget_archives', 'a:2:{s:12:"_multiwidget";i:1;i:1;a:0:{}}', 'yes'),
 (94, 'widget_meta', 'a:2:{s:12:"_multiwidget";i:1;i:1;a:0:{}}', 'yes'),
 (95, 'sidebars_widgets', 'a:5:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:0:{}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}s:13:"array_version";i:3;}', 'yes'),
-(96, 'cron', 'a:5:{i:1402082760;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1402119573;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1402143340;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1402156802;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(96, 'cron', 'a:6:{i:1402087525;a:1:{s:29:"ngg_delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"ngg_custom";s:4:"args";a:0:{}s:8:"interval";i:1800;}}}i:1402119573;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1402125960;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1402143340;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1402156802;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (98, '_transient_random_seed', '4c149865cf4e9bc2ee95ae9a0277b215', 'yes'),
 (99, 'auth_key', '>NSIq7mc7{y >c7Gi/o}grF/Xw;E1X^kX+!QHNYJ>P1*}NH?f`Vwp *~@R}H=fH*', 'yes'),
 (100, 'auth_salt', '`_MZ?4$`8_|V/@a_$<J)}Rr~.v9!t_9h5`i|Z4s.L-z|c%H(|gewuvGvh/JlNbHz', 'yes'),
@@ -302,7 +304,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (311, 'category_children', 'a:0:{}', 'yes'),
 (312, 'nav_menu_options', 'a:2:{i:0;b:0;s:8:"auto_add";a:1:{i:0;i:4;}}', 'yes'),
 (341, 'theme_mods_ward', 'a:8:{i:0;b:0;s:18:"nav_menu_locations";a:1:{s:7:"primary";i:4;}s:16:"background_color";s:0:"";s:16:"background_image";s:0:"";s:17:"background_repeat";s:6:"repeat";s:21:"background_position_x";s:4:"left";s:21:"background_attachment";s:5:"fixed";s:16:"sidebars_widgets";a:2:{s:4:"time";i:1400942976;s:4:"data";a:6:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:2:{i:0;s:8:"search-2";i:1;s:12:"categories-2";}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}s:7:"sidebar";a:0:{}s:18:"home-page-top-area";a:0:{}}}}', 'yes'),
-(344, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-3.9.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-3.9.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-3.9.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-3.9.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"3.9.1";s:7:"version";s:5:"3.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"3.8";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1402076675;s:15:"version_checked";s:5:"3.9.1";s:12:"translations";a:0:{}}', 'yes'),
+(344, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:58:"http://downloads.wordpress.org/release/wordpress-3.9.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:58:"http://downloads.wordpress.org/release/wordpress-3.9.1.zip";s:10:"no_content";s:69:"http://downloads.wordpress.org/release/wordpress-3.9.1-no-content.zip";s:11:"new_bundled";s:70:"http://downloads.wordpress.org/release/wordpress-3.9.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"3.9.1";s:7:"version";s:5:"3.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"3.8";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1402083921;s:15:"version_checked";s:5:"3.9.1";s:12:"translations";a:0:{}}', 'yes'),
 (374, 'widget_pages', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
 (375, 'widget_calendar', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
 (376, 'widget_tag_cloud', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
@@ -316,7 +318,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (412, 'theme_mods_bluefire', 'a:2:{i:0;b:0;s:16:"sidebars_widgets";a:2:{s:4:"time";i:1400943890;s:4:"data";a:3:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:2:{i:0;s:8:"search-2";i:1;s:12:"categories-2";}s:9:"sidebar-2";a:0:{}}}}', 'yes'),
 (480, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1401221384', 'yes'),
 (481, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'a:40:{s:6:"widget";a:3:{s:4:"name";s:6:"widget";s:4:"slug";s:6:"widget";s:5:"count";s:4:"3898";}s:4:"post";a:3:{s:4:"name";s:4:"Post";s:4:"slug";s:4:"post";s:5:"count";s:4:"2456";}s:6:"plugin";a:3:{s:4:"name";s:6:"plugin";s:4:"slug";s:6:"plugin";s:5:"count";s:4:"2344";}s:5:"admin";a:3:{s:4:"name";s:5:"admin";s:4:"slug";s:5:"admin";s:5:"count";s:4:"1930";}s:5:"posts";a:3:{s:4:"name";s:5:"posts";s:4:"slug";s:5:"posts";s:5:"count";s:4:"1856";}s:7:"sidebar";a:3:{s:4:"name";s:7:"sidebar";s:4:"slug";s:7:"sidebar";s:5:"count";s:4:"1583";}s:7:"twitter";a:3:{s:4:"name";s:7:"twitter";s:4:"slug";s:7:"twitter";s:5:"count";s:4:"1329";}s:6:"google";a:3:{s:4:"name";s:6:"google";s:4:"slug";s:6:"google";s:5:"count";s:4:"1325";}s:8:"comments";a:3:{s:4:"name";s:8:"comments";s:4:"slug";s:8:"comments";s:5:"count";s:4:"1310";}s:6:"images";a:3:{s:4:"name";s:6:"images";s:4:"slug";s:6:"images";s:5:"count";s:4:"1260";}s:4:"page";a:3:{s:4:"name";s:4:"page";s:4:"slug";s:4:"page";s:5:"count";s:4:"1225";}s:5:"image";a:3:{s:4:"name";s:5:"image";s:4:"slug";s:5:"image";s:5:"count";s:4:"1121";}s:9:"shortcode";a:3:{s:4:"name";s:9:"shortcode";s:4:"slug";s:9:"shortcode";s:5:"count";s:4:"1000";}s:8:"facebook";a:3:{s:4:"name";s:8:"Facebook";s:4:"slug";s:8:"facebook";s:5:"count";s:3:"982";}s:5:"links";a:3:{s:4:"name";s:5:"links";s:4:"slug";s:5:"links";s:5:"count";s:3:"974";}s:3:"seo";a:3:{s:4:"name";s:3:"seo";s:4:"slug";s:3:"seo";s:5:"count";s:3:"950";}s:9:"wordpress";a:3:{s:4:"name";s:9:"wordpress";s:4:"slug";s:9:"wordpress";s:5:"count";s:3:"844";}s:7:"gallery";a:3:{s:4:"name";s:7:"gallery";s:4:"slug";s:7:"gallery";s:5:"count";s:3:"821";}s:6:"social";a:3:{s:4:"name";s:6:"social";s:4:"slug";s:6:"social";s:5:"count";s:3:"780";}s:3:"rss";a:3:{s:4:"name";s:3:"rss";s:4:"slug";s:3:"rss";s:5:"count";s:3:"722";}s:7:"widgets";a:3:{s:4:"name";s:7:"widgets";s:4:"slug";s:7:"widgets";s:5:"count";s:3:"686";}s:6:"jquery";a:3:{s:4:"name";s:6:"jquery";s:4:"slug";s:6:"jquery";s:5:"count";s:3:"681";}s:5:"pages";a:3:{s:4:"name";s:5:"pages";s:4:"slug";s:5:"pages";s:5:"count";s:3:"678";}s:5:"email";a:3:{s:4:"name";s:5:"email";s:4:"slug";s:5:"email";s:5:"count";s:3:"623";}s:4:"ajax";a:3:{s:4:"name";s:4:"AJAX";s:4:"slug";s:4:"ajax";s:5:"count";s:3:"615";}s:5:"media";a:3:{s:4:"name";s:5:"media";s:4:"slug";s:5:"media";s:5:"count";s:3:"595";}s:10:"javascript";a:3:{s:4:"name";s:10:"javascript";s:4:"slug";s:10:"javascript";s:5:"count";s:3:"572";}s:5:"video";a:3:{s:4:"name";s:5:"video";s:4:"slug";s:5:"video";s:5:"count";s:3:"570";}s:10:"buddypress";a:3:{s:4:"name";s:10:"buddypress";s:4:"slug";s:10:"buddypress";s:5:"count";s:3:"541";}s:4:"feed";a:3:{s:4:"name";s:4:"feed";s:4:"slug";s:4:"feed";s:5:"count";s:3:"539";}s:7:"content";a:3:{s:4:"name";s:7:"content";s:4:"slug";s:7:"content";s:5:"count";s:3:"530";}s:5:"photo";a:3:{s:4:"name";s:5:"photo";s:4:"slug";s:5:"photo";s:5:"count";s:3:"522";}s:4:"link";a:3:{s:4:"name";s:4:"link";s:4:"slug";s:4:"link";s:5:"count";s:3:"506";}s:6:"photos";a:3:{s:4:"name";s:6:"photos";s:4:"slug";s:6:"photos";s:5:"count";s:3:"505";}s:5:"login";a:3:{s:4:"name";s:5:"login";s:4:"slug";s:5:"login";s:5:"count";s:3:"471";}s:4:"spam";a:3:{s:4:"name";s:4:"spam";s:4:"slug";s:4:"spam";s:5:"count";s:3:"458";}s:5:"stats";a:3:{s:4:"name";s:5:"stats";s:4:"slug";s:5:"stats";s:5:"count";s:3:"453";}s:8:"category";a:3:{s:4:"name";s:8:"category";s:4:"slug";s:8:"category";s:5:"count";s:3:"452";}s:7:"youtube";a:3:{s:4:"name";s:7:"youtube";s:4:"slug";s:7:"youtube";s:5:"count";s:3:"436";}s:7:"comment";a:3:{s:4:"name";s:7:"comment";s:4:"slug";s:7:"comment";s:5:"count";s:3:"432";}}', 'yes'),
-(580, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1402076676;s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'yes'),
+(580, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1402083944;s:7:"checked";a:8:{s:30:"advanced-custom-fields/acf.php";s:5:"4.3.8";s:29:"acf-repeater/acf-repeater.php";s:5:"1.1.1";s:37:"breadcrumb-navxt/breadcrumb-navxt.php";s:5:"5.0.1";s:43:"breadcrumb-navxt/breadcrumb_navxt_admin.php";s:5:"5.0.1";s:36:"contact-form-7/wp-contact-form-7.php";s:5:"3.8.1";s:43:"custom-post-type-ui/custom-post-type-ui.php";s:5:"0.8.2";s:37:"hide-admin-bar/sd3_hide_admin_bar.php";s:5:"0.2.5";s:29:"nextgen-gallery/nggallery.php";s:6:"2.0.66";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'yes'),
 (582, '_site_transient_timeout_browser_14ed2ce0721541a00807420602d3a874', '1402405797', 'yes'),
 (583, '_site_transient_browser_14ed2ce0721541a00807420602d3a874', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"35.0.1916.114";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (607, '_site_transient_timeout_browser_95d7e62a50bdc5562a7ae95f7f64d07c', '1402412080', 'yes'),
@@ -327,8 +329,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 (611, '_transient_timeout_feed_mod_c809918297b2c893fd8504c06adcaf00', '1401850522', 'no'),
 (612, '_transient_feed_mod_c809918297b2c893fd8504c06adcaf00', '1401807322', 'no'),
-(638, '_transient_timeout_plugin_slugs', '1402081996', 'no'),
-(639, '_transient_plugin_slugs', 'a:6:{i:0;s:30:"advanced-custom-fields/acf.php";i:1;s:29:"acf-repeater/acf-repeater.php";i:2;s:36:"contact-form-7/wp-contact-form-7.php";i:3;s:43:"custom-post-type-ui/custom-post-type-ui.php";i:4;s:37:"hide-admin-bar/sd3_hide_admin_bar.php";i:5;s:29:"nextgen-gallery/nggallery.php";}', 'no'),
+(638, '_transient_timeout_plugin_slugs', '1402170350', 'no'),
+(639, '_transient_plugin_slugs', 'a:8:{i:0;s:30:"advanced-custom-fields/acf.php";i:1;s:29:"acf-repeater/acf-repeater.php";i:2;s:37:"breadcrumb-navxt/breadcrumb-navxt.php";i:3;s:43:"breadcrumb-navxt/breadcrumb_navxt_admin.php";i:4;s:36:"contact-form-7/wp-contact-form-7.php";i:5;s:43:"custom-post-type-ui/custom-post-type-ui.php";i:6;s:37:"hide-admin-bar/sd3_hide_admin_bar.php";i:7;s:29:"nextgen-gallery/nggallery.php";}', 'no'),
 (664, 'wpcf7', 'a:1:{s:7:"version";s:5:"3.8.1";}', 'yes'),
 (710, '_transient_timeout_feed_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1402115415', 'no');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
@@ -348,10 +350,13 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (721, '_transient_feed_mod_b9388c83948825c1edaef0d856b7b109', '1402072216', 'no'),
 (722, '_transient_timeout_dash_4077549d03da2e451c8b5f002294ff51', '1402115416', 'no'),
 (723, '_transient_dash_4077549d03da2e451c8b5f002294ff51', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.org/news/2014/05/wordpress-3-9-1/''>WordPress 3.9.1 Maintenance Release</a> <span class="rss-date">May 8, 2014</span><div class="rssSummary">After three weeks and more than 9 million downloads of WordPress 3.9, we’re pleased to announce that WordPress 3.9.1 is now available. This maintenance release fixes 34 bugs in 3.9, including numerous fixes for multisite networks, customizing widgets while previewing themes, and the updated visual editor. We’ve also made some improvements to the new audio/vi</div></li></ul></div><div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/06/06/francisco-javier-carazo-gil-wordpress-como-plataforma-de-desarrollo/'' title=''''>WordPress.tv: Francisco Javier Carazo Gil: WordPress como plataforma de desarrollo</a></li><li><a class=''rsswidget'' href=''http://android.wordpress.org/2014/06/06/version-2-9-of-wordpress-for-android/'' title=''The WordPress for Android 2.9 release is now available in the Google Play Store. This release includes some exciting new features, enhancements, and bug fixes. Blog Discovery Blog discovery is a new feature in the Reader that lets you: Find new blogs (based on recommendations). Preview a blog and read posts before following it. Manage your tags and blog subs''>WP Android: Version 2.9 of WordPress for Android</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2014/06/06/fran-moreno-themes-premium-desde-la-perspectiva-del-creador-de-contenidos-del-disenador-y-del-desarrollador/'' title=''''>WordPress.tv: Fran Moreno: Themes premium desde la perspectiva del creador de contenidos, del diseñador y del desarrollador</a></li></ul></div><div class="rss-widget"><ul><li class=''dashboard-news-plugin''><span>Popular Plugin:</span> <a href=''http://wordpress.org/plugins/jetpack/'' class=''dashboard-news-plugin-link''>Jetpack by WordPress.com</a>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=jetpack&amp;_wpnonce=3896745374&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''Jetpack by WordPress.com''>Install</a>)</span></li></ul></div>', 'no'),
-(728, '_site_transient_timeout_theme_roots', '1402078475', 'yes'),
-(729, '_site_transient_theme_roots', 'a:4:{s:7:"farming";s:7:"/themes";s:14:"twentyfourteen";s:7:"/themes";s:14:"twentythirteen";s:7:"/themes";s:12:"twentytwelve";s:7:"/themes";}', 'yes'),
-(730, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1402076677;s:7:"checked";a:4:{s:7:"farming";s:0:"";s:14:"twentyfourteen";s:3:"1.0";s:14:"twentythirteen";s:3:"1.1";s:12:"twentytwelve";s:3:"1.3";}s:8:"response";a:3:{s:14:"twentyfourteen";a:4:{s:5:"theme";s:14:"twentyfourteen";s:11:"new_version";s:3:"1.1";s:3:"url";s:43:"https://wordpress.org/themes/twentyfourteen";s:7:"package";s:60:"https://wordpress.org/themes/download/twentyfourteen.1.1.zip";}s:14:"twentythirteen";a:4:{s:5:"theme";s:14:"twentythirteen";s:11:"new_version";s:3:"1.2";s:3:"url";s:43:"https://wordpress.org/themes/twentythirteen";s:7:"package";s:60:"https://wordpress.org/themes/download/twentythirteen.1.2.zip";}s:12:"twentytwelve";a:4:{s:5:"theme";s:12:"twentytwelve";s:11:"new_version";s:3:"1.4";s:3:"url";s:41:"https://wordpress.org/themes/twentytwelve";s:7:"package";s:58:"https://wordpress.org/themes/download/twentytwelve.1.4.zip";}}s:12:"translations";a:0:{}}', 'yes'),
-(750, '_transient_is_multi_author', '0', 'yes');
+(753, '_site_transient_timeout_theme_roots', '1402085720', 'yes'),
+(754, '_site_transient_theme_roots', 'a:2:{s:7:"farming";s:7:"/themes";s:14:"twentyfourteen";s:7:"/themes";}', 'yes'),
+(755, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1402083921;s:7:"checked";a:2:{s:7:"farming";s:0:"";s:14:"twentyfourteen";s:3:"1.0";}s:8:"response";a:1:{s:14:"twentyfourteen";a:4:{s:5:"theme";s:14:"twentyfourteen";s:11:"new_version";s:3:"1.1";s:3:"url";s:42:"http://wordpress.org/themes/twentyfourteen";s:7:"package";s:59:"http://wordpress.org/themes/download/twentyfourteen.1.1.zip";}}s:12:"translations";a:0:{}}', 'yes'),
+(757, 'bcn_options', 'a:102:{s:17:"bmainsite_display";b:0;s:18:"Hmainsite_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:28:"Hmainsite_template_no_anchor";s:8:"%htitle%";s:13:"bhome_display";b:1;s:14:"Hhome_template";s:63:"<a title="Go to %title%." href="%link%" class="%type%">Home</a>";s:24:"Hhome_template_no_anchor";s:8:"%htitle%";s:13:"bblog_display";b:1;s:14:"Hblog_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:24:"Hblog_template_no_anchor";s:8:"%htitle%";s:10:"hseparator";s:6:" &gt; ";s:12:"blimit_title";b:1;s:17:"amax_title_length";i:20;s:20:"bcurrent_item_linked";b:1;s:19:"Hpost_page_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:29:"Hpost_page_template_no_anchor";s:8:"%htitle%";s:15:"apost_page_root";s:2:"11";s:15:"Hpaged_template";s:13:"Page %htitle%";s:14:"bpaged_display";b:1;s:19:"Hpost_post_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:29:"Hpost_post_template_no_anchor";s:8:"%htitle%";s:15:"apost_post_root";s:1:"0";s:27:"bpost_post_taxonomy_display";b:1;s:24:"Spost_post_taxonomy_type";s:8:"category";s:25:"Hpost_attachment_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:35:"Hpost_attachment_template_no_anchor";s:8:"%htitle%";s:13:"H404_template";s:8:"%htitle%";s:10:"S404_title";s:3:"404";s:16:"Hsearch_template";s:135:"Search results for &#039;<a title="Go to the first page of search results for %title%." href="%link%" class="%type%">%htitle%</a>&#039;";s:26:"Hsearch_template_no_anchor";s:39:"Search results for &#039;%htitle%&#039;";s:18:"Hpost_tag_template";s:84:"<a title="Go to the %title% tag archives." href="%link%" class="%type%">%htitle%</a>";s:28:"Hpost_tag_template_no_anchor";s:8:"%htitle%";s:21:"Hpost_format_template";s:84:"<a title="Go to the %title% tag archives." href="%link%" class="%type%">%htitle%</a>";s:31:"Hpost_format_template_no_anchor";s:8:"%htitle%";s:16:"Hauthor_template";s:107:"Articles by: <a title="Go to the first page of posts by %title%." href="%link%" class="%type%">%htitle%</a>";s:26:"Hauthor_template_no_anchor";s:21:"Articles by: %htitle%";s:12:"Sauthor_name";s:12:"display_name";s:18:"Hcategory_template";s:89:"<a title="Go to the %title% category archives." href="%link%" class="%type%">%htitle%</a>";s:28:"Hcategory_template_no_anchor";s:8:"%htitle%";s:14:"Hdate_template";s:80:"<a title="Go to the %title% archives." href="%link%" class="%type%">%htitle%</a>";s:24:"Hdate_template_no_anchor";s:8:"%htitle%";s:27:"Hpost_testimonials_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:37:"Hpost_testimonials_template_no_anchor";s:8:"%htitle%";s:34:"bpost_testimonials_archive_display";b:0;s:23:"apost_testimonials_root";i:0;s:35:"bpost_testimonials_taxonomy_display";b:0;s:32:"Spost_testimonials_taxonomy_type";s:4:"date";s:18:"Hpost_acf_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:28:"Hpost_acf_template_no_anchor";s:8:"%htitle%";s:25:"bpost_acf_archive_display";b:0;s:14:"apost_acf_root";s:2:"11";s:26:"bpost_acf_taxonomy_display";b:0;s:23:"Spost_acf_taxonomy_type";s:4:"date";s:33:"Hpost_wpcf7_contact_form_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:43:"Hpost_wpcf7_contact_form_template_no_anchor";s:8:"%htitle%";s:40:"bpost_wpcf7_contact_form_archive_display";b:0;s:29:"apost_wpcf7_contact_form_root";s:1:"0";s:41:"bpost_wpcf7_contact_form_taxonomy_display";b:0;s:38:"Spost_wpcf7_contact_form_taxonomy_type";s:4:"date";s:24:"Hpost_ngg_album_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:34:"Hpost_ngg_album_template_no_anchor";s:8:"%htitle%";s:31:"bpost_ngg_album_archive_display";b:0;s:20:"apost_ngg_album_root";s:1:"0";s:32:"bpost_ngg_album_taxonomy_display";b:0;s:29:"Spost_ngg_album_taxonomy_type";s:4:"date";s:26:"Hpost_ngg_gallery_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:36:"Hpost_ngg_gallery_template_no_anchor";s:8:"%htitle%";s:33:"bpost_ngg_gallery_archive_display";b:0;s:22:"apost_ngg_gallery_root";s:1:"0";s:34:"bpost_ngg_gallery_taxonomy_display";b:0;s:31:"Spost_ngg_gallery_taxonomy_type";s:4:"date";s:27:"Hpost_ngg_pictures_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:37:"Hpost_ngg_pictures_template_no_anchor";s:8:"%htitle%";s:34:"bpost_ngg_pictures_archive_display";b:0;s:23:"apost_ngg_pictures_root";s:1:"0";s:35:"bpost_ngg_pictures_taxonomy_display";b:0;s:32:"Spost_ngg_pictures_taxonomy_type";s:4:"date";s:32:"Hpost_displayed_gallery_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:42:"Hpost_displayed_gallery_template_no_anchor";s:8:"%htitle%";s:39:"bpost_displayed_gallery_archive_display";b:0;s:28:"apost_displayed_gallery_root";s:1:"0";s:40:"bpost_displayed_gallery_taxonomy_display";b:0;s:37:"Spost_displayed_gallery_taxonomy_type";s:4:"date";s:27:"Hpost_display_type_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:37:"Hpost_display_type_template_no_anchor";s:8:"%htitle%";s:34:"bpost_display_type_archive_display";b:0;s:23:"apost_display_type_root";s:1:"0";s:35:"bpost_display_type_taxonomy_display";b:0;s:32:"Spost_display_type_taxonomy_type";s:4:"date";s:33:"Hpost_gal_display_source_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:43:"Hpost_gal_display_source_template_no_anchor";s:8:"%htitle%";s:40:"bpost_gal_display_source_archive_display";b:0;s:29:"apost_gal_display_source_root";s:1:"0";s:41:"bpost_gal_display_source_taxonomy_display";b:0;s:38:"Spost_gal_display_source_taxonomy_type";s:4:"date";s:31:"Hpost_lightbox_library_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:41:"Hpost_lightbox_library_template_no_anchor";s:8:"%htitle%";s:38:"bpost_lightbox_library_archive_display";b:0;s:27:"apost_lightbox_library_root";s:1:"0";s:39:"bpost_lightbox_library_taxonomy_display";b:0;s:36:"Spost_lightbox_library_taxonomy_type";s:4:"date";s:17:"Hngg_tag_template";s:77:"<a title="Go to the %title% Picture tag archives." href="%link%">%htitle%</a>";s:27:"Hngg_tag_template_no_anchor";s:8:"%htitle%";}', 'yes'),
+(758, 'bcn_options_bk', 'a:102:{s:17:"bmainsite_display";b:1;s:18:"Hmainsite_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:28:"Hmainsite_template_no_anchor";s:8:"%htitle%";s:13:"bhome_display";b:1;s:14:"Hhome_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:24:"Hhome_template_no_anchor";s:8:"%htitle%";s:13:"bblog_display";b:1;s:14:"Hblog_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:24:"Hblog_template_no_anchor";s:8:"%htitle%";s:10:"hseparator";s:6:" &gt; ";s:12:"blimit_title";b:0;s:17:"amax_title_length";i:20;s:20:"bcurrent_item_linked";b:0;s:19:"Hpost_page_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:29:"Hpost_page_template_no_anchor";s:8:"%htitle%";s:15:"apost_page_root";s:2:"11";s:15:"Hpaged_template";s:13:"Page %htitle%";s:14:"bpaged_display";b:0;s:19:"Hpost_post_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:29:"Hpost_post_template_no_anchor";s:8:"%htitle%";s:15:"apost_post_root";s:1:"0";s:27:"bpost_post_taxonomy_display";b:1;s:24:"Spost_post_taxonomy_type";s:8:"category";s:25:"Hpost_attachment_template";s:67:"<a title="Go to %title%." href="%link%" class="%type%">%htitle%</a>";s:35:"Hpost_attachment_template_no_anchor";s:8:"%htitle%";s:13:"H404_template";s:8:"%htitle%";s:10:"S404_title";s:3:"404";s:16:"Hsearch_template";s:133:"Search results for &#39;<a title="Go to the first page of search results for %title%." href="%link%" class="%type%">%htitle%</a>&#39;";s:26:"Hsearch_template_no_anchor";s:37:"Search results for &#39;%htitle%&#39;";s:18:"Hpost_tag_template";s:84:"<a title="Go to the %title% tag archives." href="%link%" class="%type%">%htitle%</a>";s:28:"Hpost_tag_template_no_anchor";s:8:"%htitle%";s:21:"Hpost_format_template";s:84:"<a title="Go to the %title% tag archives." href="%link%" class="%type%">%htitle%</a>";s:31:"Hpost_format_template_no_anchor";s:8:"%htitle%";s:16:"Hauthor_template";s:107:"Articles by: <a title="Go to the first page of posts by %title%." href="%link%" class="%type%">%htitle%</a>";s:26:"Hauthor_template_no_anchor";s:21:"Articles by: %htitle%";s:12:"Sauthor_name";s:12:"display_name";s:18:"Hcategory_template";s:89:"<a title="Go to the %title% category archives." href="%link%" class="%type%">%htitle%</a>";s:28:"Hcategory_template_no_anchor";s:8:"%htitle%";s:14:"Hdate_template";s:80:"<a title="Go to the %title% archives." href="%link%" class="%type%">%htitle%</a>";s:24:"Hdate_template_no_anchor";s:8:"%htitle%";s:27:"Hpost_testimonials_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:37:"Hpost_testimonials_template_no_anchor";s:8:"%htitle%";s:34:"bpost_testimonials_archive_display";s:0:"";s:23:"apost_testimonials_root";s:1:"0";s:35:"bpost_testimonials_taxonomy_display";b:0;s:32:"Spost_testimonials_taxonomy_type";s:4:"date";s:18:"Hpost_acf_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:28:"Hpost_acf_template_no_anchor";s:8:"%htitle%";s:25:"bpost_acf_archive_display";b:0;s:14:"apost_acf_root";s:2:"11";s:26:"bpost_acf_taxonomy_display";b:0;s:23:"Spost_acf_taxonomy_type";s:4:"date";s:33:"Hpost_wpcf7_contact_form_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:43:"Hpost_wpcf7_contact_form_template_no_anchor";s:8:"%htitle%";s:40:"bpost_wpcf7_contact_form_archive_display";b:0;s:29:"apost_wpcf7_contact_form_root";s:1:"0";s:41:"bpost_wpcf7_contact_form_taxonomy_display";b:0;s:38:"Spost_wpcf7_contact_form_taxonomy_type";s:4:"date";s:24:"Hpost_ngg_album_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:34:"Hpost_ngg_album_template_no_anchor";s:8:"%htitle%";s:31:"bpost_ngg_album_archive_display";b:0;s:20:"apost_ngg_album_root";s:1:"0";s:32:"bpost_ngg_album_taxonomy_display";b:0;s:29:"Spost_ngg_album_taxonomy_type";s:4:"date";s:26:"Hpost_ngg_gallery_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:36:"Hpost_ngg_gallery_template_no_anchor";s:8:"%htitle%";s:33:"bpost_ngg_gallery_archive_display";b:0;s:22:"apost_ngg_gallery_root";s:1:"0";s:34:"bpost_ngg_gallery_taxonomy_display";b:0;s:31:"Spost_ngg_gallery_taxonomy_type";s:4:"date";s:27:"Hpost_ngg_pictures_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:37:"Hpost_ngg_pictures_template_no_anchor";s:8:"%htitle%";s:34:"bpost_ngg_pictures_archive_display";b:0;s:23:"apost_ngg_pictures_root";s:1:"0";s:35:"bpost_ngg_pictures_taxonomy_display";b:0;s:32:"Spost_ngg_pictures_taxonomy_type";s:4:"date";s:32:"Hpost_displayed_gallery_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:42:"Hpost_displayed_gallery_template_no_anchor";s:8:"%htitle%";s:39:"bpost_displayed_gallery_archive_display";b:0;s:28:"apost_displayed_gallery_root";s:1:"0";s:40:"bpost_displayed_gallery_taxonomy_display";b:0;s:37:"Spost_displayed_gallery_taxonomy_type";s:4:"date";s:27:"Hpost_display_type_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:37:"Hpost_display_type_template_no_anchor";s:8:"%htitle%";s:34:"bpost_display_type_archive_display";b:0;s:23:"apost_display_type_root";s:1:"0";s:35:"bpost_display_type_taxonomy_display";b:0;s:32:"Spost_display_type_taxonomy_type";s:4:"date";s:33:"Hpost_gal_display_source_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:43:"Hpost_gal_display_source_template_no_anchor";s:8:"%htitle%";s:40:"bpost_gal_display_source_archive_display";b:0;s:29:"apost_gal_display_source_root";s:1:"0";s:41:"bpost_gal_display_source_taxonomy_display";b:0;s:38:"Spost_gal_display_source_taxonomy_type";s:4:"date";s:31:"Hpost_lightbox_library_template";s:52:"<a title="Go to %title%." href="%link%">%htitle%</a>";s:41:"Hpost_lightbox_library_template_no_anchor";s:8:"%htitle%";s:38:"bpost_lightbox_library_archive_display";b:0;s:27:"apost_lightbox_library_root";s:1:"0";s:39:"bpost_lightbox_library_taxonomy_display";b:0;s:36:"Spost_lightbox_library_taxonomy_type";s:4:"date";s:17:"Hngg_tag_template";s:77:"<a title="Go to the %title% Picture tag archives." href="%link%">%htitle%</a>";s:27:"Hngg_tag_template_no_anchor";s:8:"%htitle%";}', 'no'),
+(759, 'bcn_version', '5.0.1', 'no'),
+(762, '_transient_is_multi_author', '0', 'yes');
 
 -- --------------------------------------------------------
 
@@ -367,7 +372,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1519 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1609 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -398,8 +403,8 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (25, 10, '_testimonial_author', 'field_5373620aea34e'),
 (26, 6, 'testimonial_author', 'Steve Buscemi'),
 (27, 6, '_testimonial_author', 'field_5373620aea34e'),
-(28, 11, '_edit_last', '2'),
-(29, 11, '_edit_lock', '1402081774:2'),
+(28, 11, '_edit_last', '1'),
+(29, 11, '_edit_lock', '1402086252:1'),
 (30, 11, '_wp_page_template', 'page-templates/button-page.php'),
 (31, 14, 'title', 'Galleries'),
 (32, 14, 'name', 'galleries'),
@@ -586,14 +591,6 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (222, 43, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (223, 43, '_menu_item_xfn', ''),
 (224, 43, '_menu_item_url', ''),
-(226, 44, '_menu_item_type', 'post_type'),
-(227, 44, '_menu_item_menu_item_parent', '43'),
-(228, 44, '_menu_item_object_id', '36'),
-(229, 44, '_menu_item_object', 'page'),
-(230, 44, '_menu_item_target', ''),
-(231, 44, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
-(232, 44, '_menu_item_xfn', ''),
-(233, 44, '_menu_item_url', ''),
 (244, 46, '_menu_item_type', 'post_type'),
 (245, 46, '_menu_item_menu_item_parent', '0'),
 (246, 46, '_menu_item_object_id', '40'),
@@ -633,7 +630,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (289, 40, '_wp_trash_meta_time', '1400601070'),
 (290, 55, '_edit_last', '1'),
 (291, 55, '_wp_page_template', 'default'),
-(292, 55, '_edit_lock', '1400600947:1'),
+(292, 55, '_edit_lock', '1402086427:1'),
 (293, 57, '_menu_item_type', 'post_type'),
 (294, 57, '_menu_item_menu_item_parent', '0'),
 (295, 57, '_menu_item_object_id', '6'),
@@ -642,14 +639,6 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (298, 57, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (299, 57, '_menu_item_xfn', ''),
 (300, 57, '_menu_item_url', ''),
-(311, 59, '_menu_item_type', 'post_type'),
-(312, 59, '_menu_item_menu_item_parent', '44'),
-(313, 59, '_menu_item_object_id', '55'),
-(314, 59, '_menu_item_object', 'page'),
-(315, 59, '_menu_item_target', ''),
-(316, 59, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
-(317, 59, '_menu_item_xfn', ''),
-(318, 59, '_menu_item_url', ''),
 (320, 60, '_edit_last', '1'),
 (321, 60, '_wp_page_template', 'default'),
 (322, 60, '_edit_lock', '1400601286:1'),
@@ -662,30 +651,6 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (329, 62, '_menu_item_xfn', ''),
 (330, 62, '_menu_item_url', ''),
 (331, 62, '_menu_item_orphaned', '1400601270'),
-(332, 63, '_menu_item_type', 'post_type'),
-(333, 63, '_menu_item_menu_item_parent', '57'),
-(334, 63, '_menu_item_object_id', '50'),
-(335, 63, '_menu_item_object', 'page'),
-(336, 63, '_menu_item_target', ''),
-(337, 63, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
-(338, 63, '_menu_item_xfn', ''),
-(339, 63, '_menu_item_url', ''),
-(341, 64, '_menu_item_type', 'post_type'),
-(342, 64, '_menu_item_menu_item_parent', '59'),
-(343, 64, '_menu_item_object_id', '53'),
-(344, 64, '_menu_item_object', 'page'),
-(345, 64, '_menu_item_target', ''),
-(346, 64, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
-(347, 64, '_menu_item_xfn', ''),
-(348, 64, '_menu_item_url', ''),
-(350, 65, '_menu_item_type', 'post_type'),
-(351, 65, '_menu_item_menu_item_parent', '63'),
-(352, 65, '_menu_item_object_id', '55'),
-(353, 65, '_menu_item_object', 'page'),
-(354, 65, '_menu_item_target', ''),
-(355, 65, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
-(356, 65, '_menu_item_xfn', ''),
-(357, 65, '_menu_item_url', ''),
 (369, 70, '_wp_attached_file', '2014/05/logo.png'),
 (370, 70, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:466;s:6:"height";i:39;s:4:"file";s:16:"2014/05/logo.png";s:5:"sizes";a:2:{s:9:"thumbnail";a:4:{s:4:"file";s:15:"logo-150x39.png";s:5:"width";i:150;s:6:"height";i:39;s:9:"mime-type";s:9:"image/png";}s:6:"medium";a:4:{s:4:"file";s:15:"logo-300x25.png";s:5:"width";i:300;s:6:"height";i:25;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}'),
 (371, 70, '_edit_lock', '1400949178:1'),
@@ -1067,8 +1032,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (778, 112, '_menu_item_xfn', ''),
 (779, 112, '_menu_item_url', ''),
 (780, 114, '_edit_lock', '1402000217:1'),
-(781, 114, '_edit_last', '1');
-INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
+(781, 114, '_edit_last', '1'),
 (782, 114, 'field_5390c2054947b', 'a:14:{s:3:"key";s:19:"field_5390c2054947b";s:5:"label";s:17:"Contact Shortcode";s:4:"name";s:17:"contact_shortcode";s:4:"type";s:4:"text";s:12:"instructions";s:64:"Enter the shortcode for the form you wish to appear on the page.";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:1;}'),
 (784, 114, 'position', 'normal'),
 (785, 114, 'layout', 'no_box'),
@@ -1088,7 +1052,8 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (800, 120, 'contact_shortcode', '[contact-form-7 id="109" title="Contact Us"]'),
 (801, 120, '_contact_shortcode', 'field_5390c2054947b'),
 (802, 121, 'contact_shortcode', '[contact-form-7 id="109" title="Contact Us"]'),
-(803, 121, '_contact_shortcode', 'field_5390c2054947b'),
+(803, 121, '_contact_shortcode', 'field_5390c2054947b');
+INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
 (804, 114, 'field_5390d0bc54f36', 'a:11:{s:3:"key";s:19:"field_5390d0bc54f36";s:5:"label";s:16:"Page Description";s:4:"name";s:19:"contact_description";s:4:"type";s:7:"wysiwyg";s:12:"instructions";s:32:"Fill out a blurb for the page...";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:7:"toolbar";s:4:"full";s:12:"media_upload";s:3:"yes";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_5390c2054947b";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}'),
 (806, 123, 'contact_description', 'Questions or Concerns?\r\n\r\nFill out the form below with a description of the issue and we will get back to you as soon as we can!'),
 (807, 123, '_contact_description', 'field_5390d0bc54f36'),
@@ -1475,15 +1440,15 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1193, 132, '_button_4_button_border', 'field_5392059e99e0f'),
 (1194, 132, 'button', '5'),
 (1195, 132, '_button', 'field_538dcc180e321'),
-(1196, 11, 'button_0_button_border', '1'),
+(1196, 11, 'button_0_button_border', '0'),
 (1197, 11, '_button_0_button_border', 'field_5392059e99e0f'),
-(1198, 11, 'button_1_button_border', '1'),
+(1198, 11, 'button_1_button_border', '0'),
 (1199, 11, '_button_1_button_border', 'field_5392059e99e0f'),
-(1200, 11, 'button_2_button_border', '1'),
+(1200, 11, 'button_2_button_border', '0'),
 (1201, 11, '_button_2_button_border', 'field_5392059e99e0f'),
 (1202, 11, 'button_3_button_border', '1'),
 (1203, 11, '_button_3_button_border', 'field_5392059e99e0f'),
-(1204, 11, 'button_4_button_border', '1'),
+(1204, 11, 'button_4_button_border', '0'),
 (1205, 11, '_button_4_button_border', 'field_5392059e99e0f'),
 (1206, 87, 'rule', 'a:5:{s:5:"param";s:13:"page_template";s:8:"operator";s:2:"==";s:5:"value";s:30:"page-templates/button-page.php";s:8:"order_no";i:0;s:8:"group_no";i:0;}'),
 (1207, 133, 'button_0_button-image', '100'),
@@ -1797,7 +1762,87 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1515, 138, 'button_4_button_border', '1'),
 (1516, 138, '_button_4_button_border', 'field_5392059e99e0f'),
 (1517, 138, 'button', '5'),
-(1518, 138, '_button', 'field_538dcc180e321');
+(1518, 138, '_button', 'field_538dcc180e321'),
+(1519, 139, 'button_0_button-image', '100'),
+(1520, 139, '_button_0_button-image', 'field_538dcc290e322'),
+(1521, 139, 'button_0_button_name', 'Benefits to my farm'),
+(1522, 139, '_button_0_button_name', 'field_538dcc560e323'),
+(1523, 139, 'button_0_button_blurb', 'How can habitat help my farm?'),
+(1524, 139, '_button_0_button_blurb', 'field_538dde9d6d8fc'),
+(1525, 139, 'button_0_button_link', '6'),
+(1526, 139, '_button_0_button_link', 'field_539088ef0453e'),
+(1527, 139, 'button_0_button_border', '0'),
+(1528, 139, '_button_0_button_border', 'field_5392059e99e0f'),
+(1529, 139, 'button_1_button-image', '101'),
+(1530, 139, '_button_1_button-image', 'field_538dcc290e322'),
+(1531, 139, 'button_1_button_name', 'Helping Habitat'),
+(1532, 139, '_button_1_button_name', 'field_538dcc560e323'),
+(1533, 139, 'button_1_button_blurb', 'How can I help the species on my land?'),
+(1534, 139, '_button_1_button_blurb', 'field_538dde9d6d8fc'),
+(1535, 139, 'button_1_button_link', '6'),
+(1536, 139, '_button_1_button_link', 'field_539088ef0453e'),
+(1537, 139, 'button_1_button_border', '0'),
+(1538, 139, '_button_1_button_border', 'field_5392059e99e0f'),
+(1539, 139, 'button_2_button-image', '102'),
+(1540, 139, '_button_2_button-image', 'field_538dcc290e322'),
+(1541, 139, 'button_2_button_name', 'Dealing with Wildlife'),
+(1542, 139, '_button_2_button_name', 'field_538dcc560e323'),
+(1543, 139, 'button_2_button_blurb', 'Methods of coping with species'),
+(1544, 139, '_button_2_button_blurb', 'field_538dde9d6d8fc'),
+(1545, 139, 'button_2_button_link', '50'),
+(1546, 139, '_button_2_button_link', 'field_539088ef0453e'),
+(1547, 139, 'button_2_button_border', '0'),
+(1548, 139, '_button_2_button_border', 'field_5392059e99e0f'),
+(1549, 139, 'button_3_button-image', '103'),
+(1550, 139, '_button_3_button-image', 'field_538dcc290e322'),
+(1551, 139, 'button_3_button_name', 'Helpful Links & Resources'),
+(1552, 139, '_button_3_button_name', 'field_538dcc560e323'),
+(1553, 139, 'button_3_button_blurb', 'List of Links & Resources'),
+(1554, 139, '_button_3_button_blurb', 'field_538dde9d6d8fc'),
+(1555, 139, 'button_3_button_link', '55'),
+(1556, 139, '_button_3_button_link', 'field_539088ef0453e'),
+(1557, 139, 'button_3_button_border', '1'),
+(1558, 139, '_button_3_button_border', 'field_5392059e99e0f'),
+(1559, 139, 'button_4_button-image', '104'),
+(1560, 139, '_button_4_button-image', 'field_538dcc290e322'),
+(1561, 139, 'button_4_button_name', 'Contact Us'),
+(1562, 139, '_button_4_button_name', 'field_538dcc560e323'),
+(1563, 139, 'button_4_button_blurb', 'Questions or App Feedback'),
+(1564, 139, '_button_4_button_blurb', 'field_538dde9d6d8fc'),
+(1565, 139, 'button_4_button_link', '53'),
+(1566, 139, '_button_4_button_link', 'field_539088ef0453e'),
+(1567, 139, 'button_4_button_border', '0'),
+(1568, 139, '_button_4_button_border', 'field_5392059e99e0f'),
+(1569, 139, 'button', '5'),
+(1570, 139, '_button', 'field_538dcc180e321'),
+(1571, 140, '_edit_lock', '1402086455:1'),
+(1572, 140, '_edit_last', '1'),
+(1573, 140, '_wp_page_template', 'default'),
+(1582, 143, '_menu_item_type', 'post_type'),
+(1583, 143, '_menu_item_menu_item_parent', '0'),
+(1584, 143, '_menu_item_object_id', '140'),
+(1585, 143, '_menu_item_object', 'page'),
+(1586, 143, '_menu_item_target', ''),
+(1587, 143, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(1588, 143, '_menu_item_xfn', ''),
+(1589, 143, '_menu_item_url', ''),
+(1590, 143, '_menu_item_orphaned', '1402086478'),
+(1591, 144, '_menu_item_type', 'post_type'),
+(1592, 144, '_menu_item_menu_item_parent', '57'),
+(1593, 144, '_menu_item_object_id', '55'),
+(1594, 144, '_menu_item_object', 'page'),
+(1595, 144, '_menu_item_target', ''),
+(1596, 144, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(1597, 144, '_menu_item_xfn', ''),
+(1598, 144, '_menu_item_url', ''),
+(1600, 145, '_menu_item_type', 'post_type'),
+(1601, 145, '_menu_item_menu_item_parent', '43'),
+(1602, 145, '_menu_item_object_id', '140'),
+(1603, 145, '_menu_item_object', 'page'),
+(1604, 145, '_menu_item_target', ''),
+(1605, 145, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(1606, 145, '_menu_item_xfn', ''),
+(1607, 145, '_menu_item_url', '');
 
 -- --------------------------------------------------------
 
@@ -1834,7 +1879,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=139 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=146 ;
 
 --
 -- Dumping data for table `wp_posts`
@@ -1849,7 +1894,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (8, 1, '2014-05-14 12:18:47', '2014-05-14 12:18:47', '', 'Testimonials', '', 'publish', 'closed', 'closed', '', 'acf_testimonials', '', '', '2014-05-14 12:33:19', '2014-05-14 12:33:19', '', 0, 'http://localhost/farming/?post_type=acf&#038;p=8', 0, 'acf', '', 0),
 (9, 1, '2014-05-14 12:19:35', '2014-05-14 12:19:35', '', 'Ecosystem Services', '', 'inherit', 'open', 'open', '', '6-revision-v1', '', '', '2014-05-14 12:19:35', '2014-05-14 12:19:35', '', 6, 'http://localhost/farming/?p=9', 0, 'revision', '', 0),
 (10, 1, '2014-05-14 12:33:38', '2014-05-14 12:33:38', '', 'Ecosystem Services', '', 'inherit', 'open', 'open', '', '6-revision-v1', '', '', '2014-05-14 12:33:38', '2014-05-14 12:33:38', '', 6, 'http://localhost/farming/?p=10', 0, 'revision', '', 0),
-(11, 1, '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2014-06-06 19:10:39', '2014-06-06 19:10:39', '', 0, 'http://localhost/farming/?page_id=11', 0, 'page', '', 0),
+(11, 1, '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2014-06-06 19:49:15', '2014-06-06 19:49:15', '', 0, 'http://localhost/farming/?page_id=11', 0, 'page', '', 0),
 (12, 1, '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-05-14 16:53:57', '2014-05-14 16:53:57', '', 11, 'http://localhost/farming/?p=12', 0, 'revision', '', 0),
 (14, 1, '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkdhbGxlcmllcyIsInJldHVybnMiOlsiaW1hZ2UiXSwiYWxpYXNlcyI6WyJnYWxsZXJ5IiwiaW1hZ2VzIiwiaW1hZ2UiXSwibmFtZSI6ImdhbGxlcmllcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 'Galleries', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkdhbGxlcmllcyIsInJldHVybnMiOlsiaW1hZ2UiXSwiYWxpYXNlcyI6WyJnYWxsZXJ5IiwiaW1hZ2VzIiwiaW1hZ2UiXSwibmFtZSI6ImdhbGxlcmllcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 0, 'http://localhost/farming/?p=14', 0, 'gal_display_source', '', 0),
 (15, 1, '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkFsYnVtcyIsInJldHVybnMiOlsiZ2FsbGVyeSIsImFsYnVtIl0sImFsaWFzZXMiOlsiYWxidW0iXSwibmFtZSI6ImFsYnVtcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 'Albums', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-14 22:37:20', '0000-00-00 00:00:00', 'eyJ0aXRsZSI6IkFsYnVtcyIsInJldHVybnMiOlsiZ2FsbGVyeSIsImFsYnVtIl0sImFsaWFzZXMiOlsiYWxidW0iXSwibmFtZSI6ImFsYnVtcyIsImlkX2ZpZWxkIjoiSUQiLCJoYXNfdmFyaWF0aW9ucyI6ZmFsc2UsInZhcmlhdGlvbiI6MH0=', 0, 'http://localhost/farming/?p=15', 0, 'gal_display_source', '', 0),
@@ -1878,8 +1923,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (39, 1, '2014-05-20 15:39:03', '2014-05-20 15:39:03', '', 'Wetlands', '', 'inherit', 'open', 'open', '', '38-revision-v1', '', '', '2014-05-20 15:39:03', '2014-05-20 15:39:03', '', 38, 'http://localhost/farming/?p=39', 0, 'revision', '', 0),
 (40, 1, '2014-05-20 15:39:31', '2014-05-20 15:39:31', '', 'Wetland Solutions', '', 'trash', 'open', 'closed', '', 'wetland-solutions', '', '', '2014-05-20 15:51:10', '2014-05-20 15:51:10', '', 0, 'http://localhost/farming/?page_id=40', 0, 'page', '', 0),
 (41, 1, '2014-05-20 15:39:31', '2014-05-20 15:39:31', '', 'Wetland Solutions', '', 'inherit', 'open', 'open', '', '40-revision-v1', '', '', '2014-05-20 15:39:31', '2014-05-20 15:39:31', '', 40, 'http://localhost/farming/?p=41', 0, 'revision', '', 0),
-(43, 1, '2014-05-20 15:48:42', '2014-05-20 15:48:42', ' ', '', '', 'publish', 'open', 'open', '', '43', '', '', '2014-06-05 17:52:21', '2014-06-05 17:52:21', '', 0, 'http://localhost/farming/?p=43', 1, 'nav_menu_item', '', 0),
-(44, 1, '2014-05-20 15:48:42', '2014-05-20 15:48:42', ' ', '', '', 'publish', 'open', 'open', '', '44', '', '', '2014-06-05 17:52:21', '2014-06-05 17:52:21', '', 0, 'http://localhost/farming/?p=44', 2, 'nav_menu_item', '', 0),
+(43, 1, '2014-05-20 15:48:42', '2014-05-20 15:48:42', ' ', '', '', 'publish', 'open', 'open', '', '43', '', '', '2014-06-06 20:28:48', '2014-06-06 20:28:48', '', 0, 'http://localhost/farming/?p=43', 1, 'nav_menu_item', '', 0),
 (46, 1, '2014-05-20 15:47:34', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:47:34', '0000-00-00 00:00:00', '', 38, 'http://localhost/farming/?p=46', 1, 'nav_menu_item', '', 0),
 (47, 1, '2014-05-20 15:47:40', '0000-00-00 00:00:00', '<p>Best Management Practice</p>\n', 'BMP''s', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:47:40', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=47', 1, 'nav_menu_item', '', 0),
 (49, 1, '2014-05-20 15:49:04', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:49:04', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=49', 1, 'nav_menu_item', '', 0),
@@ -1888,16 +1932,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (52, 1, '2014-05-20 15:50:12', '2014-05-20 15:50:12', '', 'Water Filtration', '', 'inherit', 'open', 'open', '', '50-revision-v1', '', '', '2014-05-20 15:50:12', '2014-05-20 15:50:12', '', 50, 'http://localhost/farming/?p=52', 0, 'revision', '', 0),
 (53, 1, '2014-05-20 15:50:26', '2014-05-20 15:50:26', '', 'Water Crossing', '', 'publish', 'open', 'open', '', 'water-crossing', '', '', '2014-05-20 15:50:26', '2014-05-20 15:50:26', '', 0, 'http://localhost/farming/?page_id=53', 0, 'page', '', 0),
 (54, 1, '2014-05-20 15:50:26', '2014-05-20 15:50:26', '', 'Water Crossing', '', 'inherit', 'open', 'open', '', '53-revision-v1', '', '', '2014-05-20 15:50:26', '2014-05-20 15:50:26', '', 53, 'http://localhost/farming/?p=54', 0, 'revision', '', 0),
-(55, 1, '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 'Riparian Area', '', 'publish', 'open', 'open', '', 'riparian-area', '', '', '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 0, 'http://localhost/farming/?page_id=55', 0, 'page', '', 0),
+(55, 1, '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 'Riparian Area', '', 'publish', 'open', 'closed', '', 'riparian-area', '', '', '2014-06-06 20:27:07', '2014-06-06 20:27:07', '', 6, 'http://localhost/farming/?page_id=55', 0, 'page', '', 0),
 (56, 1, '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 'Riparian Area', '', 'inherit', 'open', 'open', '', '55-revision-v1', '', '', '2014-05-20 15:51:20', '2014-05-20 15:51:20', '', 55, 'http://localhost/farming/?p=56', 0, 'revision', '', 0),
-(57, 1, '2014-05-20 15:52:43', '2014-05-20 15:52:43', ' ', '', '', 'publish', 'open', 'open', '', '57', '', '', '2014-06-05 17:52:21', '2014-06-05 17:52:21', '', 0, 'http://localhost/farming/?p=57', 5, 'nav_menu_item', '', 0),
-(59, 1, '2014-05-20 15:52:43', '2014-05-20 15:52:43', ' ', '', '', 'publish', 'open', 'open', '', '59', '', '', '2014-06-05 17:52:21', '2014-06-05 17:52:21', '', 0, 'http://localhost/farming/?p=59', 3, 'nav_menu_item', '', 0),
+(57, 1, '2014-05-20 15:52:43', '2014-05-20 15:52:43', ' ', '', '', 'publish', 'open', 'open', '', '57', '', '', '2014-06-06 20:28:48', '2014-06-06 20:28:48', '', 0, 'http://localhost/farming/?p=57', 3, 'nav_menu_item', '', 0),
 (60, 1, '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 'Bird Watching', '', 'publish', 'open', 'open', '', 'bird-watching-2', '', '', '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 0, 'http://localhost/farming/?page_id=60', 0, 'page', '', 0),
 (61, 1, '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 'Bird Watching', '', 'inherit', 'open', 'open', '', '60-revision-v1', '', '', '2014-05-20 15:54:19', '2014-05-20 15:54:19', '', 60, 'http://localhost/farming/?p=61', 0, 'revision', '', 0),
 (62, 1, '2014-05-20 15:54:30', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'open', 'open', '', '', '', '', '2014-05-20 15:54:30', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?p=62', 1, 'nav_menu_item', '', 0),
-(63, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '63', '', '', '2014-06-05 17:52:21', '2014-06-05 17:52:21', '', 0, 'http://localhost/farming/?p=63', 6, 'nav_menu_item', '', 0),
-(64, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '64', '', '', '2014-06-05 17:52:21', '2014-06-05 17:52:21', '', 0, 'http://localhost/farming/?p=64', 4, 'nav_menu_item', '', 0),
-(65, 1, '2014-05-20 15:55:44', '2014-05-20 15:55:44', ' ', '', '', 'publish', 'open', 'open', '', '65', '', '', '2014-06-05 17:52:21', '2014-06-05 17:52:21', '', 0, 'http://localhost/farming/?p=65', 7, 'nav_menu_item', '', 0),
 (66, 1, '2014-05-24 15:52:10', '2014-05-24 15:52:10', 'This is an example page. It''s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\r\n<blockquote>Hi there! I''m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin'' caught in the rain.)</blockquote>\r\n...or something like this:\r\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\r\nAs a new WordPress user, you should go to <a href="http://localhost/farming/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!', 'Helping Habitats', '', 'inherit', 'open', 'open', '', '2-revision-v1', '', '', '2014-05-24 15:52:10', '2014-05-24 15:52:10', '', 2, 'http://localhost/farming/?p=66', 0, 'revision', '', 0),
 (70, 1, '2014-05-24 16:05:04', '2014-05-24 16:05:04', '', 'logo', '', 'inherit', 'open', 'open', '', 'logo', '', '', '2014-05-24 16:05:04', '2014-05-24 16:05:04', '', 0, 'http://localhost/farming/wp-content/uploads/2014/05/logo.png', 0, 'attachment', 'image/png', 0),
 (71, 1, '2014-05-27 14:05:27', '2014-05-27 14:05:27', '<p style="color: #000000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum tincidunt urna, eget hendrerit est aliquet nec. Sed id fringilla lacus, porta ultricies erat. In ullamcorper purus ut orci adipiscing, nec placerat nunc condimentum. Curabitur mattis neque sit amet dolor venenatis porta. Nulla nec urna in lectus lobortis congue. Nullam semper justo metus, vitae bibendum elit sollicitudin ut. Ut non iaculis orci. Sed commodo egestas posuere.</p>\r\n<p style="color: #000000;">Nam sapien nisi, rhoncus ut tortor at, venenatis congue dui. Nunc fringilla non felis quis auctor. Vivamus vitae luctus mauris. Nulla mollis faucibus erat, ac volutpat mauris auctor ut. Etiam facilisis libero sit amet laoreet auctor. Morbi a congue lorem. Nulla id hendrerit mi. Nulla dapibus dictum mi, ut egestas velit mattis at. Duis vestibulum hendrerit lectus dapibus imperdiet. Quisque vehicula tellus vel dignissim aliquam. Cras at sem vel risus fringilla ornare. Nunc tortor metus, ultricies vitae dolor nec, tristique aliquet neque. Vestibulum tempus leo eu mauris viverra, a rutrum dolor porttitor. Donec tincidunt eros ut urna consectetur ornare.</p>', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-05-27 14:05:27', '2014-05-27 14:05:27', '', 11, 'http://localhost/farming/?p=71', 0, 'revision', '', 0),
@@ -1925,12 +1965,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (105, 1, '2014-06-05 14:33:50', '2014-06-05 14:33:50', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-06-05 14:33:50', '2014-06-05 14:33:50', '', 11, 'http://localhost/farming/?p=105', 0, 'revision', '', 0),
 (106, 1, '2014-06-05 15:14:46', '2014-06-05 15:14:46', '', 'Benefits to my farm', '', 'inherit', 'open', 'open', '', '6-revision-v1', '', '', '2014-06-05 15:14:46', '2014-06-05 15:14:46', '', 6, 'http://localhost/farming/?p=106', 0, 'revision', '', 0),
 (107, 1, '2014-06-05 15:22:17', '2014-06-05 15:22:17', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-06-05 15:22:17', '2014-06-05 15:22:17', '', 11, 'http://localhost/farming/?p=107', 0, 'revision', '', 0),
-(108, 1, '2014-06-05 15:35:01', '2014-06-05 15:35:01', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-06-05 15:35:01', '2014-06-05 15:35:01', '', 11, 'http://localhost/farming/?p=108', 0, 'revision', '', 0);
-INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
+(108, 1, '2014-06-05 15:35:01', '2014-06-05 15:35:01', '', 'Home', '', 'inherit', 'open', 'open', '', '11-revision-v1', '', '', '2014-06-05 15:35:01', '2014-06-05 15:35:01', '', 11, 'http://localhost/farming/?p=108', 0, 'revision', '', 0),
 (109, 1, '2014-06-05 19:13:14', '2014-06-05 19:13:14', '<div class="contact_form">\r\n\r\n\r\n<p class="contact_name one_half_first">\r\n    [text*  your-name placeholder "Your Name*" ] </p>\r\n\r\n<p class="contact_email one_half_last">\r\n    [email*  your-email placeholder "Your Email*"] </p>\r\n\r\n\r\n<p class="contact_type one_half_first">[select* menu-710 "Question or Concern? " "App Feedback"]</p>\r\n\r\n<p class="contact_subject one_half_last">\r\n    [text* your-subject placeholder "Subject"] </p>\r\n\r\n\r\n<p class="contact_message">\r\n    [textarea* your-message placeholder "Your Message"] </p>\r\n\r\n<p class="contact_submit">[submit "Send"]</p>\r\n\r\n</div>\n[your-subject]\n[your-name] <[your-email]>\nFrom: [your-name] <[your-email]>\r\nSubject: [your-subject]\r\n\r\nMessage Body:\r\n[your-message]\r\n\r\n--\r\nThis e-mail was sent from a contact form on Farmers Biodiversity App. (http://localhost/farming)\nCShocrylas@gmail.com\n\n\n\n\n[your-subject]\n[your-name] <[your-email]>\nMessage Body:\r\n[your-message]\r\n\r\n--\r\nThis e-mail was sent from a contact form on Farmers Biodiversity App. (http://localhost/farming)\n[your-email]\n\n\n\nYour message was sent successfully. Thanks.\nFailed to send your message. Please try later or contact the administrator by another method.\nValidation errors occurred. Please confirm the fields and submit it again.\nFailed to send your message. Please try later or contact the administrator by another method.\nPlease accept the terms to proceed.\nPlease fill the required field.\nYour entered code is incorrect.\nNumber format seems invalid.\nThis number is too small.\nThis number is too large.\nEmail address seems invalid.\nURL seems invalid.\nTelephone number seems invalid.\nYour answer is not correct.\nDate format seems invalid.\nThis date is too early.\nThis date is too late.\nFailed to upload file.\nThis file type is not allowed.\nThis file is too large.\nFailed to upload file. Error occurred.', 'Contact Us', '', 'publish', 'open', 'open', '', 'contact-form-1', '', '', '2014-06-05 20:15:50', '2014-06-05 20:15:50', '', 0, 'http://localhost/farming/?post_type=wpcf7_contact_form&#038;p=109', 0, 'wpcf7_contact_form', '', 0),
-(110, 1, '2014-06-05 19:16:09', '2014-06-05 19:16:09', '', 'Contact Us', '', 'publish', 'closed', 'closed', '', 'contact-us', '', '', '2014-06-05 20:24:43', '2014-06-05 20:24:43', '', 0, 'http://localhost/farming/?page_id=110', 0, 'page', '', 0),
+(110, 1, '2014-06-05 19:16:09', '2014-06-05 19:16:09', '', 'Contact Us', '', 'publish', 'closed', 'closed', '', 'contact-us', '', '', '2014-06-05 20:24:43', '2014-06-05 20:24:43', '', 0, 'http://localhost/farming/?page_id=110', 0, 'page', '', 0);
+INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (111, 1, '2014-06-05 19:14:34', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2014-06-05 19:14:34', '0000-00-00 00:00:00', '', 0, 'http://localhost/farming/?post_type=acf&p=111', 0, 'acf', '', 0),
-(112, 1, '2014-06-05 19:16:09', '2014-06-05 19:16:09', ' ', '', '', 'publish', 'open', 'open', '', '112', '', '', '2014-06-05 19:16:09', '2014-06-05 19:16:09', '', 0, 'http://localhost/farming/?p=112', 8, 'nav_menu_item', '', 0),
+(112, 1, '2014-06-05 19:16:09', '2014-06-05 19:16:09', ' ', '', '', 'publish', 'open', 'open', '', '112', '', '', '2014-06-06 20:28:48', '2014-06-06 20:28:48', '', 0, 'http://localhost/farming/?p=112', 5, 'nav_menu_item', '', 0),
 (113, 1, '2014-06-05 19:16:09', '2014-06-05 19:16:09', '', 'Contact Us', '', 'inherit', 'open', 'open', '', '110-revision-v1', '', '', '2014-06-05 19:16:09', '2014-06-05 19:16:09', '', 110, 'http://localhost/farming/?p=113', 0, 'revision', '', 0),
 (114, 1, '2014-06-05 19:17:06', '2014-06-05 19:17:06', '', 'Contact Page', '', 'publish', 'closed', 'closed', '', 'acf_contact-page', '', '', '2014-06-05 20:24:26', '2014-06-05 20:24:26', '', 0, 'http://localhost/farming/?post_type=acf&#038;p=114', 0, 'acf', '', 0),
 (115, 1, '2014-06-05 19:20:12', '2014-06-05 19:20:12', '', 'Contact Us', '', 'inherit', 'open', 'open', '', '110-revision-v1', '', '', '2014-06-05 19:20:12', '2014-06-05 19:20:12', '', 110, 'http://localhost/farming/?p=115', 0, 'revision', '', 0),
@@ -1956,7 +1996,13 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (135, 2, '2014-06-06 18:51:33', '2014-06-06 18:51:33', '', 'Home', '', 'inherit', 'closed', 'open', '', '11-revision-v1', '', '', '2014-06-06 18:51:33', '2014-06-06 18:51:33', '', 11, 'http://localhost/farming/?p=135', 0, 'revision', '', 0),
 (136, 2, '2014-06-06 18:53:52', '2014-06-06 18:53:52', '', 'Home', '', 'inherit', 'closed', 'open', '', '11-revision-v1', '', '', '2014-06-06 18:53:52', '2014-06-06 18:53:52', '', 11, 'http://localhost/farming/?p=136', 0, 'revision', '', 0),
 (137, 2, '2014-06-06 19:10:25', '2014-06-06 19:10:25', '', 'Home', '', 'inherit', 'closed', 'open', '', '11-revision-v1', '', '', '2014-06-06 19:10:25', '2014-06-06 19:10:25', '', 11, 'http://localhost/farming/?p=137', 0, 'revision', '', 0),
-(138, 2, '2014-06-06 19:10:39', '2014-06-06 19:10:39', '', 'Home', '', 'inherit', 'closed', 'open', '', '11-revision-v1', '', '', '2014-06-06 19:10:39', '2014-06-06 19:10:39', '', 11, 'http://localhost/farming/?p=138', 0, 'revision', '', 0);
+(138, 2, '2014-06-06 19:10:39', '2014-06-06 19:10:39', '', 'Home', '', 'inherit', 'closed', 'open', '', '11-revision-v1', '', '', '2014-06-06 19:10:39', '2014-06-06 19:10:39', '', 11, 'http://localhost/farming/?p=138', 0, 'revision', '', 0),
+(139, 1, '2014-06-06 19:49:15', '2014-06-06 19:49:15', '', 'Home', '', 'inherit', 'closed', 'open', '', '11-revision-v1', '', '', '2014-06-06 19:49:15', '2014-06-06 19:49:15', '', 11, 'http://localhost/farming/?p=139', 0, 'revision', '', 0),
+(140, 1, '2014-06-06 20:27:18', '2014-06-06 20:27:18', '', 'Riparian Fence', '', 'publish', 'closed', 'closed', '', 'riparian-fence', '', '', '2014-06-06 20:27:35', '2014-06-06 20:27:35', '', 2, 'http://localhost/farming/?page_id=140', 0, 'page', '', 0),
+(142, 1, '2014-06-06 20:27:18', '2014-06-06 20:27:18', '', 'Riparian Fence', '', 'inherit', 'closed', 'open', '', '140-revision-v1', '', '', '2014-06-06 20:27:18', '2014-06-06 20:27:18', '', 140, 'http://localhost/farming/?p=142', 0, 'revision', '', 0),
+(143, 1, '2014-06-06 20:27:58', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'open', '', '', '', '', '2014-06-06 20:27:58', '0000-00-00 00:00:00', '', 2, 'http://localhost/farming/?p=143', 1, 'nav_menu_item', '', 0),
+(144, 1, '2014-06-06 20:28:48', '2014-06-06 20:28:48', ' ', '', '', 'publish', 'closed', 'open', '', '144', '', '', '2014-06-06 20:28:48', '2014-06-06 20:28:48', '', 6, 'http://localhost/farming/?p=144', 4, 'nav_menu_item', '', 0),
+(145, 1, '2014-06-06 20:28:48', '2014-06-06 20:28:48', ' ', '', '', 'publish', 'closed', 'open', '', '145', '', '', '2014-06-06 20:28:48', '2014-06-06 20:28:48', '', 2, 'http://localhost/farming/?p=145', 2, 'nav_menu_item', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2006,13 +2052,10 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (1, 1, 0),
 (33, 2, 0),
 (43, 4, 0),
-(44, 4, 0),
 (57, 4, 0),
-(59, 4, 0),
-(63, 4, 0),
-(64, 4, 0),
-(65, 4, 0),
-(112, 4, 0);
+(112, 4, 0),
+(144, 4, 0),
+(145, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -2040,7 +2083,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (1, 1, 'category', '', 0, 1),
 (2, 2, 'post_format', '', 0, 0),
 (3, 3, 'category', 'Best Management Practice', 0, 0),
-(4, 4, 'nav_menu', '', 0, 8);
+(4, 4, 'nav_menu', '', 0, 5);
 
 -- --------------------------------------------------------
 
