@@ -34,8 +34,8 @@ get_header(); ?>
 			?>
 			
 		
-	<div class="container">
-          <h1>CSS Responsive Animated Accordion</h1>
+
+        
           <div class="accordion">
             <dl>
               <dt><a class="accordionTitle" href="#">First Accordion heading</a></dt>
@@ -55,7 +55,7 @@ get_header(); ?>
               </dd>
             </dl>
           </div>
-        </div>
+      
 
 	</div><!-- #primary -->
 </div><!-- #main-content -->
