@@ -4185,8 +4185,8 @@ a.post-thumbnail:hover {
 menu buttons styling
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
-.button_text_spacing { 
-	margin-top: 1em;
+.menu_button.button_border { 
+		margin-top: 3em;
 }
 
 .menu_button{
@@ -4247,7 +4247,7 @@ menu buttons styling
 	}
 }
 
-.menu_button:nth-last-child(2){
+.menu_button:nth-child(5){
 	background-color: #797CBB;
 
 	&:hover { 
@@ -4255,7 +4255,7 @@ menu buttons styling
 	}
 }
 
-.menu_button:last-child{
+.menu_button:nth-child(6){
 	background-color: #B11E38;
 	margin-bottom: 3em;
 
