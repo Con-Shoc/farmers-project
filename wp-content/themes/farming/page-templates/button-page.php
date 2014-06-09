@@ -57,13 +57,13 @@ get_header(); ?>
 		?>					
 
 						<h1 class="entry-title button_text_spacing"><?php echo the_sub_field('button_text_spacing');?></h1>
-							<div class='menu_button'>
+							<div class='menu_button' <?php echo 'style="background-color:';			the_sub_field('button_color');			echo ' ;" ';?>>
 
 						
 						<?php
 						// case where a border is not requested
 						} elseif (empty($button_text_spacing)) { ?>
-							<div class='menu_button'>
+							<div class='menu_button' <?php echo 'style="background-color:';			the_sub_field('button_color');			echo ' ;" ';?>>
 						<?php
 						}?>
 						<a class="menu_link" href="<?php the_sub_field('button_link'); ?>">
