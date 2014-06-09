@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Ecosystem Services
+ * Template Name: Content Page
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen
@@ -19,7 +19,7 @@ get_header(); ?>
 ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content button-page-margins" role="main">
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
@@ -34,6 +34,29 @@ get_header(); ?>
 			?>
 			
 		
+	<div class="container">
+          <h1>CSS Responsive Animated Accordion</h1>
+          <div class="accordion">
+            <dl>
+              <dt><a class="accordionTitle" href="#">First Accordion heading</a></dt>
+              <dd class="accordionItem accordionItemCollapsed">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                
+              </dd>
+              <dt><a href="#" class="accordionTitle">Second Accordion heading</a></dt>
+              <dd class="accordionItem accordionItemCollapsed">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+              </dd>
+              <dt><a href="#" class="accordionTitle">Third Accordion heading</a></dt>
+              <dd class="accordionItem accordionItemCollapsed">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
 	</div><!-- #primary -->
 </div><!-- #main-content -->
 
