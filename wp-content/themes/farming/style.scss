@@ -4247,7 +4247,7 @@ menu buttons styling
 	}
 }
 
-.menu_button:nth-child(5){
+.menu_button:nth-last-child(2){
 	background-color: #797CBB;
 
 	&:hover { 
@@ -4255,7 +4255,7 @@ menu buttons styling
 	}
 }
 
-.menu_button:nth-child(6){
+.menu_button:last-child{
 	background-color: #B11E38;
 	margin-bottom: 3em;
 
