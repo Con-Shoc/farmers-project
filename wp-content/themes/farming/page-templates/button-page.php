@@ -7,6 +7,7 @@
  * @since Twenty Fourteen 1.0
  */
 
+include(__DIR__.'/../colorFunction.php');
 get_header(); ?>
 
 <div id="main-content" class="main-content">
@@ -60,13 +61,21 @@ get_header(); ?>
 		?>					
 
 						<h1 class="entry-title button_text_spacing"><?php echo the_sub_field('button_text_spacing');?></h1>
+
 							<div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('button_color');	echo ' ;" ';?>>
+
+							<div class='menu_button' <?php echo 'style="background-color:';			the_sub_field('button_color');			echo ' ;" ';?> 		onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('button_color'); ?>'"> 
+
 
 						
 						<?php
 						// case where a border is not requested
 						} elseif (empty($button_text_spacing)) { ?>
+
 							<div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('button_color');	echo ' ;" ';?>>
+
+							<div class='menu_button' <?php echo 'style="background-color:';			the_sub_field('button_color');			echo ' ;" ';?> 		onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('button_color'); ?>'"> 
+
 						<?php
 						}?>
 						<a class="menu_link" href="<?php the_sub_field('button_link'); ?>">
