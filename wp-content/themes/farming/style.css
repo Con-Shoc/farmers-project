@@ -5059,8 +5059,8 @@ menu buttons styling
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 /* line 4188, style.scss */
-.menu_button.button_border {
-  margin-top: 3em;
+.button_text_spacing {
+  margin-top: 1em;
 }
 
 /* line 4192, style.scss */

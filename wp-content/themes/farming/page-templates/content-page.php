@@ -32,8 +32,7 @@ get_header(); ?>
 					}
 				endwhile;
 			?>
-			
-		
+
 
         
           <div class="accordion">

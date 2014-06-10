@@ -47,8 +47,11 @@ get_header(); ?>
 					// display the image for the button
 					$button_image = get_sub_field('button-image');
 
-					// get the boolean value of whether or not to create spacing between the buttons
+					// grabs text and adds spacing between the buttons
 					$button_text_spacing = get_sub_field('button_text_spacing');
+
+					
+
 
 					if(!empty($button_image)){
 
@@ -57,13 +60,13 @@ get_header(); ?>
 		?>					
 
 						<h1 class="entry-title button_text_spacing"><?php echo the_sub_field('button_text_spacing');?></h1>
-							<div class='menu_button' <?php echo 'style="background-color:';			the_sub_field('button_color');			echo ' ;" ';?>>
+							<div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('button_color');	echo ' ;" ';?>>
 
 						
 						<?php
 						// case where a border is not requested
 						} elseif (empty($button_text_spacing)) { ?>
-							<div class='menu_button' <?php echo 'style="background-color:';			the_sub_field('button_color');			echo ' ;" ';?>>
+							<div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('button_color');	echo ' ;" ';?>>
 						<?php
 						}?>
 						<a class="menu_link" href="<?php the_sub_field('button_link'); ?>">
