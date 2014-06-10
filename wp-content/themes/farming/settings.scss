@@ -16,6 +16,19 @@ $seagreen: #52be99;
 $purple: #797dbb;
 $red: #b21e38;
 
+// Custom Globals
+
+	.one_half_first {
+		width: 50%;
+		float: left;
+		clear: both;
+	}
+
+	.one_half_last { 
+		width: 50%;
+		float: right;
+	}
+// End of Custom Globals 
 
 
 section.site-width { 
@@ -68,16 +81,6 @@ section.site-width {
 
 
 // Contact Page Template 
-.one_half_first {
-	width: 50%;
-	float: left;
-	clear: both;
-}
-
-.one_half_last { 
-	width: 50%;
-	float: right;
-}
 
 .contact_form { 
 	.contact_name, .contact_email, .contact_subject, .contact_type, .contact_message, .contact_submit { 
