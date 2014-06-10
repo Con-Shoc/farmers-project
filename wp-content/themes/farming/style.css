@@ -165,32 +165,37 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 /* line 26, accordion-styling.scss */
 .accordion dd {
+  padding-top: 1em;
   font-size: 1em;
   line-height: 1.5em;
 }
 /* line 30, accordion-styling.scss */
 .accordion dd > p {
-  padding: 1em 2em 1em 2em;
+  padding: 0 2em;
+}
+/* line 33, accordion-styling.scss */
+.accordion dd > ul {
+  padding: 0 2em;
+}
+/* line 36, accordion-styling.scss */
+.accordion dd .accordionimage {
+  display: block;
+  margin: 0 auto;
 }
 
-/* line 35, accordion-styling.scss */
+/* line 42, accordion-styling.scss */
 .accordion {
   position: relative;
 }
 
-/* line 39, accordion-styling.scss */
+/* line 46, accordion-styling.scss */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 2em 0 2em 0;
 }
 
-/* line 44, accordion-styling.scss */
-.accordionTitle {
-  background-color: #48B749;
-  border-bottom: #3C963C;
-}
-/* line 47, accordion-styling.scss */
+/* line 53, accordion-styling.scss */
 .accordionTitle:before {
   content: "+";
   font-size: 1.5em;
@@ -201,31 +206,30 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   -o-transition: -o-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
-/* line 55, accordion-styling.scss */
+/* line 61, accordion-styling.scss */
 .accordionTitle:hover {
   background-color: #3C963C;
 }
 
-/* line 59, accordion-styling.scss */
+/* line 65, accordion-styling.scss */
 .accordionTitleActive {
-  background-color: #3C963C;
+  background-color: #027103 !important;
 }
-/* line 61, accordion-styling.scss */
+/* line 67, accordion-styling.scss */
 .accordionTitleActive:before {
   -webkit-transform: rotate(-225deg);
   -moz-transform: rotate(-225deg);
   transform: rotate(-225deg);
 }
 
-/* line 67, accordion-styling.scss */
+/* line 73, accordion-styling.scss */
 .accordionItem {
   height: auto;
   overflow: hidden;
 }
 @media all {
-  /* line 67, accordion-styling.scss */
+  /* line 73, accordion-styling.scss */
   .accordionItem {
-    max-height: 50em;
     -webkit-transition: max-height 1s;
     -moz-transition: max-height 1s;
     -o-transition: max-height 1s;
@@ -233,9 +237,8 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   }
 }
 @media screen and (min-width: 48em) {
-  /* line 67, accordion-styling.scss */
+  /* line 73, accordion-styling.scss */
   .accordionItem {
-    max-height: 15em;
     -webkit-transition: max-height 0.5s;
     -moz-transition: max-height 0.5s;
     -o-transition: max-height 0.5s;
@@ -243,12 +246,12 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   }
 }
 
-/* line 82, accordion-styling.scss */
+/* line 88, accordion-styling.scss */
 .accordionItemCollapsed {
   max-height: 0;
 }
 
-/* line 85, accordion-styling.scss */
+/* line 91, accordion-styling.scss */
 .animateIn {
   -webkit-animation-name: accordionIn;
   -webkit-animation-duration: 0.65s;
@@ -273,7 +276,7 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   animation-delay: 0s;
 }
 
-/* line 109, accordion-styling.scss */
+/* line 115, accordion-styling.scss */
 .animateOut {
   -webkit-animation-name: accordionOut;
   -webkit-animation-duration: 0.75s;
@@ -299,13 +302,13 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @-webkit-keyframes accordionIn {
-  /* line 134, accordion-styling.scss */
+  /* line 140, accordion-styling.scss */
   0% {
     opacity: 0;
     -webkit-transform: scale(0.8);
   }
 
-  /* line 140, accordion-styling.scss */
+  /* line 146, accordion-styling.scss */
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -313,13 +316,13 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @-moz-keyframes accordionIn {
-  /* line 147, accordion-styling.scss */
+  /* line 153, accordion-styling.scss */
   0% {
     opacity: 0;
     -moz-transform: scale(0.8);
   }
 
-  /* line 153, accordion-styling.scss */
+  /* line 159, accordion-styling.scss */
   100% {
     opacity: 1;
     -moz-transform: scale(1);
@@ -327,13 +330,13 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @keyframes accordionIn {
-  /* line 160, accordion-styling.scss */
+  /* line 166, accordion-styling.scss */
   0% {
     opacity: 0;
     transform: scale(0.8);
   }
 
-  /* line 165, accordion-styling.scss */
+  /* line 171, accordion-styling.scss */
   100% {
     opacity: 1;
     transform: scale(1);
@@ -341,13 +344,13 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @-webkit-keyframes accordionOut {
-  /* line 171, accordion-styling.scss */
+  /* line 177, accordion-styling.scss */
   0% {
     opacity: 1;
     -webkit-transform: scale(1);
   }
 
-  /* line 177, accordion-styling.scss */
+  /* line 183, accordion-styling.scss */
   100% {
     opacity: 0;
     -webkit-transform: scale(0.8);
@@ -355,13 +358,13 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @-moz-keyframes accordionOut {
-  /* line 184, accordion-styling.scss */
+  /* line 190, accordion-styling.scss */
   0% {
     opacity: 1;
     -moz-transform: scale(1);
   }
 
-  /* line 190, accordion-styling.scss */
+  /* line 196, accordion-styling.scss */
   100% {
     opacity: 0;
     -moz-transform: scale(0.8);
@@ -369,13 +372,13 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @keyframes accordionOut {
-  /* line 197, accordion-styling.scss */
+  /* line 203, accordion-styling.scss */
   0% {
     opacity: 1;
     transform: scale(1);
   }
 
-  /* line 203, accordion-styling.scss */
+  /* line 209, accordion-styling.scss */
   100% {
     opacity: 0;
     transform: scale(0.8);

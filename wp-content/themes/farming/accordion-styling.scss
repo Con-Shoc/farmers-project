@@ -24,11 +24,18 @@
         }
       }
     dd {
-        // background-color:#eee;
+        padding-top: 1em;
         font-size:1em;
         line-height:1.5em;
         >p {
-          padding:1em 2em 1em 2em;
+          padding: 0 2em;
+        }
+        >ul { 
+          padding: 0 2em;
+        }
+        .accordionimage { 
+          display: block;
+          margin: 0 auto;
         }
     }
 }
@@ -42,8 +49,7 @@
   padding:2em 0 2em 0;
 }
 .accordionTitle {
- background-color: #48B749; 
-  border-bottom:#3C963C;
+ // background-color: #48B749; 
   &:before {
    content: "+";
 
@@ -57,7 +63,7 @@
   }
 }
 .accordionTitleActive {
-   background-color: #3C963C;
+   background-color: #027103 !important;
     &:before {
        -webkit-transform:rotate(-225deg);
       -moz-transform:rotate(-225deg);
@@ -69,11 +75,11 @@
     overflow:hidden; 
     //SHAME: magic number to allow the accordion to animate
     @media all {
-        max-height:50em;
+        // max-height:50em;
         @include transition(max-height 1s);
     }
     @media screen and (min-width:48em) {
-         max-height:15em;
+         // max-height:15em;
          @include transition(max-height 0.5s);
     }
     

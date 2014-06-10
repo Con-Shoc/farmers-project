@@ -6,7 +6,7 @@
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
-
+include(__DIR__.'/../colorFunction.php');
 get_header(); ?>
 
 <div id="main-content" class="main-content">
@@ -35,26 +35,37 @@ get_header(); ?>
 			
 		
 
-        
-          <div class="accordion">
+        <div class="accordion">
             <dl>
-              <dt><a class="accordionTitle" href="#">First Accordion heading</a></dt>
+            	<?php
+            	// read the accordion section field
+            if( have_rows('accordion_section') ):
+
+			 	// loop through the rows of data
+			    while ( have_rows('accordion_section') ) : the_row();
+
+				// read sub fields into variables
+				$accordion_title = get_sub_field('accordion_title');
+				$accordion_content = get_sub_field('accordion_content');
+
+				$accordion_content_image = get_sub_field('accordion_content_image');
+        ?>
+              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_color'); ?>'" href="#"><?php echo $accordion_title ?></a></dt>
+
               <dd class="accordionItem accordionItemCollapsed">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <?php echo $accordion_content ?>
+                <?php if($accordion_content_image != ''): ?>
+                	<img class="accordionimage" src="<?php echo $accordion_content_image['url']; ?>" alt="<?php echo $accordion_content_image['alt']; ?>" />
+                <?php endif; ?>
                 
               </dd>
-              <dt><a href="#" class="accordionTitle">Second Accordion heading</a></dt>
-              <dd class="accordionItem accordionItemCollapsed">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
-                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
-              </dd>
-              <dt><a href="#" class="accordionTitle">Third Accordion heading</a></dt>
-              <dd class="accordionItem accordionItemCollapsed">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
-                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
-              </dd>
+              <?php
+          endwhile;
+
+          endif; ?>
             </dl>
           </div>
+      
       
 
 	</div><!-- #primary -->

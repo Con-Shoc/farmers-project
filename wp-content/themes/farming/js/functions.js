@@ -132,7 +132,7 @@
 } )( jQuery );
 
 
-												// Accordion JS 
+// Accordion JS 
 
 
 /*!
@@ -268,4 +268,4 @@ accordion.addEventListener("click",function(e) {
 });
 
 
-								// End Accordion JS
+// End Accordion JS
