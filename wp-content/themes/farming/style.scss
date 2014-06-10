@@ -82,7 +82,7 @@ h5,
 h6 {
 	clear: both;
 	font-weight: 700;
-	margin: 36px 0 12px;
+	// margin: 36px 0 12px;
 }
 
 h1 {
@@ -1040,8 +1040,7 @@ a.post-thumbnail:hover {
 	font-weight: 600;
 	line-height: 1.0909090909;
 	text-align: center;
-	margin-bottom: 12px;
-	margin: 0 0 12px 0;
+	margin-bottom: 1em;
 	// text-transform: uppercase;
 }
 
@@ -4185,8 +4184,8 @@ a.post-thumbnail:hover {
 menu buttons styling
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
-.button_text_spacing { 
-		margin-top: 1em;
+.menu_button.button_border { 
+		margin-top: 3em;
 }
 
 .menu_button{
@@ -4219,7 +4218,6 @@ menu buttons styling
 		color: #fff;
 		
 	}
-
 }
 
 // .menu_button:nth-child(2){

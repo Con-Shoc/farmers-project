@@ -3,13 +3,13 @@
 
 // a function that will convert a hex color to a darker rgb
 	function hex2rgbDark($hex) {
-   $hex = str_replace("#", "", $hex);
+      $hex = str_replace("#", "", $hex);
 
-   if(strlen($hex) == 3) {
-      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
-      
+      if(strlen($hex) == 3) {
+         $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+         $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+         $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+         
 
    } else {
       $r = hexdec(substr($hex,0,2));
