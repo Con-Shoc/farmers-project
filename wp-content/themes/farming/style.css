@@ -206,15 +206,7 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   -o-transition: -o-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
-/* line 61, accordion-styling.scss */
-.accordionTitle:hover {
-  background-color: #3C963C;
-}
 
-/* line 65, accordion-styling.scss */
-.accordionTitleActive {
-  background-color: #027103 !important;
-}
 /* line 67, accordion-styling.scss */
 .accordionTitleActive:before {
   -webkit-transform: rotate(-225deg);
