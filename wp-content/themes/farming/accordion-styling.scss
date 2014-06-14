@@ -59,11 +59,11 @@
    @include transition(transform 0.3s ease-in-out);
   }
   &:hover {
-    background-color:#3C963C;
+    // background-color:#3C963C;
   }
 }
 .accordionTitleActive {
-   background-color: #027103 !important;
+   // background-color: #027103 !important;
     &:before {
        -webkit-transform:rotate(-225deg);
       -moz-transform:rotate(-225deg);

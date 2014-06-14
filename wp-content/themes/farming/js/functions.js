@@ -229,7 +229,7 @@ var accordion = $('.accordion');
 //add event listener to all anchor tags with accordion title class
 accordion.addEventListener("click",function(e) {
   e.stopPropagation();
-  e.preventDefault();
+  //e.preventDefault();
   if(e.target && e.target.nodeName == "A") {
     var classes = e.target.className.split(" ");
     if(classes) {

@@ -57,6 +57,50 @@ get_header(); ?>
                 <?php if($accordion_content_image != ''): ?>
                 	<img class="accordionimage" src="<?php echo $accordion_content_image['url']; ?>" alt="<?php echo $accordion_content_image['alt']; ?>" />
                 <?php endif; ?>
+
+
+
+                				<!-- sub repeater loop for buttons within accordions -->
+						                <?php
+
+						                if( have_rows('accordion_button') ):
+
+						                	?>
+						                <?php
+						                while( have_rows('accordion_button') ): the_row();
+						                $accordion_button_image = get_sub_field('accordion_button_image');
+						                ?>
+
+
+						                <div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('accordion_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_button_color'); ?>'">
+						                
+						                	<a class="menu_link" href="<?php the_sub_field('accordion_button_link'); ?>">
+						                		<img class="button_image" src="<?php echo $accordion_button_image['url']; ?>" alt="<?php echo $accordion_button_image['alt']; ?>" />
+						                			
+						                			<div class="button_text">
+						                				<!-- display a sub field value -->
+											        	<p class="button_name">
+											        	<?php the_sub_field('accordion_button_name'); ?>
+											        	</p>
+
+											        	</br>
+
+											        	<p class="button_blurb">
+											       		<?php the_sub_field('accordion_button_blurb'); ?> 
+											       		</p>
+						                			</div>
+						                	</a>
+
+						           		 </div>
+
+
+						                <?php
+						                endwhile;
+						                endif;
+						               ?>
+
+
+
                 
               </dd>
               <?php
