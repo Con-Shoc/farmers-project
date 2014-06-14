@@ -50,7 +50,7 @@ get_header(); ?>
 
 				$accordion_content_image = get_sub_field('accordion_content_image');
         ?>
-              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_color'); ?>'" href="#"><?php echo $accordion_title ?></a></dt>
+              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_color'); ?>'" ><?php echo $accordion_title ?></a></dt>
 
               <dd class="accordionItem accordionItemCollapsed">
                 <?php echo $accordion_content ?>
