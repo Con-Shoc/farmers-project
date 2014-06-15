@@ -51,7 +51,7 @@ get_header(); ?>
 					// get the boolean value of whether or not to create spacing between the buttons
 					$button_text_spacing = get_sub_field('button_text_spacing');
 
-					if(!empty($button_image)){
+					
 
 						// case where a border is requested
 						if($button_text_spacing) {
@@ -68,12 +68,25 @@ get_header(); ?>
 						<?php
 						}?>
 						<a class="menu_link" href="<?php the_sub_field('button_link'); ?>">
-			
-						<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
+						
+						<?php 
+						                		if(empty($button_image)){
+						                		?>
+						                		<img class="button_image" src="./wp-content/themes/farming/images/blank.png" alt="<?php echo 'no image'; ?>" />
+						                		<?php
+						                		}
+
+
+						                		else{
+						                		?>
+						                		<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
+						                		<?php } ?>	
+
+						
 
 					<?php 
 
-					}?>
+					?>
 						
 						<div class="button_text">
 				         <!-- display a sub field value -->

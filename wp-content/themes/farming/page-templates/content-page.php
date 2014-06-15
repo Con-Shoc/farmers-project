@@ -69,14 +69,26 @@ get_header(); ?>
 						                <?php
 						                while( have_rows('accordion_button') ): the_row();
 						                $accordion_button_image = get_sub_field('accordion_button_image');
+						                $blankImage=__DIR__.'/../images/blank.png';
 						                ?>
 
 
 						                <div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('accordion_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_button_color'); ?>'">
 						                
 						                	<a class="menu_link" href="<?php the_sub_field('accordion_button_link'); ?>">
+						                		
+						                		<?php 
+						                		if(empty($accordion_button_image)){
+						                		?>
+						                		<img class="button_image" src="./wp-content/themes/farming/images/blank.png" alt="<?php echo 'no image'; ?>" />
+						                		<?php
+						                		}
+
+
+						                		else{
+						                		?>
 						                		<img class="button_image" src="<?php echo $accordion_button_image['url']; ?>" alt="<?php echo $accordion_button_image['alt']; ?>" />
-						                			
+						                		<?php } ?>	
 						                			<div class="button_text">
 						                				<!-- display a sub field value -->
 											        	<p class="button_name">
