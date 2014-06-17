@@ -47,7 +47,7 @@
 		<div class="header-main">
 			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img class="logo" src="http://localhost/farming/wp-content/uploads/2014/05/logo.png"/>
+					<img class="logo" src="http://localhost/farming/wp-content/uploads/2014/06/logo-1.png"/>
 				</a>
 			</h1>
 

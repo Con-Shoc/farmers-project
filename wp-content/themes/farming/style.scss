@@ -888,7 +888,8 @@ span + .edit-link:before,
 }
 
 .site-navigation a:hover {
-	color: #41a62a;
+	color: #0C1DE8;
+	// font-weight: 700;
 }
 
 .site-navigation .current_page_item > a,
@@ -1220,7 +1221,7 @@ a.post-thumbnail:hover {
 .entry-summary a,
 .page-content a,
 .comment-content a {
-	text-decoration: underline;
+	// text-decoration: underline;
 }
 
 .entry-content a:hover,
