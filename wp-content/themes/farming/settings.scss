@@ -46,12 +46,13 @@ section.site-width {
 
 	.logo { 
 		padding: 1em 0;
-		max-width: 75%;
+		max-width: 90%;
 	}
 	
 	.menu-toggle{ 
 		background: none;
-		margin-top: 10px;
+		width: 48px !important;
+		margin-top: 15px;
 	}
 
 	.search-toggle { 
@@ -158,7 +159,10 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @media all and (max-width: 699px) { 
-
+	.logo { 
+		padding: 1em 0;
+		max-width: 70% !important;
+	}
 	.site-content.button-page-margins {
 		margin: 0 10px;
 	}
@@ -171,7 +175,9 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 			padding-right: 2em;
 		}
 	}
-	
+	.menu-toggle { 
+		margin-top: 10px !important;
+	}
 	.contact_form { 
 		.contact_name, .contact_email, .contact_subject { 
 			input { 

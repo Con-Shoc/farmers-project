@@ -36,65 +36,66 @@ section.site-width .site-header {
 /* line 47, settings.scss */
 section.site-width .logo {
   padding: 1em 0;
-  max-width: 75%;
+  max-width: 90%;
 }
 /* line 52, settings.scss */
 section.site-width .menu-toggle {
   background: none;
-  margin-top: 10px;
+  width: 48px !important;
+  margin-top: 15px;
 }
-/* line 57, settings.scss */
+/* line 58, settings.scss */
 section.site-width .search-toggle {
   display: none;
 }
 
-/* line 65, settings.scss */
+/* line 66, settings.scss */
 .primary-navigation ul ul li:hover > ul,
 .primary-navigation ul ul li.focus > ul {
   top: 3.5em;
 }
 
-/* line 71, settings.scss */
+/* line 72, settings.scss */
 .breadcrumbs {
   padding-top: 5px;
   text-align: center;
   font-style: italic;
   color: #299546;
 }
-/* line 76, settings.scss */
+/* line 77, settings.scss */
 .breadcrumbs a.post.post-page.current-item {
   font-weight: 700;
 }
 
-/* line 86, settings.scss */
+/* line 87, settings.scss */
 .contact_form .contact_name, .contact_form .contact_email, .contact_form .contact_subject, .contact_form .contact_type, .contact_form .contact_message, .contact_form .contact_submit {
   text-align: center;
 }
-/* line 88, settings.scss */
+/* line 89, settings.scss */
 .contact_form .contact_name input, .contact_form .contact_email input, .contact_form .contact_subject input, .contact_form .contact_type input, .contact_form .contact_message input, .contact_form .contact_submit input {
   font-weight: 700;
   max-width: 300px;
   border-radius: 0;
 }
-/* line 95, settings.scss */
+/* line 96, settings.scss */
 .contact_form .contact_type select {
   border-color: #e5e5e5;
   padding: .5em;
   font-weight: 700;
   color: #939393;
 }
-/* line 105, settings.scss */
+/* line 106, settings.scss */
 .contact_form .contact_submit input {
   background: #299546;
   transition: all .5s ease;
 }
 
-/* line 113, settings.scss */
+/* line 114, settings.scss */
 select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required {
   width: 300px;
 }
 
-/* line 117, settings.scss */
+/* line 118, settings.scss */
 textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
   font-family: "Open Sans", Helvetica;
   max-width: 700px;
@@ -102,27 +103,27 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 @media all and (min-width: 699px) {
-  /* line 133, settings.scss */
+  /* line 134, settings.scss */
   .menu_button {
     width: 70%;
     height: 100%;
   }
-  /* line 137, settings.scss */
+  /* line 138, settings.scss */
   .menu_button .button_text {
     padding-left: 3em;
   }
-  /* line 141, settings.scss */
+  /* line 142, settings.scss */
   .menu_button img {
     padding: .5em;
   }
 
-  /* line 147, settings.scss */
+  /* line 148, settings.scss */
   .site-content.button-page-margins {
     margin: 0 100px;
   }
 }
 @media all and (max-width: 997px) {
-  /* line 154, settings.scss */
+  /* line 155, settings.scss */
   .primary-navigation .menu-toggle {
     display: block;
     padding: 0;
@@ -130,32 +131,43 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 @media all and (max-width: 699px) {
   /* line 162, settings.scss */
+  .logo {
+    padding: 1em 0;
+    max-width: 70% !important;
+  }
+
+  /* line 166, settings.scss */
   .site-content.button-page-margins {
     margin: 0 10px;
   }
 
-  /* line 166, settings.scss */
+  /* line 170, settings.scss */
   .menu_button {
     width: 100%;
     height: 100%;
   }
-  /* line 169, settings.scss */
+  /* line 173, settings.scss */
   .menu_button .button_text {
     padding-left: 5em;
     padding-right: 2em;
   }
 
-  /* line 177, settings.scss */
+  /* line 178, settings.scss */
+  .menu-toggle {
+    margin-top: 10px !important;
+  }
+
+  /* line 183, settings.scss */
   .contact_form .contact_name input, .contact_form .contact_email input, .contact_form .contact_subject input {
     max-width: 200px;
   }
 
-  /* line 184, settings.scss */
+  /* line 190, settings.scss */
   select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required {
     width: 200px;
   }
 
-  /* line 188, settings.scss */
+  /* line 194, settings.scss */
   textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
     max-width: 525px;
   }
