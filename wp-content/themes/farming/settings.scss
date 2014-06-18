@@ -150,7 +150,15 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 	}
 }
 
+@media all and (max-width: 997px) { 
+	.primary-navigation .menu-toggle {
+		display: block;
+		padding: 0;
+	}
+}
+
 @media all and (max-width: 699px) { 
+
 	.site-content.button-page-margins {
 		margin: 0 10px;
 	}
