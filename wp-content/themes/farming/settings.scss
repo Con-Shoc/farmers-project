@@ -18,6 +18,10 @@ $red: #b21e38;
 
 // Custom Globals
 
+	a { 
+		text-decoration: none !important;
+	}
+
 	.one_half_first {
 		width: 50%;
 		float: left;
@@ -27,6 +31,16 @@ $red: #b21e38;
 	.one_half_last { 
 		width: 50%;
 		float: right;
+	}
+
+	tr { 
+	 &:first-child { 
+		background: #2FB34B;
+		color: #fff;
+	 }
+	 &:nth-child(even) { 
+		background: #DEEAF6;
+	 }
 	}
 // End of Custom Globals 
 
@@ -61,25 +75,42 @@ section.site-width {
 
 }
 
-// Navigation Menu
-	.primary-navigation ul ul li:hover > ul,
-	.primary-navigation ul ul li.focus > ul {
-		top: 3.5em;
-	}
-	.current_page_item {
-	font-weight: 700;
-	}
-// Breadcrumbs 
 
-.breadcrumbs {
-	padding-top: 5px;
-	text-align: center;
-	font-style: italic;
-	color: #299546;
-		a.post.post-page.current-item { 
+// Menu Button Page Template
+
+.button_text_spacing { 
+		margin-top: 1em;
+		margin-bottom: 1em;
+}
+
+.menu_button{
+	margin:auto;
+	margin-bottom: 1em;
+	transition: all .5s ease;
+	.button_text {
+		.button_name { 
+			margin-top: -4em;
+			text-align: center;
+			font-size: 16px;
 			font-weight: 700;
 		}
+		.button_blurb { 
+			margin-top: -3em;
+			font-weight: 600;
+			text-align: center;
+			font-style: italic;
+		}
+
+	}	
+	a { 
+		color: #fff;	
+		&:hover { 
+			color: #fff;
+		}
 	}
+}
+
+
 
 
 
@@ -127,76 +158,12 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 // End of Contact Page CSS
 
 
-
-
-// CUSTOM MEDIA QUERIES
-
-@media all and (min-width: 699px) { 
-
-	.menu_button { 
-		width:70%;
-		height: 100%;
-
-		.button_text { 
-			padding-left: 3em;
-		}
-
-		img { 
-			padding: .5em;
-		}
-		
-	}
-
-	.site-content.button-page-margins {
-		margin: 0 100px;
-
-	}
+//  Resources & Links Page CSS
+.panel, .panel-default{
+	margin:auto;
+	width:60%;	
 }
 
-@media all and (max-width: 997px) { 
-	.primary-navigation .menu-toggle {
-		display: block;
-		padding: 0;
-	}
-}
 
-@media all and (max-width: 699px) { 
-	.logo { 
-		padding: 1em 0;
-		max-width: 70% !important;
-	}
-	.site-content.button-page-margins {
-		margin: 0 10px;
-	}
-
-	.menu_button{
-		width: 100%;
-		height: 100%;
-		.button_text {
-			padding-left: 5em;
-			padding-right: 2em;
-		}
-	}
-	.menu-toggle { 
-		margin-top: 10px !important;
-	}
-	.contact_form { 
-		.contact_name, .contact_email, .contact_subject { 
-			input { 
-				max-width: 200px;
-			}
-
-		}
-	}
-
-	select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required { 
-		width: 200px;
-	}
-	
-	textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required { 
-		max-width: 525px;
-	}
-
-}
-
+//  End of Resources & Links Page CSS
 

@@ -55,6 +55,8 @@ get_header(); ?>
               <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_color'); ?>'" ><?php echo $section_title ?></a></dt>
 
               <dd class="accordionItem accordionItemCollapsed">
+                
+                <div class="row">
                 <?php 
 
                 	// Read link repeater fields
@@ -70,16 +72,40 @@ get_header(); ?>
 					$link_description = get_sub_field('link_description');
 
                  ?>
+                 
+
+                 	<div class="col-lg-6">
+
+		                 <div class="panel panel-success">
+						  <div class="panel-heading">
+						    <h3 class="panel-title"> <a class="link_title" href='<?php echo $link_address ?>'><?php echo $link_title ?></a></h3>
+						  </div>
+						  <div class="panel-body">
+						    <?php echo $link_description;?>
+						  </div>
+						</div>
+			
 
 
-                 <a class="link_title" href='<?php echo $link_address ?>'><?php echo $link_title ?></a> <?php echo $link_description ?>
+
+
+
+
+
+			</div>
+                 
+             	 <?php
+             	 endwhile;
+			endif;
+			?>
+		</div>
+
 
                 
               </dd>
               <?php
 
-          endwhile;
-			endif;
+          
           endwhile;
           endif; ?>
             </dl>

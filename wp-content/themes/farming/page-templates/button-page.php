@@ -68,7 +68,7 @@ get_header(); ?>
 						<?php 
 						                		if(empty($button_image)){
 						                		?>
-						                		<img class="button_image" src="./wp-content/themes/farming/images/blank.png" alt="<?php echo 'no image'; ?>" />
+						                		<img class="button_image" src="./wp-content/themes/farming/images/default-button-image.png" alt="<?php echo 'no image'; ?>" />
 						                		<?php
 						                		}
 

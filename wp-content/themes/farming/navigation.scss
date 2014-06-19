@@ -9,6 +9,19 @@
 
 
 
+// Breadcrumbs 
+
+.breadcrumbs {
+	padding-top: 5px;
+	text-align: center;
+	font-style: italic;
+	color: #299546;
+		a.post.post-page.current-item { 
+			font-weight: 700;
+		}
+	}
+
+
 /**
  * 5.0 Navigation
  * -----------------------------------------------------------------------------
