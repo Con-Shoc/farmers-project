@@ -70,31 +70,20 @@ get_header(); ?>
 						                ?>
 
 
-						                <div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('accordion_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_button_color'); ?>'">
+						                <div class='accordion_button' <?php echo 'style="background-color:';	the_sub_field('accordion_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_button_color'); ?>'">
 						                
-						                	<a class="menu_link" href="<?php the_sub_field('accordion_button_link'); ?>">
+						                	<a class="accordion_link" href="<?php the_sub_field('accordion_button_link'); ?>">
 						                		
-						                		<?php 
-						                		if(empty($accordion_button_image)){
-						                		?>
-						                		<img class="button_image" src="./wp-content/themes/farming/images/blank.png" alt="<?php echo 'no image'; ?>" />
-						                		<?php
-						                		}
-
-
-						                		else{
-						                		?>
-						                		<img class="button_image" src="<?php echo $accordion_button_image['url']; ?>" alt="<?php echo $accordion_button_image['alt']; ?>" />
-						                		<?php } ?>	
-						                			<div class="button_text">
+						           
+						                			<div class="accordion_button_text">
 						                				<!-- display a sub field value -->
-											        	<p class="button_name">
+											        	<p class="accordion_button_name">
 											        	<?php the_sub_field('accordion_button_name'); ?>
 											        	</p>
 
 											        	</br>
 
-											        	<p class="button_blurb">
+											        	<p class="accordion_button_blurb">
 											       		<?php the_sub_field('accordion_button_blurb'); ?> 
 											       		</p>
 						                			</div>
