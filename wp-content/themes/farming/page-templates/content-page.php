@@ -106,8 +106,90 @@ get_header(); ?>
 						                <?php
 						                endwhile;
 						                endif;
-						               ?>
+											?>
+						                <div class="accordion">
+            							<dl>
+            							<?php
+            							// Start nested accordion, almost identical to parent accordion
+						                if( have_rows('nested_accordion') ):
 
+
+						                	while (have_rows('nested_accordion')): the_row();
+
+						                		// read sub fields into variables
+												$nested_accordion_title = get_sub_field('nested_accordion_title');
+												$nested_accordion_content = get_sub_field('nested_accordion_content');
+
+												$nested_accordion_image = get_sub_field('nested_accordion_image');
+								        ?>
+								              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('nested_accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('nested_accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('nested_accordion_color'); ?>'" ><?php echo $nested_accordion_title ?></a></dt>
+
+								              <dd class="accordionItem accordionItemCollapsed">
+								                <?php echo $nested_accordion_content ?>
+								                <?php if($nested_accordion_image != ''): ?>
+								                	<img class="accordionimage" src="<?php echo $nested_accordion_image['url']; ?>" alt="<?php echo $nested_accordion_image['alt']; ?>" />
+								                <?php endif; ?>
+
+
+
+								                				<!-- sub repeater loop for buttons within accordions -->
+														                <?php
+
+														                if( have_rows('nested_accordion_button') ):
+
+														                	?>
+														                <?php
+														                while( have_rows('nested_accordion_button') ): the_row();
+														                $nested_button_image = get_sub_field('nested_button_image');
+														                $blankImage=__DIR__.'/../images/blank.png';
+														                ?>
+
+
+														                <div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('nested_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('nested_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('nested_button_color'); ?>'">
+														                
+														                	<a class="menu_link" href="<?php the_sub_field('nested_button_link'); ?>">
+														                		
+														                		<?php 
+														                		if(empty($nested_button_image)){
+														                		?>
+														                		<img class="button_image" src="./wp-content/themes/farming/images/blank.png" alt="<?php echo 'no image'; ?>" />
+														                		<?php
+														                		}
+
+
+														                		else{
+														                		?>
+														                		<img class="button_image" src="<?php echo $nested_button_image['url']; ?>" alt="<?php echo $nested_button_image['alt']; ?>" />
+														                		<?php } ?>	
+														                			<div class="button_text">
+														                				<!-- display a sub field value -->
+																			        	<p class="button_name">
+																			        	<?php the_sub_field('nested_button_name'); ?>
+																			        	</p>
+
+																			        	</br>
+
+																			        	<p class="button_blurb">
+																			       		<?php the_sub_field('nested_button_blurb'); ?> 
+																			       		</p>
+														                			</div>
+														                	</a>
+
+														           		 </div>
+
+										           		 <?php
+										                endwhile;
+										                endif;
+
+										               ?>
+
+						              </dd>
+						              <?php
+						          endwhile;
+
+						          endif; ?>
+						            </dl>
+						          </div>
 
 
                 
