@@ -23,6 +23,16 @@
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 
+
+
+
+
+	
+		 <script src="<?php bloginfo('template_directory'); ?>/js/jquery-2.1.1.js"></script>
+		 <script src="<?php bloginfo('template_directory'); ?>/js/bootstrap.js"></script>
+
+
+
 	<?php wp_footer(); ?>
 </body>
 </html>

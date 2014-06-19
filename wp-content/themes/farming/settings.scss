@@ -28,16 +28,6 @@ $red: #b21e38;
 		width: 50%;
 		float: right;
 	}
-
-	tr { 
-		&:first-child { 
-			background: #2FB34B;
-			color: #fff;
-		}
-		&:nth-child(even) {
-			background: #DEEAF6;
-		}
-	}	
 // End of Custom Globals 
 
 
