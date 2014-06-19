@@ -24,6 +24,7 @@ get_header(); ?>
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
 					// Include the page content template.
+
 					get_template_part( 'content', 'page' );
 
 					// If comments are open or we have at least one comment, load up the comment template.
@@ -71,7 +72,7 @@ get_header(); ?>
                  ?>
 
 
-                 <a href='<?php echo $link_address ?>'><?php echo $link_title ?></a> <?php echo $link_description ?>
+                 <a class="link_title" href='<?php echo $link_address ?>'><?php echo $link_title ?></a> <?php echo $link_description ?>
 
                 
               </dd>
