@@ -96,13 +96,14 @@ get_header(); ?>
 						                endwhile;
 						                endif;
 											?>
-						                <div class="accordion">
-            							<dl>
+						                
             							<?php
             							// Start nested accordion, almost identical to parent accordion
 						                if( have_rows('nested_accordion') ):
-
-
+						                	?>
+						                <div class="accordion">
+            							<dl>
+            								<?php
 						                	while (have_rows('nested_accordion')): the_row();
 
 						                		// read sub fields into variables
@@ -185,10 +186,12 @@ get_header(); ?>
               </dd>
               <?php
           endwhile;
-
-          endif; ?>
+				?>
             </dl>
           </div>
+          <?php
+          endif;
+          ?>
       
       
 
