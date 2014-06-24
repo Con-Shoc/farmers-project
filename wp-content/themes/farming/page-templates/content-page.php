@@ -40,10 +40,7 @@ get_header(); ?>
 
 			 	// loop through the rows of data
 			    while ( have_rows('accordion_section') ) : the_row();
-				add_filter( 'the_excerpt', 'shortcode_unautop');
-				add_filter( 'the_excerpt', 'do_shortcode');
-
-
+			
 
 				// read sub fields into variables
 				$accordion_title = get_sub_field('accordion_title');
@@ -116,7 +113,7 @@ get_header(); ?>
 					              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('nested_accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('nested_accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('nested_accordion_color'); ?>'" ><?php echo $nested_accordion_title ?></a></dt>
 
 					              <dd class="accordionItem accordionItemCollapsed">
-					                <?php  echo apply_filters('the_excerpt', get_sub_field('custom-field-name'), true);  echo $nested_accordion_content; ?>
+					                <?php echo $nested_accordion_content ?>
 					                <?php if($nested_accordion_image != ''): ?>
 					                	<img class="accordionimage" src="<?php echo $nested_accordion_image['url']; ?>" alt="<?php echo $nested_accordion_image['alt']; ?>" />
 					                <?php endif; ?>

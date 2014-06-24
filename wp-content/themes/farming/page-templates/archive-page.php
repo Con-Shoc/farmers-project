@@ -77,9 +77,12 @@ get_header(); ?>
                  	<div class="col-lg-6">
 
 		                 <div class="panel panel-success">
+						  <a class="link_title" href='<?php echo $link_address ?>'>
 						  <div class="panel-heading">
-						    <h3 class="panel-title"> <a class="link_title" href='<?php echo $link_address ?>'><?php echo $link_title ?></a></h3>
+						    <h3 class="panel-title">
+						    <?php echo $link_title ?></h3>
 						  </div>
+						  </a>
 						  <div class="panel-body">
 						    <?php echo $link_description;?>
 						  </div>

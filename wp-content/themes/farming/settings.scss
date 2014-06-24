@@ -42,6 +42,26 @@ $red: #b21e38;
 		background: #DEEAF6;
 	 }
 	}
+
+
+
+.panel-heading {
+	background-color: $navcolor !important;
+	color: #fff !important;
+	text-align: center !important;
+	transition: all 0.5s ease;
+	&:hover { 
+		background-color: $seagreen !important;
+
+	}
+
+	a { 
+		text-decoration: none;
+		&:hover { 
+			color: #fff;
+		}
+	}
+}
 // End of Custom Globals 
 
 
