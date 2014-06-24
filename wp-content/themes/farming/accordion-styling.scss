@@ -2,7 +2,12 @@
 
 // Accordion Styling 
 
-.accordion {
+.nested_accordion { 
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.accordion, .nested_accordion {
     dl {
         
         //  &:after {
