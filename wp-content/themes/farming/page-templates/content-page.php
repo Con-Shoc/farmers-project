@@ -41,6 +41,7 @@ get_header(); ?>
 			 	// loop through the rows of data
 			    while ( have_rows('accordion_section') ) : the_row();
 
+
 				// read sub fields into variables
 				$accordion_title = get_sub_field('accordion_title');
 				$accordion_content = get_sub_field('accordion_content');
@@ -98,7 +99,7 @@ get_header(); ?>
 							// Start nested accordion, almost identical to parent accordion
 			                if( have_rows('nested_accordion') ):
 			                	?>
-			                <div class="accordion">
+			                <div class="nested_accordion">
 							<dl>
 								<?php
 			                	while (have_rows('nested_accordion')): the_row();
@@ -112,7 +113,7 @@ get_header(); ?>
 					              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('nested_accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('nested_accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('nested_accordion_color'); ?>'" ><?php echo $nested_accordion_title ?></a></dt>
 
 					              <dd class="accordionItem accordionItemCollapsed">
-					                <?php echo $nested_accordion_content ?>
+					                <?php  do_shortcode('[su_tabs]');  echo $nested_accordion_content; ?>
 					                <?php if($nested_accordion_image != ''): ?>
 					                	<img class="accordionimage" src="<?php echo $nested_accordion_image['url']; ?>" alt="<?php echo $nested_accordion_image['alt']; ?>" />
 					                <?php endif; ?>
