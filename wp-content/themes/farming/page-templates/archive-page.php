@@ -35,46 +35,57 @@ get_header(); ?>
 			?>
 			
 		
+		<?php query_posts('post_type=resource_link'); 
+
+			$categories = array();
+
+
+			// Fill an array of all distinct cateogories for links and resources
+			while(have_posts()): the_post();
+
+				$current = get_the_category()[0]->cat_name;
+
+				// Checks to make syure duplicate entries are not included. This prevents too many accordions from being created.
+				if(!in_array($current, $categories)):
+
+					$result = array_push($categories, $current);
+
+				endif;
+
+			endwhile;
+
+			// Cycle through each category and and create an accordion.
+			foreach($categories as $category) {
+			
+
+		?>
 
         <div class="accordion">
-            <dl>
-            	<?php
-            	// read the accordion section field
-            if( have_rows('accordion_section') ):
-
-			 	// loop through the rows of data
-			    while ( have_rows('accordion_section') ) : the_row();
-
-				// read sub fields into variables
-				$section_title = get_sub_field('section_title');
-
-				$accordion_color = get_sub_field('accordion_color');				
-
-				
-        ?>
-              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_color'); ?>'" ><?php echo $section_title ?></a></dt>
+            <dl>				
+              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	echo 'red';	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo 'blue';?>'"	onMouseOut="this.style.backgroundColor='<?php  echo 'red';?>'"> <?php echo $category ?></a></dt>
 
               <dd class="accordionItem accordionItemCollapsed">
                 
                 <div class="row">
                 <?php 
 
-                	// Read link repeater fields
-                	if( have_rows('link') ):
+                	query_posts('post_type=resource_link');
 
-					while (have_rows('link') ): the_row();
+                	while ( have_posts() ): the_post();
 
-					// Read subfields
-					$link_title = get_sub_field('link_title');
+                		// Checks if the current post belongs to the current accordion category.
+	                	if(get_the_category()[0]->cat_name == $category):
 
-					$link_address = get_sub_field('link_address');
 
-					$link_description = get_sub_field('link_description');
+							$link_title = get_field('link_title');
 
-                 ?>
-                 
+							$link_address = get_field('link_address');
 
-                 	<div class="col-lg-6">
+							$link_description = get_field('link_description');
+					?>
+
+
+					<div class="col-lg-6">
 
 		                 <div class="panel panel-success">
 						  <div class="panel-heading">
@@ -84,31 +95,23 @@ get_header(); ?>
 						    <?php echo $link_description;?>
 						  </div>
 						</div>
-			
+
+					</div>
 
 
+					<?php
+                		endif;
 
-
-
-
-
-			</div>
-                 
-             	 <?php
-             	 endwhile;
-			endif;
-			?>
-		</div>
-
-
-                
+                	endwhile; ?>
+				</div>
+ 
               </dd>
-              <?php
 
-          
-          endwhile;
-          endif; ?>
             </dl>
+
+            <?php
+             } ?>
+
           </div>
       
       
