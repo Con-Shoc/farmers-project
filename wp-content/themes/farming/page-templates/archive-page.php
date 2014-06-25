@@ -43,7 +43,9 @@ get_header(); ?>
 			// Fill an array of all distinct cateogories for links and resources
 			while(have_posts()): the_post();
 
-				$current = get_the_category()[0]->cat_name;
+				$current_catObject = get_the_category();
+				
+				$current = $current_catObject[0]->cat_name;
 
 				// Checks to make syure duplicate entries are not included. This prevents too many accordions from being created.
 				if(!in_array($current, $categories)):
@@ -73,8 +75,10 @@ get_header(); ?>
 
                 	while ( have_posts() ): the_post();
 
+						$current_category = get_the_category();
+					
                 		// Checks if the current post belongs to the current accordion category.
-	                	if(get_the_category()[0]->cat_name == $category):
+	                	if($current_category[0]->cat_name == $category):
 
 
 							$link_title = get_field('link_title');
