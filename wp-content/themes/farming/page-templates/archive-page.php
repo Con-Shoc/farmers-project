@@ -64,7 +64,7 @@ get_header(); ?>
 
         <div class="accordion">
             <dl>				
-              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	echo 'red';	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo 'blue';?>'"	onMouseOut="this.style.backgroundColor='<?php  echo 'red';?>'"> <?php echo $category ?></a></dt>
+              <dt><a class='accordionTitle' <?php echo 'style="background-color:';	echo '#48B749';	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo '#299546';?>'"	onMouseOut="this.style.backgroundColor='<?php  echo '#48B749';?>'"> <?php echo $category ?></a></dt>
 
               <dd class="accordionItem accordionItemCollapsed">
                 
@@ -97,11 +97,13 @@ get_header(); ?>
 						    <h3 class="panel-title">
 						    <?php echo $link_title ?></h3>
 						  </div>
-						  </a>
+						 
 						  <div class="panel-body">
+						  	<p class="link_description_title">Link Description</p>
 						    <?php echo $link_description;?>
 						  </div>
 						</div>
+						 </a>
 
 					</div>
 

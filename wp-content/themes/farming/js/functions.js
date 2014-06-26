@@ -33,9 +33,10 @@
 
 		$( '.menu-toggle' ).on( 'click.twentyfourteen', function() {
 			nav.toggleClass( 'toggled-on' );
+
 		} );
 	} )();
-
+	
 	/*
 	 * Makes "skip to content" link work correctly in IE9 and Chrome for better
 	 * accessibility.

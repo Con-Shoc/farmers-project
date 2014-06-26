@@ -44,22 +44,52 @@ $red: #b21e38;
 	}
 
 
-
-.panel-heading {
-	background-color: $navcolor !important;
-	color: #fff !important;
-	text-align: center !important;
-	transition: all 0.5s ease;
+.panel {
+	border-radius: none !important;
 	&:hover { 
-		background-color: $seagreen !important;
+		.panel-heading { 
+			background-color: $seagreen !important;
+		}
+		.panel-body { 
+			background-color: $seagreen !important;
+		}
 
+		}
+	.panel-heading {
+		background-color: $navcolor !important;
+		color: #fff !important;
+		text-align: center !important;
+		transition: all 0.5s ease;
+		
+		
+	}
+	.panel-body {
+		transition: all 0.5s ease;
+		color: #000 !important;
+		text-align: center;
+		line-height: 1;
+	
+		.link_description_title{ 
+			font-weight: 700 !important;
+		}
+		
+	}
+	a { 
+		transition: all 0.5s ease;
+		text-decoration: none;
+			&:hover { 
+				.panel-body {
+					color: #fff !important;
+				}
+			}
+		
 	}
 
-	a { 
-		text-decoration: none;
-		&:hover { 
-			color: #fff;
-		}
+}
+
+.entry-content { 
+	p {
+		margin-bottom: 0;
 	}
 }
 // End of Custom Globals 
