@@ -47,7 +47,7 @@ get_header(); ?>
 				
 				$current = $current_catObject[0]->cat_name;
 
-				// Checks to make syure duplicate entries are not included. This prevents too many accordions from being created.
+				// Checks to make sure duplicate entries are not included. This prevents too many accordions from being created.
 				if(!in_array($current, $categories)):
 
 					$result = array_push($categories, $current);
@@ -99,7 +99,7 @@ get_header(); ?>
 						  </div>
 						 
 						  <div class="panel-body">
-						  	<p class="link_description_title">Link Description</p>
+						  	<!-- <p class="link_description_title">Link Description</p> -->
 						    <?php echo $link_description;?>
 						  </div>
 						</div>

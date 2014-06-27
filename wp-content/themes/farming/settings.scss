@@ -45,7 +45,8 @@ $red: #b21e38;
 
 
 .panel {
-	border-radius: none !important;
+	margin-bottom: 1em !important;
+	width: 80% !important;
 	&:hover { 
 		.panel-heading { 
 			background-color: $seagreen !important;
@@ -56,6 +57,7 @@ $red: #b21e38;
 
 		}
 	.panel-heading {
+		border-radius: 0px!important;
 		background-color: $navcolor !important;
 		color: #fff !important;
 		text-align: center !important;
@@ -64,25 +66,32 @@ $red: #b21e38;
 		
 	}
 	.panel-body {
-		transition: all 0.5s ease;
+		transition: all 0.3s ease;
 		color: #000 !important;
-		text-align: center;
-		line-height: 1;
+		// line-height: 1;
 	
 		.link_description_title{ 
+			text-align: center;
 			font-weight: 700 !important;
+			margin-bottom: 1em;
+		}
+
+		p { 
+			margin-bottom: 5px;
 		}
 		
 	}
 	a { 
-		transition: all 0.5s ease;
+		transition: all 0.3s ease;
 		text-decoration: none;
 			&:hover { 
 				.panel-body {
 					color: #fff !important;
+					span { 
+						color: #fff;
+					}
 				}
 			}
-		
 	}
 
 }
