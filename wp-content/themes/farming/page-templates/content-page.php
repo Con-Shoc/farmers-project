@@ -24,13 +24,47 @@ get_header(); ?>
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
 					// Include the page content template.
-					get_template_part( 'content', 'page' );
+					// get_template_part( 'content', 'page' );
+					the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
 
 				
 				endwhile;
 			?>
-			
-		
+
+		<div class="flexslider">
+		    <ul class="slides">
+		    <?php
+		    $rows = get_field('slide');
+		    if($rows) {
+		 
+		        foreach($rows as $row) {
+		            // retrieve size 'large' for background image
+		            $bgimg = $row['bg_image']['sizes']['large'];
+		 
+		            $output = "<li style='background-image: url(". $bgimg ."); background-size:100%;'>\n";
+		            $output .= "  <div class='slide-text'>\n";
+		            $output .= "  <h2>". $row['slide_heading'] ."</h2>\n";
+		            $output .= "  " . $row['slide_text'];
+		            $output .= "  </div>\n";
+		            $output .= "</li>\r\n\n";
+		 
+		            echo $output;
+		        }
+		    }
+		    ?>
+		    
+		    </ul>
+		</div>
+
+		<?php
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
+				the_content();
+
+				endwhile
+
+		?>
+
 		<!-- Accordion Starts  -->
         <div class="accordion">
             <dl>
