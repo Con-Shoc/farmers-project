@@ -31,32 +31,34 @@ get_header(); ?>
 				endwhile;
 			?>
 
-		<div class="flexslider">
-		    <ul class="slides">
-		    <?php
-		    $rows = get_field('slide');
-		    if($rows) {
-		 
-		        foreach($rows as $row) {
-		            // retrieve size 'large' for background image
-		            $bgimg = $row['bg_image']['sizes']['large'];
-		 
-		            $output = "<li style='background-image: url(". $bgimg ."); background-size:100%;'>\n";
-		            $output .= "  <div class='slide-text'>\n";
-		            $output .= "  <h2>". $row['slide_heading'] ."</h2>\n";
-		            $output .= "  " . $row['slide_text'];
-		            $output .= "  </div>\n";
-		            $output .= "</li>\r\n\n";
-		 
-		            echo $output;
-		        }
-		    }
-		    ?>
-		    
-		    </ul>
-		</div>
+		<?php if( have_rows('slide') ): ?>
 
+			<div class="flexslider">
+			    <ul class="slides">
+			    <?php
+			    $rows = get_field('slide');
+			    if($rows) {
+			 
+			        foreach($rows as $row) {
+			            // retrieve size 'large' for background image
+			            $bgimg = $row['bg_image']['sizes']['large'];
+			 
+			            $output = "<li style='background-image: url(". $bgimg ."); background-size:100%;'>\n";
+			            $output .= "  <div class='slide-text'>\n";
+			            $output .= "  <h2>". $row['slide_heading'] ."</h2>\n";
+			            $output .= "  " . $row['slide_text'];
+			            $output .= "  </div>\n";
+			            $output .= "</li>\r\n\n";
+			 
+			            echo $output;
+			        }
+			    }
+			    ?>
+			    
+			    </ul>
+			</div>
 		<?php
+			endif;
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
 				the_content();
