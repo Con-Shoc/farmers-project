@@ -47,12 +47,17 @@ $red: #b21e38;
 .panel {
 	margin-bottom: 1em !important;
 	width: 80% !important;
+	border: none;
 	&:hover { 
+		.panel { 
+			background-color: $seagreen !important;
+		}
 		.panel-heading { 
 			background-color: $seagreen !important;
 		}
 		.panel-body { 
 			background-color: $seagreen !important;
+			color: #fff;
 		}
 
 		}
