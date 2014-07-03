@@ -34,7 +34,11 @@
    (function($) {
       $(window).load(function(){
       $('.flexslider').flexslider({
-        animation: "slide",
+      	 slideshow: false,
+      	 useCSS: true,
+      	 touch: true,
+      	 controlNav: false,
+        // animation: "slide",
         start: function(slider){
           $('body').removeClass('loading');
         }
