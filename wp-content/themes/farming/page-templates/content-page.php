@@ -31,6 +31,8 @@ get_header(); ?>
 				endwhile;
 			?>
 
+
+
 		<?php if( have_rows('slide') ): ?>
 
 			<div class="flexslider">
@@ -67,6 +69,54 @@ get_header(); ?>
 
 		?>
 
+		<?php if( have_rows('button') ):
+
+			while( have_rows('button') ): the_row(); ?>
+
+			<div class='accordion_button' <?php echo 'style="background-color:';	the_sub_field('button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('button_color'); ?>'">
+			                
+            	<a class="accordion_link" href="<?php the_sub_field('button_link'); ?>">
+            		
+       
+            			<div class="button_text">
+            				<!-- display a sub field value -->
+				        	<p class="accordion_button_name">
+				        	<?php the_sub_field('button_name'); ?>
+				        	</p>
+
+				        	</br>
+
+				        	<p class="accordion_button_blurb">
+				       		<?php the_sub_field('button_blurb'); ?> 
+				       		</p>
+            			</div>
+            	</a>
+
+       		 </div>
+
+       		 <?php 
+       		 endwhile;
+       		 endif; ?>
+
+       	<?php if( have_rows('tab') ): ?>
+			<ul class="nav nav-pills">
+       		<?php while( have_rows('tab') ): the_row(); 
+
+       			$tab_title = the_sub_field('tab_title');
+       			$tab_content = the_sub_field('tab_content'); ?>
+       			<li><a href="#<?php echo $tab_title; ?>"><?php echo $tab_title; ?></a></li>
+
+       			<div id="<?php echo $tab_title ?>">
+       				<?php echo $tab_content; ?>
+       			</div>
+
+       		<?php endwhile; ?>
+			  
+			</ul>
+
+		<?php endif; ?>
+
+
 		<!-- Accordion Starts  -->
         <div class="accordion">
             <dl>
@@ -76,7 +126,6 @@ get_header(); ?>
 
 			 	// loop through the rows of data
 			    while ( have_rows('accordion_section') ) : the_row();
-			
 
 				// read sub fields into variables
 				$accordion_title = get_sub_field('accordion_title');
