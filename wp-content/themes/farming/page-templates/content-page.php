@@ -78,7 +78,7 @@ get_header(); ?>
             	<a class="accordion_link" href="<?php the_sub_field('button_link'); ?>">
             		
        
-            			<div class="button_text">
+            			<div class="accordion_button_text">
             				<!-- display a sub field value -->
 				        	<p class="accordion_button_name">
 				        	<?php the_sub_field('button_name'); ?>
