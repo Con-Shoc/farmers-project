@@ -30,23 +30,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script src="/farming/wp-content/plugins/woothemes-FlexSlider/jquery.flexslider.js"></script>
 	
-	<script type="text/javascript">
-   (function($) {
-      $(window).load(function(){
-      $('.flexslider').flexslider({
-      	 slideshow: false,
-      	 useCSS: true,
-      	 touch: true,
-      	 controlNav: false,
-        // animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });
-   })(jQuery);
-
-</script>
+	<script type="text/javascript" charset="utf-8">
+		 $(window).load(function() {
+	  $('.flexslider').flexslider({
+	    animation: "slide"
+	  });
+	});
+	</script>
 
 	<!-- End of FlexSlider -->
 
@@ -85,11 +75,90 @@
 				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
 			</div>
 
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+                      <!-- Brand and toggle get grouped for better mobile display -->
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                       
+                      </div>
+                    
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        
+                        <?php
+                            wp_nav_menu( array(
+                                'menu'              => 'primary',
+                                'theme_location'    => 'primary',
+                                'depth'             => 1,                              
+                                'container_id'      => 'bs-example-navbar-collapse-1',
+                                'menu_class'        => 'nav navbar-nav',
+                                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                                'walker'            => new wp_bootstrap_navwalker())
+                            );
+                         ?>
+
+                       
+                      </div><!-- /.navbar-collapse -->
+                    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		</div>
 
 		<div id="search-container" class="search-box-wrapper hide">

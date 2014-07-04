@@ -1,4 +1,11 @@
 <?php
+
+
+include_once('wp_bootstrap_navwalker.php');
+
+register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'farming' ),
+) );
 /**
  * Twenty Fourteen functions and definitions
  *
@@ -510,6 +517,4 @@ require get_template_directory() . '/inc/customizer.php';
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
 }
-
-
 
