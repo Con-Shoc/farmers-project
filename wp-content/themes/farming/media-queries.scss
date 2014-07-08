@@ -1135,7 +1135,9 @@
 // CUSTOM MEDIA QUERIES
 
 @media all and (min-width: 699px) { 
-
+	.menu-toggle { 
+		height: 55px;
+	}
 	.menu_button { 
 		width:70%;
 		height: 100%;
@@ -1167,7 +1169,7 @@
 
 @media all and (max-width: 699px) { 
 	.logo { 
-		padding: 1em 0;
+		// padding: 1em 0;
 		max-width: 70% !important;
 	}
 	.site-content.button-page-margins {

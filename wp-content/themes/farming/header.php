@@ -52,7 +52,7 @@
 <body <?php body_class(); ?>>
 
 	
-<section class="site-width">
+<section class="site-width" style="min-width:100%;">
 
 <div id="page" class="hfeed site">
 	<?php if ( get_header_image() ) : ?>
