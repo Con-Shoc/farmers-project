@@ -69,6 +69,24 @@ get_header(); ?>
 						                		if(empty($button_image)){
 						                		?>
 						                		<img class="button_image" src="./wp-content/themes/farming/images/blank.png" alt="<?php echo 'no image'; ?>" />
+						                		
+							                		<div class="button_text" style="margin-right:2em;">
+												         <!-- display a sub field value -->
+													        <p class="button_name">
+													        	<?php the_sub_field('button_name'); ?>
+													        </p>
+
+													       	</br>
+
+													        <!-- display the blurb for the button -->
+													       <p class="button_blurb">
+													       		<?php the_sub_field('button_blurb'); ?> 
+													       	</p>
+													  
+														</div>
+														</a>
+
+											        </div>
 						                		<?php
 						                		}
 
@@ -76,6 +94,24 @@ get_header(); ?>
 						                		else{
 						                		?>
 						                		<img class="button_image" src="<?php echo $button_image['url']; ?>" alt="<?php echo $button_image['alt']; ?>" />
+						                		
+								                		<div class="button_text">
+													         <!-- display a sub field value -->
+														        <p class="button_name">
+														        	<?php the_sub_field('button_name'); ?>
+														        </p>
+
+														       	</br>
+
+														        <!-- display the blurb for the button -->
+														       <p class="button_blurb">
+														       		<?php the_sub_field('button_blurb'); ?> 
+														       	</p>
+														  
+															</div>
+															</a>
+
+												        </div>
 						                		<?php } ?>	
 
 						
@@ -84,23 +120,7 @@ get_header(); ?>
 
 					?>
 						
-						<div class="button_text">
-				         <!-- display a sub field value -->
-					        <p class="button_name">
-					        	<?php the_sub_field('button_name'); ?>
-					        </p>
-
-					       	</br>
-
-					        <!-- display the blurb for the button -->
-					       <p class="button_blurb">
-					       		<?php the_sub_field('button_blurb'); ?> 
-					       	</p>
-					  
-						</div>
-						</a>
-
-			        </div>
+						
 			        
 
 			        <?php
