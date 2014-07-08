@@ -1167,10 +1167,17 @@
 	
 }
 
+@media all and (max-width:320px) { 
+	.logo { 
+		max-width: 87% !important;
+		margin-top: 0.5em;
+	}
+}
+
 @media all and (max-width: 699px) { 
 	.logo { 
 		// padding: 1em 0;
-		max-width: 70% !important;
+		// max-width: 70% !important;
 	}
 	.site-content.button-page-margins {
 		margin: 0 10px;
