@@ -115,6 +115,7 @@ section.site-width {
 
 	.site-title { 
 		max-width: 375px;
+		padding-bottom: 1em;
 		// min-width: 325px;
 	}
 
@@ -123,14 +124,14 @@ section.site-width {
 	}
 
 	.logo { 
-		padding: 1em 0;
+		// padding: 1em 0;
 		max-width: 90%;
 	}
 	
 	.menu-toggle{ 
 		background: none;
 		width: 48px !important;
-		margin-top: 25px;
+		// margin-top: 25px;
 	}
 
 	.search-toggle { 
