@@ -98,23 +98,146 @@ get_header(); ?>
        		 endwhile;
        		 endif; ?>
 
-       	<?php if( have_rows('tab') ): ?>
-			<ul class="nav nav-pills">
-       		<?php while( have_rows('tab') ): the_row(); 
+       	<?php 
+       		if( have_rows('tab_menu') ): 
+       			while ( have_rows('tab_menu') ): the_row();
+       				if( have_rows('tab') ): 
+       					$active_flag = true; ?>
+						<ul class="nav nav-tabs" data-tabs="tabs">
+						<?php 
+						while( have_rows('tab') ): the_row();
 
-       			$tab_title = the_sub_field('tab_title');
-       			$tab_content = the_sub_field('tab_content'); ?>
-       			<li><a href="#<?php echo $tab_title; ?>"><?php echo $tab_title; ?></a></li>
+							$tab_title = get_sub_field('tab_title');
+			   				$tab_content = get_sub_field('tab_content');
 
-       			<div id="<?php echo $tab_title ?>">
-       				<?php echo $tab_content; ?>
-       			</div>
+							if($active_flag): 
+								 ?>
+								<li class="active"><a data-toggle="tab" href="<?php echo '#' . str_replace(' ', '', $tab_title); ?>"><?php echo $tab_title ?></a></li>
+								<?php 
+								$active_flag = false;?>
+			       			<?php  
+			       			else:
+			       			?>
+				       			<li><a data-toggle="tab" href="<?php echo '#' . str_replace(' ', '', $tab_title); ?>"><?php echo $tab_title; ?></a></li>
 
-       		<?php endwhile; ?>
-			  
-			</ul>
+				       		<?php 
+       						endif;
+       					endwhile;
+       				endif; ?>
 
-		<?php endif; ?>
+       				</ul> 
+
+       		
+					<?php
+       				if(have_rows('tab')): ?>
+						<div class="tab-content">
+       					<?php 
+       					$active_flag = true;
+       					while(have_rows('tab')): the_row();?>
+		       				
+			       			<?php 
+			       			
+
+			       			$tab_title = get_sub_field('tab_title');
+			       			$tab_content = get_sub_field('tab_content'); ?>
+
+			       			<?php 
+			       			if($active_flag): ?>
+			       				<div id="<?php echo str_replace(' ', '', $tab_title); ?>" class="tab-pane fade in active">
+						      	<?php echo $tab_content ?>
+						      	<?php
+
+			                	if( have_rows('tab_button') ):
+					                while( have_rows('tab_button') ): the_row();
+						                $accordion_button_image = get_sub_field('tab_button_image');
+						                $blankImage=__DIR__.'/../images/blank.png';
+						                ?>
+
+
+						                <div class='accordion_button' <?php echo 'style="background-color:';	the_sub_field('tab_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('tab_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('tab_button_color'); ?>'">
+						                
+						                	<a class="accordion_link" href="<?php the_sub_field('tab_button_link'); ?>">
+						                		
+						           
+						                			<div class="accordion_button_text">
+						                				<!-- display a sub field value -->
+											        	<p class="accordion_button_name">
+											        	<?php the_sub_field('tab_button_name'); ?>
+											        	</p>
+
+											        	</br>
+
+											        	<p class="accordion_button_blurb">
+											       		<?php the_sub_field('tab_button_blurb'); ?> 
+											       		</p>
+						                			</div>
+						                	</a>
+
+						           		 </div>
+
+
+					                <?php
+					                endwhile;
+			                	endif;
+			                	$active_flag = false;
+								?>
+
+							    </div>
+							<?php 
+						    else: ?>
+						    	<div id="<?php echo str_replace(' ', '', $tab_title); ?>" class="tab-pane fade">
+						      	<?php echo $tab_content ?>
+						      	<?php
+
+			                	if( have_rows('tab_button') ): ?>
+			                		<?php 
+			                		while( have_rows('tab_button') ): the_row();
+						                $accordion_button_image = get_sub_field('tab_button_image');
+						                $blankImage=__DIR__.'/../images/blank.png';
+						                ?>
+
+
+						                <div class='accordion_button' <?php echo 'style="background-color:';	the_sub_field('tab_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('tab_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('tab_button_color'); ?>'">
+						                
+						                	<a class="accordion_link" href="<?php the_sub_field('tab_button_link'); ?>">
+						                		
+						           
+						                			<div class="accordion_button_text">
+						                				<!-- display a sub field value -->
+											        	<p class="accordion_button_name">
+											        	<?php the_sub_field('tab_button_name'); ?>
+											        	</p>
+
+											        	</br>
+
+											        	<p class="accordion_button_blurb">
+											       		<?php the_sub_field('tab_button_blurb'); ?> 
+											       		</p>
+						                			</div>
+						                	</a>
+
+						           		 </div>
+
+
+					                	<?php
+					                endwhile;
+			                	endif;
+								?>
+
+						    	</div>
+
+		       				<?php 
+		       				endif;
+		       			endwhile; ?>
+
+		       			</div>
+		       		<?php endif;
+		       		?>
+
+		       	<?php
+		       	endwhile;
+			endif; ?>
+
 
 
 		<!-- Accordion Starts  -->
