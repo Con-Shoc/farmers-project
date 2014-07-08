@@ -30,13 +30,23 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script src="/farming/wp-content/plugins/woothemes-FlexSlider/jquery.flexslider.js"></script>
 	
-	<script type="text/javascript" charset="utf-8">
-		 $(window).load(function() {
-	  $('.flexslider').flexslider({
-	    animation: "slide"
-	  });
-	});
-	</script>
+		<script type="text/javascript">
+   (function($) {
+      $(window).load(function(){
+      $('.flexslider').flexslider({
+      	 slideshow: false,
+      	 useCSS: true,
+      	 touch: true,
+      	 controlNav: false,
+        // animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+   })(jQuery);
+
+</script>
 
 	<!-- End of FlexSlider -->
 
