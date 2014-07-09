@@ -14,7 +14,7 @@ $navcolor: #299546;
 $blue: #2e3092;
 $seagreen: #52be99;
 $purple: #797dbb;
-$red: #b21e38;
+$red: #C21010;
 
 // Custom Globals
 
@@ -316,3 +316,53 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 	}
 }
 
+
+// Tab Stylings
+.tab-menu {
+	.nav-tabs {
+		border: 0px;
+		li.active { 
+			a {
+				border: 0px;
+				color: #fff;
+				background: $navcolor;
+				font-weight: 700;
+				transition: all 0.3s ease;
+					&:hover{ 
+						background: $navcolor;
+					}
+
+
+			}
+			&:after { 
+				content: "";
+				width: 0;
+				height: 0;
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				border-top: 10px solid $navcolor;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		li {
+			a { 
+				padding: 0.5em;
+				color: $red;
+				transition: all 0.3s ease;
+				font-weight: 600;
+					&:hover { 
+						background: $blue;
+						color: #fff;
+					}
+					&:before { 
+						content: "+ ";
+					}
+			}
+		}
+	}
+}
+
+.tab-content { 
+	padding: 1em 1em 0 3em;
+}

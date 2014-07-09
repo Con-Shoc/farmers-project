@@ -68,41 +68,13 @@ get_header(); ?>
 				endwhile
 
 		?>
-
-		<?php if( have_rows('button') ):
-
-			while( have_rows('button') ): the_row(); ?>
-
-			<div class='accordion_button' <?php echo 'style="background-color:';	the_sub_field('button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('button_color'); ?>'">
-			                
-            	<a class="accordion_link" href="<?php the_sub_field('button_link'); ?>">
-            		
-       
-            			<div class="accordion_button_text">
-            				<!-- display a sub field value -->
-				        	<p class="accordion_button_name">
-				        	<?php the_sub_field('button_name'); ?>
-				        	</p>
-
-				        	</br>
-
-				        	<p class="accordion_button_blurb">
-				       		<?php the_sub_field('button_blurb'); ?> 
-				       		</p>
-            			</div>
-            	</a>
-
-       		 </div>
-
-       		 <?php 
-       		 endwhile;
-       		 endif; ?>
-
+		 
        	<?php 
        		if( have_rows('tab_menu') ): 
        			while ( have_rows('tab_menu') ): the_row();
        				if( have_rows('tab') ): 
        					$active_flag = true; ?>
+						<div class="tab-menu">
 						<ul class="nav nav-tabs" data-tabs="tabs">
 						<?php 
 						while( have_rows('tab') ): the_row();
@@ -126,6 +98,8 @@ get_header(); ?>
        				endif; ?>
 
        				</ul> 
+       				
+       
 
        		
 					<?php
@@ -237,6 +211,8 @@ get_header(); ?>
 		       	<?php
 		       	endwhile;
 			endif; ?>
+			</div>
+
 
 
 
@@ -399,6 +375,35 @@ get_header(); ?>
           <?php
           endif;
           ?>
+
+		<?php if( have_rows('button') ):
+
+			while( have_rows('button') ): the_row(); ?>
+
+			<div class='accordion_button' <?php echo 'style="background-color:';	the_sub_field('button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('button_color'); ?>'">
+			                
+            	<a class="accordion_link" href="<?php the_sub_field('button_link'); ?>">
+            		
+       
+            			<div class="accordion_button_text">
+            				<!-- display a sub field value -->
+				        	<p class="accordion_button_name">
+				        	<?php the_sub_field('button_name'); ?>
+				        	</p>
+
+				        	</br>
+
+				        	<p class="accordion_button_blurb">
+				       		<?php the_sub_field('button_blurb'); ?> 
+				       		</p>
+            			</div>
+            	</a>
+
+       		 </div>
+
+       		 <?php 
+       		 endwhile;
+       		 endif; ?>
       
       
 
