@@ -47,7 +47,7 @@ get_header(); ?>
 			 
 			            $output = "<li style='background-image: url(". $bgimg ."); background-size:100%; max-height: 325px; min-height: 270px;'>\n";
 			            $output .= "  <div class='slide-text'>\n";
-			            $output .= "  <h2>". $row['slide_heading'] ."</h2>\n";
+			            // $output .= "  <h2>". $row['slide_heading'] ."</h2>\n";
 			            $output .= "  " . $row['slide_text'];
 			            $output .= "  </div>\n";
 			            $output .= "</li>\r\n\n";
