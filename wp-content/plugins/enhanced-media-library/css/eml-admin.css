@@ -31,23 +31,13 @@
 	max-width: 140px !important;
 }
 
-.media-frame .search {
-	line-height: 14px;
-}
-
 
 /* == Media Uploader Boxes' Positions == */
-
 
 .attachments-browser .media-toolbar {
 	height: auto;
 	position: relative;
 	margin-right: 300px;
-}
-.attachments-browser .attachments {
-	position: relative;
-	margin-right: 300px;
-	top: 20px;
 }
 .attachments-browser .media-toolbar-primary,
 .attachments-browser .media-toolbar-secondary {
@@ -55,27 +45,38 @@
 	height: auto;
 }
 .attachments-browser .media-toolbar-secondary select,
-.attachments-browser .media-toolbar-secondary ,instruction {
+.attachments-browser .media-toolbar-secondary .instructions {
 	float: left;
 }
+.media-frame .spinner {
+	float: none;
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	right: 10px;
+}
 
-@media only screen and (max-width: 640px), screen and (max-height: 400px) 
+@media only screen and (max-width: 900px) 
 {
 	.attachments-browser .media-toolbar {
 		margin-right: 180px;
 		height: auto;
 	}
+}
+
+@media only screen and (max-width: 640px), screen and (max-height: 400px)
+{
 	.attachments-browser .attachments {
 		top: 20px;
 	}
-	.media-frame .search {
-		line-height: 20px;
+	.media-frame .attachments-browser {
+		padding-bottom: 20px;
+		height: auto;
 	}
 	.media-sidebar .attachment-details h3 {
 		margin-top: 24px;
 	}
 }
-
 
 
 /* == MIME types Option Page Styles == */
@@ -177,8 +178,6 @@
 .wpuxss-eml-taxonomy-edit .wpuxss-eml-labels-edit input {
 	min-width: 150px;
 }
-
-
 
 
 /* == Buttons Styles == */

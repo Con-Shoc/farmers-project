@@ -1,10 +1,11 @@
 window.wp = window.wp || {};
 
-(function($) {
-
+(function($){
+	
 	wp.customize.HeaderControl = wp.customize.HeaderControl.extend({
-
+		
 		openMedia: function(event) {
+			
 			var l10n = _wpMediaViewsL10n;
 
 			event.preventDefault();
@@ -22,7 +23,7 @@ window.wp = window.wp || {};
 						priority:  20,
 						suggestedWidth: _wpCustomizeHeader.data.width,
 						suggestedHeight: _wpCustomizeHeader.data.height,
-						filterable: 'all' // turn on filters
+						filterable: 'eml' // turn on filters
 					}),
 					new wp.media.controller.Cropper({
 						imgSelectOptions: this.calculateImageSelectOptions
@@ -38,11 +39,8 @@ window.wp = window.wp || {};
 		}
 	});
 	
-	wp.customize.controlConstructor = {
-		color:  wp.customize.ColorControl,
-		upload: wp.customize.UploadControl,
-		image:  wp.customize.ImageControl,
+	$.extend( wp.customize.controlConstructor, {
 		header: wp.customize.HeaderControl
-	};
-
+	});
+	
 }(jQuery));

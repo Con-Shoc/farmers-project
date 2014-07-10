@@ -3,7 +3,7 @@
 Plugin Name: Enhanced Media Library
 Plugin URI: http://wordpressuxsolutions.com
 Description: This plugin will be handy for those who need to manage a lot of media files.
-Version: 1.1
+Version: 1.1.1
 Author: WordPress UX Solutions
 Author URI: http://wordpressuxsolutions.com
 License: GPLv2 or later
@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 
-$wpuxss_eml_version = '1.1';
+$wpuxss_eml_version = '1.1.1';
 $wpuxss_eml_old_version = get_option('wpuxss_eml_version', false);
 $wpuxss_eml_dir = plugin_dir_url( __FILE__ );
 
@@ -176,14 +176,51 @@ function wpuxss_eml_on_wp_loaded()
  */
  
 add_action( 'admin_init', 'wpuxss_eml_on_admin_init' );
-add_action( 'customize_controls_enqueue_scripts', 'wpuxss_eml_on_admin_init' );
 
 function wpuxss_eml_on_admin_init() 
-{	
-	global $wpuxss_eml_version,
-	$wpuxss_eml_dir;
+{
 	
-	// plugin scripts
+	// plugin settings: taxonomies
+	register_setting( 
+		'wpuxss_eml_taxonomies', //option_group
+		'wpuxss_eml_taxonomies', //option_name
+		'wpuxss_eml_taxonomies_validate' //sanitize_callback
+	);
+	
+	// plugin settings: mime types
+	register_setting( 
+		'wpuxss_eml_mimes', //option_group
+		'wpuxss_eml_mimes', //option_name
+		'wpuxss_eml_mimes_validate' //sanitize_callback
+	);
+	
+	// plugin settings: mime types backup
+	register_setting( 
+		'wpuxss_eml_mimes_backup', //option_group
+		'wpuxss_eml_mimes_backup' //option_name
+	);
+}
+
+
+
+
+/**
+ *  wpuxss_eml_admin_enqueue_scripts
+ *
+ *  @since    1.1.1
+ *  @created  07/04/14
+ */
+
+add_action( 'admin_enqueue_scripts', 'wpuxss_eml_admin_enqueue_scripts' );
+
+function wpuxss_eml_admin_enqueue_scripts() 
+{
+	global $wpuxss_eml_version,
+	$wpuxss_eml_dir,
+	$pagenow;
+	
+	
+	// generic scripts
 	wp_enqueue_script(
 		'wpuxss-eml-media-models-script',
 		$wpuxss_eml_dir . 'js/eml-media-models.js',
@@ -199,16 +236,6 @@ function wpuxss_eml_on_admin_init()
 		$wpuxss_eml_version,
 		true
 	);
-	
-	// admin styles
-	wp_enqueue_style( 
-		'wpuxss-eml-admin-custom-style', 
-		$wpuxss_eml_dir . 'css/eml-admin.css',
-		array('media-views'), 
-		$wpuxss_eml_version,
-		'all' 
-	);
-
 	
 	
 	// pass taxonomies to media uploader's filter
@@ -258,37 +285,50 @@ function wpuxss_eml_on_admin_init()
 	);
 	
 	
-	// plugin settings: taxonomies
-	register_setting( 
-		'wpuxss_eml_taxonomies', //option_group
-		'wpuxss_eml_taxonomies', //option_name
-		'wpuxss_eml_taxonomies_validate' //sanitize_callback
-	);
+	// Filters for /wp-admin/theme.php
+	if ( 'themes.php' == $pagenow )
+	{
+		wp_enqueue_script(
+			'wpuxss-eml-custom-header-script',
+			$wpuxss_eml_dir . 'js/eml-custom-header.js',
+			array('jquery','backbone','custom-header'),
+			$wpuxss_eml_version,
+			true
+		);
+		
+		wp_enqueue_script(
+			'wpuxss-eml-custom-background-script',
+			$wpuxss_eml_dir . 'js/eml-custom-background.js',
+			array('jquery','backbone','custom-background'),
+			$wpuxss_eml_version,
+			true
+		);
+	}
 	
-	// plugin settings: mime types
-	register_setting( 
-		'wpuxss_eml_mimes', //option_group
-		'wpuxss_eml_mimes', //option_name
-		'wpuxss_eml_mimes_validate' //sanitize_callback
-	);
 	
-	// plugin settings: mime types backup
-	register_setting( 
-		'wpuxss_eml_mimes_backup', //option_group
-		'wpuxss_eml_mimes_backup' //option_name
+	// admin styles
+	wp_enqueue_style( 
+		'wpuxss-eml-admin-custom-style', 
+		$wpuxss_eml_dir . 'css/eml-admin.css',
+		array('media-views'), 
+		$wpuxss_eml_version,
+		'all' 
 	);
+
 }
+
+
 
 
 /**
  *  wpuxss_eml_customize_controls_scripts
  *
- *  Modification of WP customize-controls.js script in order to turn on Media Uploader filters for customize.php
+ *  Filters for /wp-admin/customize.php
  *
- *  @since    1.1.0
- *  @created  07/02/14
+ *  @since    1.1.1
+ *  @created  07/04/14
  */
- 
+
 add_action( 'customize_controls_enqueue_scripts', 'wpuxss_eml_customize_controls_scripts' );
 
 function wpuxss_eml_customize_controls_scripts() 
@@ -296,7 +336,7 @@ function wpuxss_eml_customize_controls_scripts()
 	global $wpuxss_eml_version,
 	$wpuxss_eml_dir;
 	
-		wp_enqueue_script(
+	wp_enqueue_script(
 		'wpuxss-eml-customize-controls-script',
 		$wpuxss_eml_dir . 'js/eml-customize-controls.js',
 		array('jquery','backbone','customize-controls'),

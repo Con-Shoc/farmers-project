@@ -69,4 +69,43 @@ window.wp = window.wp || {};
 		}
 	});
 	
+	
+	
+	function correctAttachmentsListCSS()
+	{		
+		if ( 'absolute' == $('.attachments-browser .attachments').css('position') && $('.attachments-browser').height() > $('.attachments-browser .media-toolbar').height()+20 )
+		{
+			$('.attachments-browser .attachments').css('top',$('.attachments-browser .media-toolbar').height()+20);
+			
+		}
+		else if ( 'absolute' == $('.attachments-browser .attachments').css('position') )
+		{
+			$('.attachments-browser .attachments').css('top','50px');
+		}
+		else if ( 'relative' == $('.attachments-browser .attachments').css('position') )
+		{
+			$('.attachments-browser .attachments').css('top','0');
+		}
+		
+		return false;
+	};
+	
+	$(document).on('change', '.media-toolbar-secondary select', function(e)
+	{
+    	correctAttachmentsListCSS();
+	});
+	
+	wp.media.view.Modal.prototype.on('open', function()
+	{
+		correctAttachmentsListCSS();
+	});	
+	
+	$(window).on('resize',function(e)
+	{
+		if ( typeof wp !== 'undefined' && wp.media && wp.media.editor )
+		{	
+			correctAttachmentsListCSS();
+		}
+	})
+	
 })( jQuery );
