@@ -88,47 +88,24 @@
 
 
 
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
- 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
- 			</nav>
 
+<nav>
+			<a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
 
+<div id="sidr">
+  <!-- Your content -->
+ <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script>
+jQuery(document).ready(function() {
+  jQuery('#simple-menu').sidr({
+    
+      side: 'right'
+    });
+});
+</script>
+</nav>
 
 
 
