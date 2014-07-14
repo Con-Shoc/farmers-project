@@ -18,7 +18,6 @@
 <!--[if !(IE 7) | !(IE 8) ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
-
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
@@ -47,7 +46,12 @@
     });
    })(jQuery);
 
-
+   jQuery(document).ready(function() {
+  jQuery('#simple-menu').sidr({
+    
+      side: 'right'
+    });
+});
 
 </script>
 
@@ -61,11 +65,10 @@
 	
 	<?php wp_head(); ?>
 </head>
-<!-- <a id="top"> </a> -->
-
+<a id="top"></a>
 <body <?php body_class(); ?>>
 
-
+	
 <section class="site-width" style="min-width:100%;">
 
 <div id="page" class="hfeed site">
@@ -91,11 +94,6 @@
 
 
 
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
- 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
- 			</nav>
 
 
 <nav>
@@ -106,15 +104,12 @@
  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 </div>
 
-<script>
-jQuery(document).ready(function() {
-  jQuery('#simple-menu').sidr({
-    
-      side: 'right'
-    });
-});
-</script>
+
 </nav>
+
+
+
+
 
 
 		</div>
@@ -136,10 +131,8 @@ jQuery(document).ready(function() {
 	    }
 	}
     ?>
-
 </div>
-<a href="#top" id="smoothup" class="top-scroll">
+<a href="#top" id="smoothup" class="scroll-top">
 ^ </br>
-Scroll Up</a>
-
-</div>
+Scroll Up
+</a>

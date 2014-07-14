@@ -38,4 +38,3 @@
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
-

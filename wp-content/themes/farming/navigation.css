@@ -1,9 +1,9 @@
 /*
 Syntax error: Undefined variable: "$navcolor".
-        on line 160 of c:/wamp/www/farming/wp-content/themes/farming/navigation.scss
+        on line 157 of c:/wamp/www/farming/wp-content/themes/farming/navigation.scss
 
 Backtrace:
-c:/wamp/www/farming/wp-content/themes/farming/navigation.scss:160
+c:/wamp/www/farming/wp-content/themes/farming/navigation.scss:157
 c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/script/variable.rb:49:in `_perform'
 c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/script/node.rb:40:in `perform'
 c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
@@ -74,4 +74,4 @@ c:/RailsInstaller/Ruby1.9.3/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$navcolor\".\A         on line 160 of c:/wamp/www/farming/wp-content/themes/farming/navigation.scss"; }
+  content: "Syntax error: Undefined variable: \"$navcolor\".\A         on line 157 of c:/wamp/www/farming/wp-content/themes/farming/navigation.scss"; }
