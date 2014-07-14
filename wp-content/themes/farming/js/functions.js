@@ -266,7 +266,9 @@ accordion.addEventListener("click",function(e) {
     }
     
   }
+
 });
 
 
 // End Accordion JS
+

@@ -18,6 +18,7 @@
 <!--[if !(IE 7) | !(IE 8) ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
@@ -46,6 +47,8 @@
     });
    })(jQuery);
 
+
+
 </script>
 
 	<!-- End of FlexSlider -->
@@ -58,10 +61,11 @@
 	
 	<?php wp_head(); ?>
 </head>
+<!-- <a id="top"> </a> -->
 
 <body <?php body_class(); ?>>
 
-	
+
 <section class="site-width" style="min-width:100%;">
 
 <div id="page" class="hfeed site">
@@ -95,46 +99,6 @@
  			</nav>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		</div>
 
 		<div id="search-container" class="search-box-wrapper hide">
@@ -155,3 +119,6 @@
 	}
     ?>
 </div>
+<a href="#top" id="smoothup" class="top-scroll">
+^ </br>
+Scroll Up</a>
