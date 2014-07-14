@@ -3,6 +3,7 @@
 @import 'media-queries.scss';
 @import 'navigation.scss';
 @import "css/bootstrap.css";
+@import "css/jquery.sidr.dark.css";
 
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -64,7 +65,7 @@ a {
 }
 
 a:focus {
-	outline: thin dotted;
+	// outline: thin dotted;
 }
 
 a:hover,
@@ -2820,3 +2821,13 @@ a.post-thumbnail:hover {
 	width: auto;
 }
 
+
+
+
+
+
+
+
+.sidr ul li span{
+	display: inline;
+}
