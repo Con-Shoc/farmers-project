@@ -107,7 +107,7 @@ address {
 }
 
 abbr[title] {
-	border-bottom: 1px dotted #2b2b2b;
+	/*border-bottom: 1px dotted #2b2b2b;*/
 	cursor: help;
 }
 
@@ -286,7 +286,7 @@ a:visited {
 }
 
 a:focus {
-	outline: thin dotted;
+	/*outline: thin dotted;*/
 }
 
 a:active,

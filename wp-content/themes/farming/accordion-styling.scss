@@ -28,7 +28,8 @@
           line-height:1;
           color:#fff;
           -webkit-transition:background-color 0.5s ease-in-out;
-          
+          transition:background-color 0.5s ease-in-out;
+          -moz-transition:background-color 0.5s ease-in-out; 
         }
       }
     dd {
@@ -229,17 +230,21 @@
   margin: 1em auto;
   max-width: 60%;
   transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
     .accordion_button_text { 
         color: #fff;
         text-align: center;
+        padding: 1em;
           .accordion_button_name { 
               font-weight: 700;
               margin: 0 0 -1em 0;
-              padding-top: 1em;
+              // padding-top: 1em;
           }
           .accordion_button_blurb { 
               font-weight: 600;
-              padding-bottom: 1em;
+              // padding-bottom: 1em;
               font-style: italic;
           }
     }

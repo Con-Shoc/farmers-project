@@ -67,12 +67,14 @@ $red: #C21010;
 		background-color: $navcolor !important;
 		color: #fff !important;
 		text-align: center !important;
-		transition: all 0.5s ease;
-		
-		
+		transition: all 0.3s ease;
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;		
 	}
 	.panel-body {
 		transition: all 0.3s ease;
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
 		color: #000 !important;
 		border-left: 1px solid $navcolor;
 		border-bottom: 1px solid $navcolor;
@@ -92,6 +94,8 @@ $red: #C21010;
 	}
 	a { 
 		transition: all 0.3s ease;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
 		text-decoration: none;
 			&:hover { 
 				.panel-body {
@@ -157,7 +161,10 @@ section.site-width {
 	margin:auto;
 	margin-bottom: 1em;
 	transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
 	.button_text {
+			padding-bottom: 0.5em;
 		.button_name { 
 			margin-top: -4em;
 			text-align: center;
@@ -209,6 +216,8 @@ section.site-width {
 		input { 
 			background: $navcolor;
 			transition: all .5s ease;
+			-moz-transition: all .5s ease;
+			-webkit-transition: all .5s ease;
 		}
 	}
 	
@@ -331,6 +340,8 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 				background: $navcolor;
 				font-weight: 700;
 				transition: all 0.3s ease;
+				-webkit-transition: all .3s ease;
+				-moz-transition: all .3s ease;
 					&:hover{ 
 						background: $navcolor;
 					}
@@ -353,6 +364,8 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 				padding: 0.5em;
 				color: $red;
 				transition: all 0.3s ease;
+				-webkit-transition: all .3s ease;
+				-moz-transition: all .3s ease;
 				font-weight: 600;
 					&:hover { 
 						background: $blue;

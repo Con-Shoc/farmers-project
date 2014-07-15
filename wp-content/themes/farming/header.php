@@ -30,9 +30,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script src="./wp-content/plugins/woothemes-FlexSlider/jquery.flexslider.js"></script>
 	
-		<script type="text/javascript">
+	<script type="text/javascript">
    (function($) {
-      $(window).load(function(){
+      $(document).ready(function(){
       $('.flexslider').flexslider({
       	 slideshow: false,
       	 useCSS: true,
@@ -97,7 +97,7 @@
 
 
 <nav>
-			<a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
+<a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
 
 <div id="sidr">
   <!-- Your content -->
@@ -114,11 +114,7 @@
 
 		</div>
 
-		<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-				<?php get_search_form(); ?>
-			</div>
-		</div>
+		
 	</header><!-- #masthead -->
 
 	<div id="main" class="site-main">
@@ -133,6 +129,5 @@
     ?>
 </div>
 <a href="#top" id="smoothup" class="scroll-top">
-^ </br>
-Scroll Up
+^
 </a>

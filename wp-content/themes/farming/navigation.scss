@@ -156,16 +156,19 @@
 
 .scroll-top { 
 	position: fixed;
+	border-radius: 30%;
 	right:0.6em;
 	bottom: 1em;
-	text-align: center;
 	background: $navcolor;
 	opacity: 0.8;
 	padding: 0.5em;
 	color: #fff;
 	line-height: 1;
-	font-weight: 600;
+	font-weight: 700;
+	z-index:1;
 	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
 		&:hover { 
 			opacity:1;
 			color: #fff;
