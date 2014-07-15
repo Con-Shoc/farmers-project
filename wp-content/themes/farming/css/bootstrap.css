@@ -49,9 +49,9 @@ a:active,
 a:hover {
   outline: 0;
 }
-abbr[title] {
+/*abbr[title] {
   border-bottom: 1px dotted;
-}
+}*/
 b,
 strong {
   font-weight: bold;
@@ -297,7 +297,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
+  /*outline: thin dotted;*/
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
