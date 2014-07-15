@@ -34,7 +34,7 @@
 
 .site-navigation li {
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
-	width: 50%;
+	// width: 50%;
 	margin: 0 auto;
 	font-size: 1.5em;
 	font-weight: 600;
@@ -92,6 +92,7 @@
 .primary-navigation .nav-menu {
 	// border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	display: none;
+	padding: 0 55px;
 }
 
 .primary-navigation.toggled-on .nav-menu {
@@ -148,3 +149,25 @@
 	outline: 1px dotted;
 }
 
+
+.sidr { 
+	background: #2E3092;
+}
+
+.scroll-top { 
+	position: fixed;
+	right:0.6em;
+	bottom: 1em;
+	text-align: center;
+	background: $navcolor;
+	opacity: 0.8;
+	padding: 0.5em;
+	color: #fff;
+	line-height: 1;
+	font-weight: 600;
+	transition: all 0.5s ease;
+		&:hover { 
+			opacity:1;
+			color: #fff;
+		}
+}

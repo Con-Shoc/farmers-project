@@ -226,6 +226,8 @@ function twentyfourteen_font_url() {
  * @since Twenty Fourteen 1.0
  */
 function twentyfourteen_scripts() {
+	// Add Smooth Scrolling JS
+	wp_enqueue_script( 'smoothup', get_template_directory_uri() . '/js/smoothscrollup.js', array( 'jquery' ), '',  true );
 	// Add Lato font, used in the main stylesheet.
 	wp_enqueue_style( 'twentyfourteen-lato', twentyfourteen_font_url(), array(), null );
 
