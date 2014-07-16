@@ -36,10 +36,7 @@
         padding-top: 1em;
         font-size:1em;
         line-height:1.5em;
-        >p {
-          padding: 0 2em;
-        }
-        >ul { 
+        .accordion_content { 
           padding: 0 2em;
         }
         .accordionimage { 
@@ -246,6 +243,7 @@
               font-weight: 600;
               // padding-bottom: 1em;
               font-style: italic;
+              margin-bottom:0;
           }
     }
 

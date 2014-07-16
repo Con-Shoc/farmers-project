@@ -235,7 +235,7 @@ get_header(); ?>
 	              	<dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('accordion_color'); ?>'" ><?php echo $accordion_title ?></a></dt>
 
 	              	<dd class="accordionItem accordionItemCollapsed">
-	                <?php echo $accordion_content ?>
+	                <div class="accordion_content"><?php echo $accordion_content ?></div>
                 	<?php if($accordion_content_image != ''): ?>
                 		<img class="accordionimage" src="<?php echo $accordion_content_image['url']; ?>" alt="<?php echo $accordion_content_image['alt']; ?>" />
                 	<?php endif; ?>
@@ -296,6 +296,7 @@ get_header(); ?>
 			              	<dt><a class='accordionTitle' <?php echo 'style="background-color:';	the_sub_field('nested_accordion_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('nested_accordion_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('nested_accordion_color'); ?>'" ><?php echo $nested_accordion_title ?></a></dt>
 
 			              	<dd class="accordionItem accordionItemCollapsed">
+			                <div class="accordion_content">
 			                <?php echo $nested_accordion_content ?>
 					        <?php if($nested_accordion_image != ''): ?>
 			                	<img class="accordionimage" src="<?php echo $nested_accordion_image['url']; ?>" alt="<?php echo $nested_accordion_image['alt']; ?>" />
@@ -315,7 +316,7 @@ get_header(); ?>
 					                ?>
 
 
-					                <div class='menu_button' <?php echo 'style="background-color:';	the_sub_field('nested_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('nested_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('nested_button_color'); ?>'">
+					                <div class='page_button' <?php echo 'style="background-color:';	the_sub_field('nested_button_color');	echo ' ;" ';?> onMouseOver="this.style.backgroundColor='<?php  echo hex2rgbDark(get_sub_field('nested_button_color'));?>'"	onMouseOut="this.style.backgroundColor='<?php the_sub_field('nested_button_color'); ?>'">
 					                
 				                	<a class="menu_link" href="<?php the_sub_field('nested_button_link'); ?>">
 												                		
@@ -353,7 +354,7 @@ get_header(); ?>
 		                	endif;
 
 		               ?>
-
+						</div>
 		             	 </dd>
 			              <?php
 			        	endwhile; ?>

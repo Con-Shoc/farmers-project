@@ -31,6 +31,7 @@
 	<script src="./wp-content/plugins/woothemes-FlexSlider/jquery.flexslider.js"></script>
 	
 	<script type="text/javascript">
+	
    (function($) {
       $(document).ready(function(){
       $('.flexslider').flexslider({
@@ -44,14 +45,14 @@
         }
       });
     });
-   })(jQuery);
 
-   jQuery(document).ready(function() {
-  jQuery('#simple-menu').sidr({
-    
-      side: 'right'
-    });
-});
+   })(jQuery);
+    jQuery(document).ready(function() {
+	 jQuery('#simple-menu').sidr({
+	    
+	      side: 'right'
+	    });
+	});
 
 </script>
 
@@ -100,7 +101,6 @@
 <a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
 
 <div id="sidr">
-  <!-- Your content -->
  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 </div>
 
