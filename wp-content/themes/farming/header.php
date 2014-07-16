@@ -27,6 +27,7 @@
 
 	<!-- Flex Slider -->
 	<link rel="stylesheet" href="./wp-content/plugins/woothemes-FlexSlider/flexslider.css" type="text/css">
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script src="./wp-content/plugins/woothemes-FlexSlider/jquery.flexslider.js"></script>
 	
