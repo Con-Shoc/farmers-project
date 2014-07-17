@@ -48,12 +48,6 @@
     });
 
    })(jQuery);
-    jQuery(document).ready(function() {
-	 jQuery('#simple-menu').sidr({
-	    
-	      side: 'right'
-	    });
-	});
 
 </script>
 
@@ -105,14 +99,23 @@
 
 
 <nav>
-<a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
+	<a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
 
-<div id="sidr">
- <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-</div>
+	<div id="sidr">
+		 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+	</div>
 
 
 </nav>
+
+<script> 
+jQuery(document).ready(function() {
+	 jQuery('#simple-menu').sidr({
+	    
+	      side: 'right'
+	    });
+	});
+</script>
 
 
 
