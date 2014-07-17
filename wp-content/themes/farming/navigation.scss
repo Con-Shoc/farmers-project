@@ -184,3 +184,26 @@ nav {
 div.menu-menu-2-container {
 	overflow: hidden;
 }
+
+
+
+// Search Functionality 
+
+section.site-width .search-toggle {
+	display: block;
+	margin-top: 7px;
+	background: none;
+	font-weight: 700;
+}
+
+.search-box {
+	background: $navcolor !important;
+	padding: 12px;
+	float: right;
+	position: absolute;
+	top: -2.5em;
+	right: 5em;
+	transition: all 0.3s ease;
+}
+
+
