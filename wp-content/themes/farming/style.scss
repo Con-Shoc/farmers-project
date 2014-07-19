@@ -485,13 +485,7 @@ input[type="submit"]:active {
 	background-color: #55d737;
 }
 
-.search-field {
-	width: 100%;
-}
 
-.search-submit {
-	display: none;
-}
 
 /* Placeholder text color -- selectors need to be separate to work. */
 
@@ -864,10 +858,7 @@ span + .edit-link:before,
 .search-box .search-field {
 	background-color: #fff;
 	border: 0;
-	float: right;
 	font-size: 16px;
-	padding: 2px 2px 3px 6px;
-	width: 100%;
 }
 
 

@@ -20,10 +20,13 @@ get_header(); ?>
 ?>
 
 <!-- custom field for the button page intro -->
-<h4> <?php echo the_field('page_intro'); ?> </h4>
+
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content button-page-margins" role="main">
+			<div class="page_intro">
+				<?php echo the_field('page_intro'); ?> 
+			 </div>
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();

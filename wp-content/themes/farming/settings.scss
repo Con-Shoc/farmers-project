@@ -4,7 +4,7 @@
 
 
 
-body, p, div { 
+body, p, div, a, input { 
 	font-family: "Open Sans", Helvetica !important;
 	-webkit-font-smoothing: antialiased !important;
 	 text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
@@ -18,6 +18,9 @@ $red: #C21010;
 
 // Custom Globals
 
+	span.edit-link {
+	display: none;
+	}
 	a { 
 		text-decoration: none !important;
 	}
@@ -159,6 +162,10 @@ section.site-width {
 }
 
 // Menu Button Page Template
+
+.page_intro { 
+	
+}
 
 .button_text_spacing { 
 		margin-top: 1em;
@@ -425,3 +432,14 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 .tab-content { 
 	padding: 1em 1em 0 3em;
 }
+
+
+
+
+
+
+
+
+
+
+

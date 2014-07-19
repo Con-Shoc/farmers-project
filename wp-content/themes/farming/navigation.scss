@@ -122,13 +122,34 @@ section.site-width .search-toggle {
 }
 
 .search-box {
-	background: $navcolor !important;
+	background: none !important;
 	padding: 12px;
-	float: right;
 	position: absolute;
 	top: -2.5em;
-	right: 5em;
-	transition: all 0.3s ease;
+	right: -2em;
+	.search-field { 
+		max-width: 50%;
+		border-radius: 0;
+		margin-right: -4px;
+		padding: 3px 2px 3px 6px;
+	}
+	.search_submit { 
+		padding: 0.5em;
+		background: #2E3092;
+		border-radius: 0;
+		text-transform: none;
+		transition: all 0.3s ease;
+			&:hover { 
+				background: #060655;
+			}
+
+	}
 }
+
+h1.search-title {
+text-align: center;
+padding-bottom: 0.5em;
+}
+
 
 
