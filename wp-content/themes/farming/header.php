@@ -101,7 +101,7 @@
 <nav>
 	<a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
 
-	<div id="sidr">
+	<div id="sidr" style="display:none;">
 		 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 	</div>
 
