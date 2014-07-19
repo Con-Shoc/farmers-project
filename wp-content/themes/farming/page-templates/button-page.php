@@ -19,6 +19,9 @@ get_header(); ?>
 	}
 ?>
 
+<!-- custom field for the button page intro -->
+<h4> <?php echo the_field('page_intro'); ?> </h4>
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content button-page-margins" role="main">
 			<?php
