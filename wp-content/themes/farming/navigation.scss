@@ -126,13 +126,15 @@ section.site-width .search-toggle {
 	font-weight: 700;
 }
 
-.search-box {
+.custom_search { 
 	background: none !important;
-	padding: 12px;
+	// padding: 12px;
+	display: block;
 	position: absolute;
 	top: -2.5em;
-	right: -2em;
-	.search-field { 
+	right: 4em;
+	max-width: 75%;
+		.search-field { 
 		max-width: 50%;
 		border-radius: 0;
 		margin-right: -4px;
@@ -147,7 +149,6 @@ section.site-width .search-toggle {
 			&:hover { 
 				background: #060655;
 			}
-
 	}
 }
 

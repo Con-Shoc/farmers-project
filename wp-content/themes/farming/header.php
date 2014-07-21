@@ -36,7 +36,9 @@
    (function($) {
       $(document).ready(function(){
       $('.flexslider').flexslider({
-      	 slideshow: false,
+      	 slideshow: true,
+      	 slideshowSpeed: 3500,
+      	 pauseOnHover: true,
       	 useCSS: true,
       	 touch: true,
       	 controlNav: false,
@@ -89,9 +91,7 @@
 			</div>
 
 			<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
 				<?php get_search_form(); ?> 
-			</div>
 			</div>
 
 
