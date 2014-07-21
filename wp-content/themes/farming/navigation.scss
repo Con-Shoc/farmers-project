@@ -77,14 +77,19 @@
 	bottom: 1em;
 	background: $navcolor;
 	opacity: 0.8;
-	padding: 0.5em;
+	padding: 0 0.5em 1em 0.5em;
 	color: #fff;
-	line-height: 1;
 	font-weight: 700;
-	z-index:1;
+	z-index:999;
 	transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
+		&:before { 
+			content: '\f500';
+			-webkit-font-smoothing: antialiased;
+		    font: bold 20px/1 'Genericons';
+		    vertical-align: middle;
+		}
 		&:hover { 
 			opacity:1;
 			color: #fff;

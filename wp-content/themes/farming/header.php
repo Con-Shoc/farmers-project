@@ -138,6 +138,4 @@ jQuery(document).ready(function() {
 	}
     ?>
 </div>
-<a href="#top" id="smoothup" class="scroll-top">
-^
-</a>
+<a href="#top" id="smoothup" class="scroll-top"></a>
