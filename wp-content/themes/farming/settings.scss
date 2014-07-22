@@ -163,10 +163,6 @@ section.site-width {
 
 // Menu Button Page Template
 
-.page_intro { 
-	
-}
-
 .button_text_spacing { 
 		margin-top: 1em;
 		margin-bottom: 1em;
@@ -215,7 +211,7 @@ section.site-width {
 	.button_text {
 			padding-bottom: 0.5em;
 		.button_name { 
-			margin-top: -4em;
+			margin-top: -5em;
 			text-align: center;
 			font-size: 16px;
 			font-weight: 700;
@@ -434,17 +430,86 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 }
 
 
-// 404 page
+//  Content None Styling
 
-.not-found {
-	text-align: center;
+.no_result_header { 
+	display: block;
+	margin: 0 auto;
+	border: none;
+	background: $red;
+	padding: 1em;
+	max-width: 100%;
+	color: #fff;
+	.no_result_warning{ 
+			-webkit-font-smoothing: antialiased;
+		    font: bold 5em/1 'Genericons';
+		    vertical-align: middle;
+		    position: relative;
+		    float: left;
+			}
+
+	.no_result_warning_2{ 
+		-webkit-font-smoothing: antialiased;
+	    font: bold 5em/1 'Genericons';
+	    vertical-align: middle;
+	    position: relative;
+	    float: right;
+		margin: -0.85em 0.8em;
+		}
+	.no_result_text {
+		font-weight: 700;
+		text-align: center;
+		font-size: 1em;
+		line-height: 1;
+		margin-top: 1em;
+		margin-bottom: 0;
+		position: relative;
+	}
+	.no_result_frown {
+		margin-bottom: 0;
+		-webkit-font-smoothing: antialiased; 
+		font-size: 1.5em;
+		font-weight: 700;
+		text-align: center;
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg); /* IE 9 */
+		-webkit-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+
+	}
 }
 
-.h1.not-found {
-	text-align: center;
-	font-weight: 900;
-  	font-size: 100px;
-}
+	.no_result_option_1 { 
+		font-size: 2em;
+		background: $seagreen;
+		color: #fff;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		padding: 2em;
+		font-weight: 700;
+		text-align: center;
+		.no_result_search { 
+			margin-top: 1em;
+			.no_result_search-field { 
+				max-width: 100%;
+			}
+			.no_result_search_submit { 
+				padding: 0.5em;
+				font-weight: 700;
+				font-size: 1em;
+				background: $blue;
+				transition: all 0.5s ease;
+				text-transform: none;
+				&:hover { 
+					background: #09095A;
+				}
+			}
+		}
+	}
+
+
+
+
 
 
 
