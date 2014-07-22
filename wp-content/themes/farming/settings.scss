@@ -511,13 +511,68 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 // 404 page
 
 .not-found {
+	color: #fff;
+	height: 489px;
+	margin-top: -1em;
 	text-align: center;
+
+		.neo-text {
+			display:block;
+			margin: 0 auto;
+			background: $navcolor;
+			max-width: 666px;
+			line-height: 1;
+			h1 {
+				position: relative;
+				font-weight: 900;
+				top: -15px;
+		  	}
+		  	p { 
+				position: relative;
+				top:-15px;
+		  	}
+		  	.neo-arrow { 
+			    position: relative;
+				-webkit-font-smoothing: antialiased;
+			    font: bold 5em/1 'Genericons';
+			    vertical-align: middle;
+			   	right: 3em;
+			   	transform:rotate(90deg);
+				-ms-transform:rotate(90deg); /* IE 9 */
+				-webkit-transform:rotate(90deg);
+				-moz-transform:rotate(90deg)
+		  	}
+		}
 }
 
-.h1.not-found {
-	text-align: center;
-	font-weight: 900;
-  	font-size: 100px;
+
+.error_result_option_1 { 
+		display: block;
+		margin: 0 auto 1em auto;
+		max-width: 666px;
+		font-size: 2em;
+		background: $seagreen;
+		color: #fff;
+		padding: 2em;
+		font-weight: 700;
+		text-align: center;
+		.no_result_search { 
+			margin-top: 1em;
+			.no_result_search-field { 
+				max-width: 100%;
+			}
+			.no_result_search_submit { 
+				padding: 0.5em;
+				font-weight: 700;
+				font-size: 1em;
+				background: $blue;
+				transition: all 0.5s ease;
+				text-transform: none;
+				&:hover { 
+					background: #09095A;
+				}
+			}
+		}
 }
 
 
