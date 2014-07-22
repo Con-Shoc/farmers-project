@@ -127,7 +127,7 @@ jQuery(document).ready(function() {
 		
 	</header><!-- #masthead -->
 
-	<div id="main" class="site-main">
+	<div id="main" class="site-main page_button_margins">
 	<div class="breadcrumbs">
     <?php
     if ( !is_front_page() ) {

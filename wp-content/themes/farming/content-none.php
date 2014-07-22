@@ -8,8 +8,6 @@
  */
 ?>
 
-
-
 <div id="primary" class="content-area">
 		<div id="content" class="site-content button-page-margins" role="main">
 			<div id="content" class="site-content button-page-margins" role="main">
