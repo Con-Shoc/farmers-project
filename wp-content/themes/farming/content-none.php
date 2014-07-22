@@ -9,13 +9,13 @@
 ?>
 
 <header class="page-header">
-	<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyfourteen' ); ?></h1>
+	<h1 class="page-title"><?php _e( 'No results found', 'twentyfourteen' ); ?></h1>
 </header>
 
 <div class="page-content">
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-	<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'twentyfourteen' ), admin_url( 'post-new.php' ) ); ?></p>
+	<p><?php printf( __( 'No pages match your search query.', 'twentyfourteen' ), admin_url( 'post-new.php' ) ); ?></p>
 
 	<?php elseif ( is_search() ) : ?>
 
