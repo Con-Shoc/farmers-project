@@ -17,6 +17,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	outline: 0;
 	padding: 0;
 	vertical-align: baseline;
+
 }
 
 article,
@@ -840,16 +841,7 @@ span + .edit-link:before,
 	left: 5px; /* Avoid a horizontal scrollbar when the site has a long menu */
 }
 
-.search-box-wrapper {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
-	box-sizing:         border-box;
-	position: relative;
-	top: 48px;
-	right: 0;
-	width: 100%;
-	z-index: 2;
-}
+
 
 .search-box {
 	background-color: #41a62a;
@@ -2824,3 +2816,7 @@ a.post-thumbnail:hover {
 .sidr ul li span{
 	display: inline;
 }
+
+
+
+
