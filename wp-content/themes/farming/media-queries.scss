@@ -1265,6 +1265,13 @@ z-index: -1;
 }
 	 }
 
+.no_result_search_submit { 
+	margin-top: 1em;
+	width: 100%
+}
+.no_result_search-field { 
+	width: 100%;
+}
 
 
 @media (min-width: 401px) and (max-width: 705px) { 
@@ -1276,6 +1283,7 @@ z-index: -1;
 .search-toggle{
 	position:relative;
 	bottom:20px;
+	right:-3em;
 }
 
 .search-box-wrapper {
@@ -1287,7 +1295,12 @@ top:105px;
 width: 100%;
 z-index: -1;
 }
+
+.custom_search { 
+	right: 0 !important;
 }
+}
+
 
 
 

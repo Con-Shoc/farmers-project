@@ -438,7 +438,7 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 	border: none;
 	background: $red;
 	padding: 1em;
-	max-width: 500px;
+	max-width: 100%;
 	color: #fff;
 	.no_result_warning{ 
 			-webkit-font-smoothing: antialiased;
@@ -447,6 +447,15 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 		    position: relative;
 		    float: left;
 			}
+
+	.no_result_warning_2{ 
+		-webkit-font-smoothing: antialiased;
+	    font: bold 5em/1 'Genericons';
+	    vertical-align: middle;
+	    position: relative;
+	    float: right;
+		margin: -0.85em 0.8em;
+		}
 	.no_result_text {
 		font-weight: 700;
 		text-align: center;
@@ -472,11 +481,29 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 
 	.no_result_option_1 { 
 		font-size: 2em;
+		background: $seagreen;
+		color: #fff;
 		margin-top: 1em;
+		margin-bottom: 1em;
+		padding: 2em;
 		font-weight: 700;
 		text-align: center;
 		.no_result_search { 
 			margin-top: 1em;
+			.no_result_search-field { 
+				max-width: 100%;
+			}
+			.no_result_search_submit { 
+				padding: 0.5em;
+				font-weight: 700;
+				font-size: 1em;
+				background: $blue;
+				transition: all 0.5s ease;
+				text-transform: none;
+				&:hover { 
+					background: #09095A;
+				}
+			}
 		}
 	}
 
