@@ -163,10 +163,6 @@ section.site-width {
 
 // Menu Button Page Template
 
-.page_intro { 
-	
-}
-
 .button_text_spacing { 
 		margin-top: 1em;
 		margin-bottom: 1em;
@@ -432,6 +428,57 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 .tab-content { 
 	padding: 1em 1em 0 3em;
 }
+
+
+//  Content None Styling
+
+.no_result_header { 
+	display: block;
+	margin: 0 auto;
+	border: none;
+	background: $red;
+	padding: 1em;
+	max-width: 500px;
+	color: #fff;
+	.no_result_warning{ 
+			-webkit-font-smoothing: antialiased;
+		    font: bold 5em/1 'Genericons';
+		    vertical-align: middle;
+		    position: relative;
+		    float: left;
+			}
+	.no_result_text {
+		font-weight: 700;
+		text-align: center;
+		font-size: 1em;
+		line-height: 1;
+		margin-top: 1em;
+		margin-bottom: 0;
+		position: relative;
+	}
+	.no_result_frown {
+		margin-bottom: 0;
+		-webkit-font-smoothing: antialiased; 
+		font-size: 1.5em;
+		font-weight: 700;
+		text-align: center;
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg); /* IE 9 */
+		-webkit-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+
+	}
+}
+
+	.no_result_option_1 { 
+		font-size: 2em;
+		margin-top: 1em;
+		font-weight: 700;
+		text-align: center;
+		.no_result_search { 
+			margin-top: 1em;
+		}
+	}
 
 
 
