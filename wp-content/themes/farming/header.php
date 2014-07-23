@@ -25,6 +25,10 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+	<noscript>
+  		<meta http-equiv="refresh" content="0; url=./wp-content/themes/farming/nojs.php" />
+	</noscript>
+
 	<!-- Flex Slider -->
 	<link rel="stylesheet" href="./wp-content/plugins/woothemes-FlexSlider/flexslider.css" type="text/css">
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />

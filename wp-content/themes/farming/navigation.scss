@@ -15,11 +15,12 @@
 	padding-top: 5px;
 	text-align: center;
 	font-style: italic;
-	color: #299546;
+	color: $navcolor;
 		a.post.post-page.current-item { 
 			font-weight: 700;
+			border-bottom: 2px solid $navcolor;
 		}
-	}
+}
 
 
 
