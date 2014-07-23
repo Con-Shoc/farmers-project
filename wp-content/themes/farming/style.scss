@@ -6,6 +6,7 @@
 @import "css/jquery.sidr.dark.css";
 
 
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
 	// font-family: inherit;
@@ -16,6 +17,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	outline: 0;
 	padding: 0;
 	vertical-align: baseline;
+
 }
 
 article,
@@ -485,13 +487,7 @@ input[type="submit"]:active {
 	background-color: #55d737;
 }
 
-.search-field {
-	width: 100%;
-}
 
-.search-submit {
-	display: none;
-}
 
 /* Placeholder text color -- selectors need to be separate to work. */
 
@@ -845,16 +841,7 @@ span + .edit-link:before,
 	left: 5px; /* Avoid a horizontal scrollbar when the site has a long menu */
 }
 
-.search-box-wrapper {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
-	box-sizing:         border-box;
-	position: relative;
-	top: 48px;
-	right: 0;
-	width: 100%;
-	z-index: 2;
-}
+
 
 .search-box {
 	background-color: #41a62a;
@@ -864,10 +851,7 @@ span + .edit-link:before,
 .search-box .search-field {
 	background-color: #fff;
 	border: 0;
-	float: right;
 	font-size: 16px;
-	padding: 2px 2px 3px 6px;
-	width: 100%;
 }
 
 
@@ -2832,3 +2816,7 @@ a.post-thumbnail:hover {
 .sidr ul li span{
 	display: inline;
 }
+
+
+
+

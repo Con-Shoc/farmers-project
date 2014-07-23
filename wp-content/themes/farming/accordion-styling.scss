@@ -56,13 +56,16 @@
 }
 .accordionTitle {
  // background-color: #48B749; 
-  &:before {
-   content: "+";
-
-   font-size:1.5em;
-   line-height:0.5em;
-   float:left; 
-   @include transition(transform 0.3s ease-in-out);
+    &:before {
+    content: "\f429";
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font: bold 48px/1 'Genericons';
+    vertical-align: middle;
+    font-size:1.5em;
+    line-height:0.5em;
+    float:left; 
+    @include transition(transform 0.3s ease-in-out);
   }
   &:hover {
     // background-color:#3C963C;
@@ -71,9 +74,9 @@
 .accordionTitleActive {
    // background-color: #027103 !important;
     &:before {
-       -webkit-transform:rotate(-225deg);
-      -moz-transform:rotate(-225deg);
-      transform:rotate(-225deg);
+       -webkit-transform:rotate(450deg);
+      -moz-transform:rotate(450deg);
+      transform:rotate(450deg);
     }
 }
 .accordionItem {

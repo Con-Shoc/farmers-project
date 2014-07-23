@@ -217,6 +217,17 @@
 	.error404 .page-header {
 		margin-bottom: 24px;
 	}
+
+	.search-box-wrapper {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	position: relative;
+	top: 60px;
+	right: 0;
+	width: 100%;
+	// z-index: -1;
+}
 }
 
 @media screen and (min-width: 594px) {
@@ -251,7 +262,7 @@
 	}
 
 	.site-content {
-		margin-right: 33.33333333%;
+		// margin-right: 33.33333333%;
 	}
 
 	.site-content .has-post-thumbnail .entry-header {
@@ -1142,6 +1153,7 @@
 	.menu_button { 
 		width:70%;
 		height: 100%;
+	}
 
 		.button_text { 
 			padding-left: 2em;
@@ -1157,7 +1169,7 @@
 		margin: 0 100px;
 
 	}
-}
+
 
 @media all and (max-width: 997px) { 
 	.primary-navigation .menu-toggle {
@@ -1226,10 +1238,105 @@
 	// 	right: 1em;
 	// }	
 
+	.search-toggle { 
+		position: relative;
+		left: 50px;
+	}
+
 	.flexslider{
 		border:none;
 		margin-top: -50px;
 		margin-bottom: -40px;
 		background-color: rgba(255,250,250,0);
 	}
+}
+
+@media (max-width: 400px) { 
+.search-box-wrapper {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+position: relative;
+top: 125px;
+// right: -7px;
+left:80px;
+width: 100%;
+z-index: -1;
+}
+
+.search-toggle{
+	// position: relative;
+	// left:45px;
+}
+	 }
+
+.no_result_search_submit { 
+	margin-top: 1em;
+	width: 100%
+}
+.no_result_search-field { 
+	width: 100%;
+}
+
+
+@media (min-width: 401px) and (max-width: 705px) { 
+
+.site-header{
+	height:100px;
+}
+
+.search-toggle{
+	position:absolute;
+	cursor: pointer;
+	float: none !important;
+	font-size: 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	right: 0;
+	// bottom:20px;
+	margin-right: 0 !important;
+	// right:-3em;
+}
+
+.search-box-wrapper {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+position:relative;
+top:105px;
+width: 100%;
+z-index: -1;
+}
+
+.custom_search { 
+	right: 0 !important;
+}
+}
+
+
+
+
+@media (min-width: 481px) and (max-width: 705px) { 
+	.search-toggle{
+	// position:relative;
+	top:45px;
+}
+	}
+
+
+@media (min-width: 700px) and (max-width: 1042px) { 
+.menu_button { 
+		width:100%;
+		height: 100%;
+	}
+
+
+.site-content.button-page-margins {
+		margin:auto;
+		margin-left: 4px;
+		margin-right: 4px;
+
+	}
+
 }

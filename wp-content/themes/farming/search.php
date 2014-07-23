@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content button-page-margins" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -18,6 +18,10 @@ get_header(); ?>
 				<!-- <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyfourteen' ), get_search_query() ); ?></h1> -->
 			<!-- </header> -->
 			<!-- .page-header -->
+			
+			<h1 class="search-title">
+				<?php echo $wp_query->found_posts; ?> <?php _e( 'Search Results Found For', 'locale' ); ?>: "<?php the_search_query(); ?>"
+			</h1>
 
 				<?php
 					// Start the Loop.

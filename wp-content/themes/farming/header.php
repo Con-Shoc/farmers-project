@@ -25,6 +25,10 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+	<noscript>
+  		<meta http-equiv="refresh" content="0; url=./wp-content/themes/farming/nojs.php" />
+	</noscript>
+
 	<!-- Flex Slider -->
 	<link rel="stylesheet" href="./wp-content/plugins/woothemes-FlexSlider/flexslider.css" type="text/css">
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
@@ -36,7 +40,9 @@
    (function($) {
       $(document).ready(function(){
       $('.flexslider').flexslider({
-      	 slideshow: false,
+      	 slideshow: true,
+      	 slideshowSpeed: 3500,
+      	 pauseOnHover: true,
       	 useCSS: true,
       	 touch: true,
       	 controlNav: false,
@@ -89,9 +95,7 @@
 			</div>
 
 			<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-				<?php get_search_form(); ?>
-			</div>
+				<?php get_search_form(); ?> 
 			</div>
 
 
@@ -101,7 +105,7 @@
 <nav>
 	<a id="simple-menu" href="#sidr"><button class="menu-toggle"></button></a>
 
-	<div id="sidr">
+	<div id="sidr" style="display:none;">
 		 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 	</div>
 
@@ -127,7 +131,7 @@ jQuery(document).ready(function() {
 		
 	</header><!-- #masthead -->
 
-	<div id="main" class="site-main">
+	<div id="main" class="site-main page_button_margins">
 	<div class="breadcrumbs">
     <?php
     if ( !is_front_page() ) {
@@ -138,6 +142,4 @@ jQuery(document).ready(function() {
 	}
     ?>
 </div>
-<a href="#top" id="smoothup" class="scroll-top">
-^
-</a>
+<a href="#top" id="smoothup" class="scroll-top"></a>

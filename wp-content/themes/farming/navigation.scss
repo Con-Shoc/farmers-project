@@ -15,11 +15,12 @@
 	padding-top: 5px;
 	text-align: center;
 	font-style: italic;
-	color: #299546;
+	color: $navcolor;
 		a.post.post-page.current-item { 
 			font-weight: 700;
+			border-bottom: 2px solid $navcolor;
 		}
-	}
+}
 
 
 
@@ -77,14 +78,19 @@
 	bottom: 1em;
 	background: $navcolor;
 	opacity: 0.8;
-	padding: 0.5em;
+	padding: 0 0.5em 1em 0.5em;
 	color: #fff;
-	line-height: 1;
 	font-weight: 700;
-	z-index:1;
+	z-index:999;
 	transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
+		&:before { 
+			content: '\f500';
+			-webkit-font-smoothing: antialiased;
+		    font: bold 20px/1 'Genericons';
+		    vertical-align: middle;
+		}
 		&:hover { 
 			opacity:1;
 			color: #fff;
@@ -121,14 +127,36 @@ section.site-width .search-toggle {
 	font-weight: 700;
 }
 
-.search-box {
-	background: $navcolor !important;
-	padding: 12px;
-	float: right;
+.custom_search { 
+	background: none !important;
+	// padding: 12px;
+	display: block;
 	position: absolute;
 	top: -2.5em;
-	right: 5em;
-	transition: all 0.3s ease;
+	right: 4.5em;
+	max-width: 75%;
+		.search-field { 
+		max-width: 50%;
+		border-radius: 0;
+		margin-right: -4px;
+		padding: 3px 2px 3px 6px;
+	}
+	.search_submit { 
+		padding: 0.5em;
+		background: #2E3092;
+		border-radius: 0;
+		text-transform: none;
+		transition: all 0.3s ease;
+			&:hover { 
+				background: #060655;
+			}
+	}
 }
+
+h1.search-title {
+text-align: center;
+padding-bottom: 0.5em;
+}
+
 
 
