@@ -226,7 +226,7 @@
 	top: 60px;
 	right: 0;
 	width: 100%;
-	z-index: -1;
+	// z-index: -1;
 }
 }
 
@@ -1239,7 +1239,8 @@
 	// }	
 
 	.search-toggle { 
-		top: 45px;
+		position: relative;
+		left: 50px;
 	}
 
 	.flexslider{
@@ -1264,8 +1265,8 @@ z-index: -1;
 }
 
 .search-toggle{
-	
-	left:45px;
+	// position: relative;
+	// left:45px;
 }
 	 }
 
