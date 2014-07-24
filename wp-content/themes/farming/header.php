@@ -26,7 +26,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<noscript>
-  		<meta http-equiv="refresh" content="0; url=./wp-content/themes/farming/nojs.php" />
+  		<meta http-equiv="refresh" content="0; url=nojs.php" />
 	</noscript>
 
 	<!-- Flex Slider -->

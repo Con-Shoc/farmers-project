@@ -507,6 +507,26 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
 		}
 	}
 
+
+// Search Page Styling
+.search_title_result{
+	background: $blue;
+	display: block;
+	padding: 0.5em;
+	max-width: 500px;
+	text-align: center;
+	margin: 0 auto;
+	color: #fff;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+		&:hover { 
+			background: #060655;
+			color: #fff;
+		}
+}	
+
 // 404 page
 
 .not-found {
